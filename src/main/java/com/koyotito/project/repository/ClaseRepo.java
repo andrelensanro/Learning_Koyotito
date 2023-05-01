@@ -19,11 +19,9 @@ public interface ClaseRepo extends JpaRepository<Clase, Integer>{
 	
 	List<String> todasClase_profesor(@Param("nombre") String nombre, @Param("apellido") String apellido,  @Param("apellido2") String apellido2);
 	
-	@Query(value="SELECT nombreClase FROM clase JOIN usuario "
-			+ "ON clase.profesor_idProfesor = usuario.profesor_idProfesor "
-			+ "JOIN profesor "
-			+ "ON profesor.idProfesor = usuario.profesor_idProfesor "
-			+ "WHERE profesor.institucion=UPPER(:institucion)")
+	@Query(value="SELECT DISTINCT ombreClase FROM clase JOIN profesor "
+			+ "ON clase.profesor_idProfesor = profesor.idProfesor "
+			+ "WHERE profesor.institucion=:institucion", nativeQuery=true)
 	List<String> todasClase_institucion(@Param("institucion") String institucion);
 	
 	
