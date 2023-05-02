@@ -21,7 +21,10 @@ import com.koyotito.project.services.TutorService;
 import com.koyotito.project.services.TutoradoService;
 import com.koyotito.project.services.UsuarioService;
 
+import jakarta.servlet.http.HttpSession;
+
 @RestController
+@RequestMapping("/usuario")
 @CrossOrigin(origins = "http://localhost:4200")
 public class UsuarioController{
 	
@@ -37,15 +40,17 @@ public class UsuarioController{
 	
 	
 	@RequestMapping("/login")
-	public Usuario login(@RequestBody Usuario usuario){
+	public Usuario login(@RequestBody Usuario usuario, HttpSession session){
 		Optional<Usuario> usr = usuarioService.findByCorreo(usuario.getCorreo().toString());
 		//logger.info(usr.get().toString());
-		if(usr.isPresent())
+		if(usr.isPresent()) {
+			session.setAttribute("idUsuario", usr.get().getIdUsuario());
 			return usr.get();
+ 		}
 		return null;
 	}
 	
-	@RequestMapping("/registro")
+	@RequestMapping("registro")
 	public Usuario registro(@RequestBody Usuario usuario) {
 		logger.info(usuario.toString());
 	

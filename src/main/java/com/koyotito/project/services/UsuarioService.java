@@ -22,21 +22,17 @@ public class UsuarioService {
 	public Optional<Usuario> findByCorreo(String email) {
 		return usuarioRepo.findByCorreo(email);
 	}
+	public Optional<Usuario> findById(int id) {
+		return usuarioRepo.findById(id);
+	}
+
 	public Usuario save(Usuario usuario) {
 		return usuarioRepo.save(usuario);
 	}
 	public void delete(Usuario usuario) {
 		usuarioRepo.delete(usuario);
 	}	
-	public Usuario update(Usuario user) {
-		Usuario u = new Usuario();
-		u = usuarioRepo.getReferenceById(user.getIdUsuario());
-		u.setNombre(user.getNombre());
-		u.setApellido1(user.getApellido1());
-		u.setApellido2(user.getApellido2());
-		u.setPassword(user.getPassword() );
-		u.setNum_denuncias(user.getNum_denuncias());
-		logger.info("actualizacion de usuario " + u.toString());
-		return u;
+	public void update(Usuario user) {
+		usuarioRepo.save(user);
 	}
 }
