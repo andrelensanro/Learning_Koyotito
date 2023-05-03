@@ -8,6 +8,7 @@ import java.util.Optional;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,23 +40,23 @@ public class UsuarioController{
 	TutorService tutorService;
 	
 	
-	@RequestMapping("/login")
+	@GetMapping("/login")
 	public Usuario login(@RequestBody Usuario usuario, HttpSession session){
-		Optional<Usuario> usr = usuarioService.findByCorreo(usuario.getCorreo().toString());
+		Usuario usr = usuarioService.findByCorreo(usuario.getCorreo());
 		//logger.info(usr.get().toString());
-		if(usr.isPresent()) {
-			session.setAttribute("idUsuario", usr.get().getIdUsuario());
-			return usr.get();
+		if(usr.getIdUsuario()!=null) {
+			session.setAttribute("idUsuario", usr.getIdUsuario());
+			return usr;
  		}
 		return null;
 	}
 	
-	@RequestMapping("registro")
+	@GetMapping("/registro")
 	public Usuario registro(@RequestBody Usuario usuario) {
 		logger.info(usuario.toString());
 	
-		Optional<Usuario> usr = usuarioService.findByCorreo(usuario.getCorreo().toString());
-		if(usr.isPresent()) {
+		Usuario usr = usuarioService.findByCorreo(usuario.getCorreo().toString());
+		if(usr.getIdUsuario()!=null) {
 			logger.warn("Ese email ya esta en la base de datos");
 			return null;
 		}

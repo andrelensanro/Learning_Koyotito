@@ -19,11 +19,11 @@ public class UsuarioService {
 	
 	private final Logger logger = (Logger) LoggerFactory.getLogger(ClaseController.class);
 	
-	public Optional<Usuario> findByCorreo(String email) {
+	public Usuario findByCorreo(String email) {
 		return usuarioRepo.findByCorreo(email);
 	}
-	public Optional<Usuario> findById(int id) {
-		return usuarioRepo.findById(id);
+	public Usuario findById(int id) {
+		return usuarioRepo.findById(id).get();
 	}
 
 	public Usuario save(Usuario usuario) {
@@ -35,4 +35,8 @@ public class UsuarioService {
 	public void update(Usuario user) {
 		usuarioRepo.save(user);
 	}
+	public int getId_profesor(int idUsuario) {
+		return usuarioRepo.getId_profesor(idUsuario);
+	}
+
 }

@@ -43,8 +43,8 @@ public class HomeController {
 	
 	@GetMapping("filtrar/tituloclase/{nombreClase}") 
 	public List<String> filtrarNombreClase(@PathVariable String nombreClase, HttpSession session) {
-		Optional<Usuario> usr = usuarioService.findById(Integer.parseInt(session.getAttribute("idUsuario").toString()));
-		logger.info(usr.get().toString());
+		//Usuario usuario = usuarioService.findById(Integer.parseInt(session.getAttribute("idUsuario").toString()));
+		// no se puede generar una sesion solo con postman 
 		return claseService.findAll_nombreClase().stream().filter(p -> p.toLowerCase().contains(nombreClase)).collect(Collectors.toList());
 	}
 	
