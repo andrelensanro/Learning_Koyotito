@@ -1,0 +1,24 @@
+<mat-card>
+<!--<mat-card *ngIf="!this.authService.isLoggedIn()">-->
+  <mat-card-content><h1 mat-dialog-title>Hola, ingrese sus datos.</h1>
+    <mat-form-field appearance="fill">
+      <mat-label>Correo</mat-label>
+      <!--<input matInput [(ngModel)]="this.correo" type="email" name="correo">-->
+      <input matInput type="email" name="correo">
+    </mat-form-field><br>
+    
+    <mat-card-subtitle>Contraseña</mat-card-subtitle>
+    <mat-form-field appearance="fill">  
+      <mat-label>Contraseña</mat-label>
+      <!--<input name="contra" matInput [(ngModel)]="this.contra" type="password">-->
+      <input name="contra" matInput type="password">
+      <a href="/recpContra">¿Olvidó su contraseña?</a>
+    </mat-form-field>
+    
+    <div mat-dialog-actions>
+      <!--<button mat-button (click)="this.login()">Iniciar sesión</button>-->
+      <button mat-button>Iniciar sesión</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a onmouseover="" (click)="RegistroDialog()">¿No tiene cuenta?, Cree una</a>
+    </div>
+  </mat-card-content>
+</mat-card>

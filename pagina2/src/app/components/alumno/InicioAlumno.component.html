@@ -1,0 +1,32 @@
+<section>
+	<div class="cuadro">  
+        <div class="Psup">
+          <!-- Marca error, pero funciona-->
+            <input class="redondo" type="text" placeholder=""> 
+      
+            <span class="material-icons" id="Icono">campaign</span>
+        </div>
+        <img *ngFor='let preview of previews' [src]="preview" class="preview">
+        <div class="imagen">
+        </div>
+        <div id="content">
+            <div class="overlay">
+                <div class="overlay-element top-left"></div>
+                <div class="overlay-element top-right"></div>
+                <div class="overlay-element bottom-left"></div>
+                <div class="overlay-element bottom-right"></div>
+            </div>
+        </div>
+        <div class="Pinf">
+          <input class="redondoInf" style="font-size: 20px;" type="text" placeholder="Poner cosa que habilite el mic." disabled> 
+          <p id="respIdioma">Idioma</p>
+          
+        </div>
+      <div class='air air1'></div>
+      <div class='air air2'></div>
+      <div class='air air3'></div>
+      <div class='air air4'></div>
+    </div>
+</section>
+  
+  
