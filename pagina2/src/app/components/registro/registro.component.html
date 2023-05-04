@@ -1,0 +1,44 @@
+<form>
+<mat-card>
+  <mat-card-content>
+    <H2>Hola, necesitamos algunos datos tuyos<br></H2>
+  <mat-button-toggle-group requiered>
+    <mat-button-toggle value="Profesor" (click)="OpProf()" (click)="limpiar()"><mat-icon>school</mat-icon> Profesor</mat-button-toggle>
+    <mat-button-toggle value="Tutor" (click)="OpTut()" (click)="limpiar()"><mat-icon>person_outline</mat-icon> Tutor</mat-button-toggle>
+  </mat-button-toggle-group>
+  <br><br>
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre(s)</mat-label>
+    <input matInput name="nom_usu" requiered>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Apellido</mat-label>
+    <input matInput name="nom_usu">
+  </mat-form-field><br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Institución</mat-label>
+    <input matInput [disabled]='profesor' [(ngModel)]='texto' name="inst">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Pseudonimo del alumno</mat-label>
+    <input matInput name="pseud" [disabled]='pseudonimo' title="El nombre que tendrá su tutorado, será necesario tener al menos 1 para usar los servicios del sistema.">
+  </mat-form-field><br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Correo</mat-label>
+    <input matInput name="email" type="email">
+  </mat-form-field><br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Contraseña</mat-label>
+    <input matInput name="contra" type="password">
+  </mat-form-field><br>
+          <button type="submit" mat-raised-button color="primary">Registrarme.  </button>
+    <i class=" tim-icons icon-alert-circle-exc"> </i>
+
+
+</mat-card-content>
+</mat-card>
+</form>
