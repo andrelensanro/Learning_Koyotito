@@ -9,6 +9,7 @@ import org.slf4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -40,23 +41,22 @@ public class UsuarioController{
 	TutorService tutorService;
 	
 	
-	@GetMapping("/login")
-	public Usuario login(@RequestBody Usuario usuario, HttpSession session){
-		Usuario usr = usuarioService.findByCorreo(usuario.getCorreo());
-		//logger.info(usr.get().toString());
-		if(usr.getIdUsuario()!=null) {
-			session.setAttribute("idUsuario", usr.getIdUsuario());
-			return usr;
- 		}
+	@PostMapping("/login")
+	public Usuario login(@RequestBody Usuario usuario){
+		Optional<Usuario> usr =  usuarioService.findByCorreo(usuario.getCorreo());
+		if(usr.isPresent()) {
+			return usr.get();
+		}
+		logger.info("este usuario no esta registrado");
 		return null;
 	}
 	
-	@GetMapping("/registro")
+	@PostMapping("/registro")
 	public Usuario registro(@RequestBody Usuario usuario) {
 		logger.info(usuario.toString());
 	
-		Usuario usr = usuarioService.findByCorreo(usuario.getCorreo().toString());
-		if(usr.getIdUsuario()!=null) {
+		Optional<Usuario> usr = usuarioService.findByCorreo(usuario.getCorreo().toString());
+		if(usr.isPresent()) {
 			logger.warn("Ese email ya esta en la base de datos");
 			return null;
 		}

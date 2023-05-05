@@ -19,11 +19,11 @@ public class UsuarioService {
 	
 	private final Logger logger = (Logger) LoggerFactory.getLogger(ClaseController.class);
 	
-	public Usuario findByCorreo(String email) {
+	public Optional<Usuario> findByCorreo(String email) {
 		return usuarioRepo.findByCorreo(email);
 	}
-	public Usuario findById(int id) {
-		return usuarioRepo.findById(id).get();
+	public Optional<Usuario> findById(int id) {
+		return usuarioRepo.findById(id);
 	}
 
 	public Usuario save(Usuario usuario) {

@@ -9,7 +9,7 @@
   <br><br>
   <mat-form-field appearance="fill">
     <mat-label>Nombre(s)</mat-label>
-    <input matInput name="nom_usu" requiered>
+    <input matInput name="nom_usu" requiered >
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Apellido</mat-label>
@@ -18,7 +18,7 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Institución</mat-label>
-    <input matInput [disabled]='profesor' [(ngModel)]='texto' name="inst">
+    <input matInput [disabled]='profesor' name="inst">
   </mat-form-field>
 
   <mat-form-field appearance="fill">
@@ -35,7 +35,7 @@
     <mat-label>Contraseña</mat-label>
     <input matInput name="contra" type="password">
   </mat-form-field><br>
-          <button type="submit" mat-raised-button color="primary">Registrarme.  </button>
+          <button type="submit" mat-raised-button color="primary" role="button" >Registrarme.  </button>
     <i class=" tim-icons icon-alert-circle-exc"> </i>
 
 

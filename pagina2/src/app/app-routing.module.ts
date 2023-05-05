@@ -11,15 +11,15 @@ import { CrearClaseComponent } from './components/Profesor/Clase/ClasesProfesor/
 import { InicioAlumnoComponent } from './components/alumno/InicioAlumno.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent},
   {path: 'registro', component: RegistroComponent},
   {path: 'recpContra', component: RecuperarContraComponent},
   {path: 'reestablecimiento', component: ReestContraComponent},
-  {path: 'InicioProfesor', component: InicioProfComponent},
-    {path: 'CrearClase', component: CrearClaseComponent},
-    {path: 'Calificacion', component: CalificacionComponent},
-    {path: 'TomarClase', component: InicioAlumnoComponent},
-    {path: '', component: HomeComponent}
+  {path: 'inicioProfesor', component: InicioProfComponent},
+  {path: 'CrearClase', component: CrearClaseComponent},
+  {path: 'Calificacion', component: CalificacionComponent},
+  {path: 'tomarClase', component: InicioAlumnoComponent},
+  {path: '', component: HomeComponent}
 ];
 
 @NgModule({

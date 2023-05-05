@@ -11,7 +11,7 @@ import com.koyotito.project.model.Usuario;
 
 @Repository
 public interface UsuarioRepo extends JpaRepository<Usuario, Integer>{
-	public Usuario findByCorreo(String email);
+	public Optional<Usuario> findByCorreo(String email);
 	@Query(value = "SELECT profesor_idProfesor "
 			+ "FROM usuario "
 			+ "WHERE usuario.idUsuario = :idUsuario", nativeQuery = true)

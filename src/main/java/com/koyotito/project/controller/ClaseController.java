@@ -157,13 +157,6 @@ public class ClaseController {
 			a = r.getArchivo();
 			r.setArchivo(a);
 		}
-		
-		
-		
-		
-		
-		
-		
 	
 		List<RelClaseTag> relaciones =  claseService.findById(idClase).getRelClaseTags();
 		for(RelClaseTag r : relaciones) {

@@ -28,7 +28,7 @@ import { RouterModule } from '@angular/router';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatListModule } from '@angular/material/list';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 
@@ -65,11 +65,11 @@ import {MatSelectModule} from '@angular/material/select';
     }),
     RouterModule,
     MatFormFieldModule,
-  MatProgressBarModule,
-  MatSelectModule,
-  MatListModule,
-  HttpClientModule,
-  ReactiveFormsModule
+    MatProgressBarModule,
+    MatSelectModule,
+    MatListModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}],
   bootstrap: [AppComponent]
