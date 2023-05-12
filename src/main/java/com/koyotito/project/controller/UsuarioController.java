@@ -27,7 +27,6 @@ import jakarta.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("/usuario")
-@CrossOrigin(origins = "http://localhost:4200")
 public class UsuarioController{
 	
 	private final Logger logger = LoggerFactory.getLogger(UsuarioController.class);
