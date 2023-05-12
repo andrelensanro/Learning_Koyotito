@@ -17,11 +17,10 @@
 
 <mat-toolbar class="navbar" style="background-color: transparent; ">
     <mat-toolbar-row>
-          <mat-icon>search</mat-icon>
+
           <mat-form-field c>
-              <input type="tel" matInput placeholder="Search">
               </mat-form-field>
               <button mat-flat-button color="primary" routerLink="/CrearClase">Crear clase</button>
-              <button mat-flat-button color="accent">Crear grupo</button>
+              <a mat-raised-button color="warn" (click)="openDialog()">Cerrar sesión</a>
               <mat-icon>notifications</mat-icon>
     </mat-toolbar-row>

@@ -1,0 +1,71 @@
+/* resets */
+*,
+*:before,
+*:after {
+   box-sizing: border-box;
+}
+
+p {
+  font-family: 'Muli', sans-serif;
+}
+
+h1 {
+  font-family: 'Muli', sans-serif;
+  text-transform: uppercase;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ===== 2. standard seachbox ==== */
+
+.search-txt-input{
+  padding: 10px 20px;
+  font-size:14px;
+  border:1px solid #c8c8c8;
+  border-right:0px;
+  border-top-left-radius: 4px 4px;
+  border-bottom-left-radius: 4px 4px;
+  width: 200px;
+}
+.search-button {
+  padding: 8px 15px;
+  font-size: 16px;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  border: solid 1px #c8c8c8;
+  border-right: 0px;
+  background: #f45c03;
+  border-top-right-radius: 4px 4px;
+  border-bottom-right-radius: 4px 4px;
+  position: relative;
+  left:-5px;
+}
+.search-button:hover {
+  text-decoration: none;
+  background: #f67c35;
+}
+
+/* Fixes submit button height problem in Firefox */
+.search-button::-moz-focus-inner {
+  border: 0;
+}
+
+
+/* == 4. standard seachbox with icon === */
+
+button[type='submit'] {
+background-color:#E51284;
+color:#fff;
+cursor:pointer;
+}
+button[type='submit']:hover {
+background-color:#ea419c;
+color:#fff;
+cursor:pointer;
+}

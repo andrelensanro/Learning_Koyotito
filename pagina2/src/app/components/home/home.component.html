@@ -1,3 +1,23 @@
+<header>
+    <mat-toolbar style="background-color:transparent; position: fixed;"class="navbar">
+        <mat-toolbar-row>
+            <span>
+                <a routerLink="/home"><img mat-flat-button class="Imagen" src="../../../assets/Koyotito.png"></a>
+            </span>
+    
+    
+            <a mat-raised-button color="accent" routerLink="/InicioProfesor">Profesor</a>
+            <a mat-raised-button color="accent" routerLink="/InicioTutor">Tutor</a>
+            <a mat-raised-button color="accent" routerLink="/TomarClase">Alumno</a>
+    
+    
+            <span class="menu-spacer"></span>        
+            <a mat-raised-button (click)="openDialog()">Login</a>
+    <!--<a mat-button routerLink="/registro">Logout</a>-->
+            <a mat-raised-button color="accent" (click)="RegistroDialog()">Crear cuenta</a>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</header>
 <div  class="masthead">
     <div class="container">
         <div class="masthead-subheading">¡Hola!  </div>

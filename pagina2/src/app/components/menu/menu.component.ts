@@ -4,6 +4,7 @@ import { inicioSesionDialog } from './inicioSesion.component';
 import { AuthService } from '../services/authService.component';
 import { RegistroComponent } from '../registro/registro.component';
 import { Router } from '@angular/router';
+import { CerrarSesionComponent } from '../sesion/CerrarSesioncomponent';
 
 @Component({
   selector: 'app-menu',
@@ -29,18 +30,9 @@ export class MenuComponent implements OnInit{
   }
 
 
+
 ngOnInit(): void{
-  this.route.events.subscribe((val:any)=>{
-    if(val.url.includes('Profesor')){
-      this.menuType="Profesor";
-    }else if(val.url.includes('CrearClase')){
-      this.menuType="CrearClase";
-    }else if(val.url.includes('home')){
-      this.menuType="General";
-    }else {
-      this.menuType="General_Otro";
-    }
-  })
+
 }
   
 /*

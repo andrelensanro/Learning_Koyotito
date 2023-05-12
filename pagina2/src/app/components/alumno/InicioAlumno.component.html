@@ -18,9 +18,76 @@
             </div>
         </div>
         <div class="Pinf">
-          <input class="redondoInf" style="font-size: 20px;" type="text" placeholder="Poner cosa que habilite el mic." disabled> 
-          <p id="respIdioma">Idioma</p>
-          
+            <input type="file" accept="audio/*" capture id="recorder" />
+            <audio id="player" controls></audio>
+              <script>
+                const recorder = document.getElementById('recorder');
+                const player = document.getElementById('player');
+            
+                recorder.addEventListener('change', function (e) {
+                  const file = e.target.files[0];
+                  const url = URL.createObjectURL(file);
+                  // Do something with the audio file.
+                  player.src = url;
+                });
+              </script>
+
+            <button id="stop">Stop</button>
+            <script>
+              const downloadLink = document.getElementById('download');
+              const stopButton = document.getElementById('stop');
+            
+            
+              const handleSuccess = function(stream) {
+                const options = {mimeType: 'audio/webm'};
+                const recordedChunks = [];
+                const mediaRecorder = new MediaRecorder(stream, options);
+            
+                mediaRecorder.addEventListener('dataavailable', function(e) {
+                  if (e.data.size > 0) recordedChunks.push(e.data);
+                });
+            
+                mediaRecorder.addEventListener('stop', function() {
+                  downloadLink.href = URL.createObjectURL(new Blob(recordedChunks));
+                  downloadLink.download = 'acetest.wav';
+                });
+            
+                stopButton.addEventListener('click', function() {
+                  mediaRecorder.stop();
+                });
+            
+                mediaRecorder.start();
+              };
+            
+              navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+                  .then(handleSuccess);
+                  navigator.permissions.query({name: 'microphone'}).then(function (result) {
+  if (result.state == 'granted') {
+  } else if (result.state == 'prompt') {
+  } else if (result.state == 'denied') {
+  }
+  result.onchange = function () {};
+});
+            </script>
+                      <p id="respIdioma">Idioma</p>
+<!--          <swiper
+  [slidesPerView]="1"
+  [spaceBetween]="50"
+  [navigation]="true"
+  [pagination]="{ type: 'fraction' }"
+  [centeredSlides]="true"
+  [keyboard]="{
+    enabled: true
+  }"
+  [virtual]="true"
+  class="my-swiper"
+>
+  <ng-template swiperSlide *ngFor="let slide of slides$ | async; index as i">
+    <div class="swiper-slide-container">
+      {{ slide }}
+    </div>
+  </ng-template>
+</swiper>         -->
         </div>
       <div class='air air1'></div>
       <div class='air air2'></div>

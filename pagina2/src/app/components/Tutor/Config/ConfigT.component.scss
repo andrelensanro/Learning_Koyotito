@@ -1,0 +1,150 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
+}
+
+
+
+textarea {
+  resize: none;
+}
+/*
+#izquierdo {
+  position: absolute;
+  background: none;
+  left: 8%;
+  top: 40%;
+  width: 500px;
+  height: 10000%;
+  padding: 30px 20px;
+}
+
+
+#derecha {
+  position: absolute;
+  background: none;
+  right: 8%;
+  top: 70%;
+  width: 400px;
+  height: 10000%;
+  padding: 30px 20px;
+}
+
+*/
+/**********************  Tabla de Correos del maestro. ****************************/
+.tableFixHead {
+overflow-y: auto; /* make the table scrollable if height is more than 200 px  */
+height: 200px; /* gives an initial height of 200px to the table */
+overflow-x: auto; /* make the table scrollable if height is more than 200 px  */
+width: 700px; /* gives an initial height of 200px to the table */
+}
+.tableFixHead thead th {
+position: sticky; /* make the table heads sticky */
+top: 0px; /* table head will be placed from the top of the table and sticks to it */
+}
+.tableC {
+border-collapse: collapse; /* make the table borders collapse to each other */
+}
+th,
+.tdG {
+border: 1px solid #ccc;
+padding: 15px;	
+}
+th {
+background: #494646;
+}
+
+/************  Pestañas  *******************************/
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+*, *:before, *:after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+section {  
+display: none;
+border-top: 1px solid #dddddd;
+}
+
+input {
+display: none;
+}
+
+label {
+display: inline-block;
+margin: 0 0 -1px;
+padding: 15px 25px;
+font-weight: 600;
+text-align: center;
+color: #ffffff;
+border: 1px solid transparent;
+
+}
+
+label:before {
+font-family: fontawesome;
+font-weight: normal;
+margin-right: 10px;
+}
+
+label[for*='1']:before {
+content: '\f1cb';
+}
+
+label[for*='2']:before {
+content: '\f17d';
+}
+
+label[for*='3']:before {
+content: '\f16b';
+}
+
+label[for*='4']:before {
+content: '\f1a9';
+}
+
+label:hover {
+color: #000000;
+cursor: pointer;
+}
+
+input:checked + label {
+color: #000000;
+border: 1px solid #ddd;
+border-bottom: 1px solid #ffffff;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+z-index: 1;
+display: block;
+}
+
+@media screen and (max-width: 650px) {
+label {
+  font-size: 0;
+}
+
+label:before {
+  margin: 0;
+  font-size: 18px;
+}
+}
+@media screen and (max-width: 400px) {
+label {
+  padding: 15px;
+}
+}

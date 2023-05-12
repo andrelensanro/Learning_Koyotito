@@ -33,18 +33,18 @@
       <span class="floating square" style="top:52.093973442288046%;left:68.90625%;animation-delay:-0.7s;"></span>
       <span class="floating square" style="top:81.51174668028601%;left:83.59375%;animation-delay:-0.35s;"></span>
       <span class="floating square" style="top:11.542390194075587%;left:91.51041666666667%;animation-delay:-0.1s;"></span>
-
-</div>
-
-<section id="Topbar">
-  <div  class="example-button-container">
-      <button id="añadir" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+    </div>
+    
+    
+    <section id="Topbar">
+      <div  class="example-button-container">
+        <button id="añadir" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
           <mat-icon>add</mat-icon>
-      </button>
-  </div>
-  <mat-form-field id="TipoLetra" appearance="fill">
-      <mat-label>Tipo de letra</mat-label>
-      <mat-select [(ngModel)]="datos.TipoLetra">
+        </button>
+      </div>
+      <mat-form-field id="TipoLetra" appearance="fill">
+        <mat-label>Tipo de letra</mat-label>
+        <mat-select [(ngModel)]="datos.TipoLetra">
           <mat-option default value="Arial">Arial</mat-option>
           <mat-option value="Arial Black">Arial Black</mat-option>
           <mat-option value="Verdana">Verdana</mat-option>
@@ -60,73 +60,72 @@
           <mat-option value="Brush Script MT">Brush Script MT</mat-option>
           <mat-option value="Luminari">Luminari</mat-option>
           <mat-option value="Comic Sans MS">Comic Sans MS</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field id="TamLetra" appearance="fill">
-      <mat-label>Tamaño</mat-label>
-      <mat-select [(ngModel)]="datos.TamLetra">
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field id="TamLetra" appearance="fill">
+        <mat-label>Tamaño</mat-label>
+        <mat-select [(ngModel)]="datos.TamLetra">
           <mat-option default value="12">12</mat-option>
           <mat-option value="14">14</mat-option>
           <mat-option value="16">16</mat-option>
           <mat-option value="18">18</mat-option>
           <mat-option value="20">20</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <div  class="example-button-container">
-      <button id="Hecho" mat-mini-fab style="background-color: rgb(30, 110, 30);" aria-label="">
-          <mat-icon>done</mat-icon>
-      </button>
-  </div>
+        </mat-select>
+      </mat-form-field>
       <div  class="example-button-container">
-      <button title="Guardar tarjeta" id="Hecho" mat-mini-fab style="background-color: rgb(30, 110, 30);" aria-label="">
+        <button id="Hecho" mat-mini-fab style="background-color: rgb(30, 110, 30);" aria-label="">
           <mat-icon>done</mat-icon>
-      </button>
-  </div>
-  <div class="example-button-container">
-    <button title="Eliminar tarjeta" id="Borrar" mat-mini-fab style="background-color: rgb(182, 23, 23);" aria-label="">
-      <mat-icon>delete_outline</mat-icon>
-    </button>
-</div>
-</section>
-
-<section id="derecha">
-  <div id="texto">
-    <p style="text-align: center; background-color: rgb(61, 60, 60);opacity: 0.95;">Modifique los campos y previsualicé como lucirá su tarjeta en el cuadro de la izquierda.</p>
-  </div>
-  <mat-form-field id="Idioma" appearance="fill" requiered>
-      <mat-label>Idioma</mat-label>
-      <mat-select [(ngModel)]="datos.Idioma">
-        <mat-option value="Español">Español</mat-option>
-        <mat-option value="Inglés">Inglés</mat-option>
-      </mat-select>
-  </mat-form-field>
-  <br>
-  <mat-form-field id="instruccion" appearance="fill" requiered>
-      <mat-label>Instrucción</mat-label>
-      <input matInput [(ngModel)]="datos.Instruccion" maxlength="35">
-  </mat-form-field>
-
-  <mat-form-field id="respuesta" appearance="fill" requiered>
-    <mat-label>Respuesta</mat-label>
-    <input matInput [(ngModel)]="datos.Respuesta" maxlength="20">
-</mat-form-field>
-    <mat-form-field  id="SubirImagen">
-      <div>
-        <mat-toolbar>
-          <!--selectedFileNames.length ? selectedFileNames : -->
-          <input readonly matInput [value]="'Seleccionar imagen'" required/>    
-        </mat-toolbar>      
-        <input type="file" id="fileInput" name="fileInput" accept="image/*" multiple (change)="selectFiles($event)"
-        />
+        </button>
       </div>
-  </mat-form-field>
-</section>
+      <div  class="example-button-container">
+        <button title="Guardar tarjeta" id="Hecho" mat-mini-fab style="background-color: rgb(30, 110, 30);" aria-label="">
+          <mat-icon>done</mat-icon>
+        </button>
+      </div>
+      <div class="example-button-container">
+        <button title="Eliminar tarjeta" id="Borrar" mat-mini-fab style="background-color: rgb(182, 23, 23);" aria-label="">
+          <mat-icon>delete_outline</mat-icon>
+        </button>
+      </div>
+    </section>
+    
+    <section id="derecha">
+      <div id="texto">
+        <p style="text-align: center; background-color: rgb(61, 60, 60);opacity: 0.95;">Modifique los campos y previsualicé como lucirá su tarjeta en el cuadro de la izquierda.</p>
+      </div>
+      <mat-form-field id="Idioma" appearance="fill" requiered>
+        <mat-label>Idioma</mat-label>
+        <mat-select [(ngModel)]="datos.Idioma">
+          <mat-option value="Español">Español</mat-option>
+          <mat-option value="Inglés">Inglés</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field id="instruccion" appearance="fill" requiered>
+        <mat-label>Instrucción</mat-label>
+        <input matInput [(ngModel)]="datos.Instruccion" maxlength="35">
+      </mat-form-field>
+      <mat-form-field id="respuesta" appearance="fill" requiered>
+        <mat-label>Respuesta</mat-label>
+        <input matInput [(ngModel)]="datos.Respuesta" maxlength="20">
+      </mat-form-field>
+      <mat-form-field  id="SubirImagen">
+        <div>
+          <mat-toolbar>
+          <!--selectedFileNames.length ? selectedFileNames : -->
+            <input readonly matInput [value]="'Seleccionar imagen'" required/>    
+          </mat-toolbar>      
+          <input type="file" id="fileInput" name="fileInput" accept="image/*" multiple (change)="selectFiles($event)"
+          />
+        </div>
+      </mat-form-field>
+    </section>
 
 
 <div class="cuadro">  
   <div class="Psup">
     <!-- Marca error, pero funciona-->
-      <input class="redondo" type="text" style="font-size: {{datos.TamLetra}}px; font-family: '{{datos.TipoLetra}}'; " placeholder="{{datos.Instruccion}}"> 
+      <input class="redondo" type="text" style="font-size: {{datos.TamLetra}}px; font-family: '{{datos.TipoLetra}}'; " placeholder="{{datos.Instruccion}}" disabled> 
 
   <span class="material-icons" id="Icono">campaign</span>
 </div>

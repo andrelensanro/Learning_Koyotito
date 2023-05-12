@@ -7,11 +7,11 @@ import { MenuComponent } from '../menu/menu.component';
 import { Dialog } from '@angular/cdk/dialog';
 
 @Component({
-  selector: 'app-InicioProf',
-  templateUrl: './InicioProf.component.html',
-  styleUrls: ['./FondoP.component.scss', './InicioP.component.scss']
+  selector: 'app-InicioT',
+  templateUrl: './InicioT.component.html',
+  styleUrls: ['./FondoT.component.scss', './InicioT.component.scss']
 })
-export class InicioProfComponent{
+export class InicioTComponent{
   constructor(public dialog: MatDialog){}
 //constructor(private authService :AuthService){}
 
