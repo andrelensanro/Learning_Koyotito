@@ -85,13 +85,13 @@ import { FooterComponent } from './components/Tutor/Footer.component';
     }),
     RouterModule,
     MatFormFieldModule,
-  MatProgressBarModule,
-  MatSelectModule,
-  MatListModule,
-//  SwiperModule,
-  HttpClientModule,
-  ReactiveFormsModule,
-  MatSidenavModule
+    MatProgressBarModule,
+    MatSelectModule,
+    MatListModule,
+  //  SwiperModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatSidenavModule
   ],
   providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}],
   bootstrap: [AppComponent]

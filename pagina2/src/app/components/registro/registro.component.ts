@@ -9,8 +9,17 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   templateUrl: './registro.component.html',
 })
 export class RegistroComponent {
-
-  usuario!: Usuario;
+  usuario: Usuario = {
+    idUsuario: 0,
+    nombre: 'Pablo',
+    apellido1: 'Doe',
+    apellido2: 'Tolpe',
+    correo: 'pabloTuto@gmail.com',
+    password: '1234',
+    num_denuncias: 0,
+    idTipoUsuario: 3,
+    instPseudonimo: 'Manguuito'
+  };
 
   public pseudonimo: boolean=true;
   public profesor: boolean=true;
@@ -21,9 +30,9 @@ export class RegistroComponent {
     private router:Router
   ){}
 
-  guardarUsuario(usuario:Usuario){
+  guardarUsuario(){
     this.usuarioService
-    .registrar(usuario)
+    .registrar(this.usuario)
     .subscribe(usr => console.log(usr));
   }
 

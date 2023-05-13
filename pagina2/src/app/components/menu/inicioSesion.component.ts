@@ -29,9 +29,18 @@ export interface DialogData {
 
   
   export class inicioSesionDialog {
-
-    usuario!:Usuario;
-
+    usuario: Usuario = {
+      idUsuario: 0,
+      nombre: '',
+      apellido1: '',
+      apellido2: '',
+      correo: 'pabloTuto@gmail.com',
+      password: '1234',
+      num_denuncias: 0,
+      idTipoUsuario: 0,
+      instPseudonimo: ''
+    };
+  
     constructor(
       public dialog: MatDialog,
       private usuarioService:UsuarioService, 
@@ -67,9 +76,9 @@ export interface DialogData {
   }
 
 
-  login(usuario:Usuario):void{
+  login():void{
     this.usuarioService
-      .login(usuario)
+      .login(this.usuario)
       .subscribe(
         (usr) => {
           console.log("Inicio sesión:" + usr);

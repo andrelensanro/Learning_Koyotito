@@ -13,8 +13,8 @@ export class UsuarioService {
   constructor(private http:HttpClient) { }
 
 
-  registrar(usuario:Usuario):Observable<Object>{
-    return this.http.post(`${this.url+"/registro"}`,usuario);
+  registrar(usuario:Usuario):Observable<Usuario>{
+    return this.http.post<Usuario>(`${this.url+"/registro"}`,usuario);
   }
 
   login(usuario:Usuario):Observable<Object>{
