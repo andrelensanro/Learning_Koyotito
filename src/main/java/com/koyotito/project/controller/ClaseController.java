@@ -64,9 +64,12 @@ public class ClaseController {
 	private ArchivoService archivoService;
 	
 	@PostMapping("/crear")
-	public Clase crear(@RequestBody Clase clase, HttpSession session) {
+//	public Clase crear(@RequestBody Clase clase, HttpSession session) {
+	public Clase crear(@RequestBody Clase clase) {
+
 		// la implementacion de la siguiente linea es por si el front no me da el id del profesor 
-		int idProfesor = usuarioService.getId_profesor(Integer.parseInt(session.getAttribute("idUsuario").toString()));
+//		int idProfesor = usuarioService.getId_profesor(Integer.parseInt(session.getAttribute("idUsuario").toString()));
+		int idProfesor = 1;
 		Profesor profesor = new Profesor();
 		profesor = profesorService.findById(idProfesor);
 		clase.setProfesor(profesor);
