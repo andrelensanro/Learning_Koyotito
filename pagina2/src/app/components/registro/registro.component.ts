@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router} from '@angular/router';
-import { Usuario } from 'src/app/models/usuario';
-import { UsuarioService } from 'src/app/services/usuario.service';
+import { Usuario } from 'app/models/usuario';
+import { UsuarioService } from 'app/services/usuario.service';
 
 
 @Component({
@@ -9,16 +9,17 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   templateUrl: './registro.component.html',
 })
 export class RegistroComponent {
+  private idUsuario!: number;
   usuario: Usuario = {
     idUsuario: 0,
-    nombre: 'Pablo',
-    apellido1: 'Doe',
-    apellido2: 'Tolpe',
-    correo: 'pabloTuto@gmail.com',
-    password: '1234',
+    nombre: '',
+    apellido1: '',
+    apellido2: '',
+    correo: '',
+    password: '',
     num_denuncias: 0,
-    idTipoUsuario: 3,
-    instPseudonimo: 'Manguuito'
+    idTipoUsuario: 2,
+    instPseudonimo: ''
   };
 
   public pseudonimo: boolean=true;
@@ -33,7 +34,21 @@ export class RegistroComponent {
   guardarUsuario(){
     this.usuarioService
     .registrar(this.usuario)
-    .subscribe(usr => console.log(usr));
+    .subscribe(usuario => {
+      this.idUsuario = usuario.idUsuario;
+      this.redirigir(usuario.idTipoUsuario);
+    });
+  }
+
+  redirigir(idTipoUsuario:number){
+    if (idTipoUsuario == 2){
+      this.router.navigate(['/InicioProfesor/:this.idUsuario']);
+    }
+    if(idTipoUsuario == 3){
+      this.router.navigate(['/InicioTutor/:this.idUsuario']);
+    }else{
+      this.router.navigate(['/']);
+    }
   }
 
   OpProf(){

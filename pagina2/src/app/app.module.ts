@@ -42,7 +42,7 @@ import { BarraBusquedasComponent } from './components/Profesor/BarraBusquedas.co
 import { BusquedasTComponent } from './components/Tutor/BusquedasT.component';
 import { FooterComponent } from './components/Tutor/Footer.component';
 
-//import { SwiperModule } from 'swiper/angular';
+//import  { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [
@@ -50,7 +50,7 @@ import { FooterComponent } from './components/Tutor/Footer.component';
     MenuComponent,
     RegistroComponent,
     HomeComponent,
-    inicioSesionDialog,
+    //inicioSesionDialog,
     RecuperarContraComponent,
     ReestContraComponent,
     InicioProfComponent,

@@ -19,15 +19,15 @@ const routes: Routes = [
   {path: 'registro', component: RegistroComponent},
   {path: 'recpContra', component: RecuperarContraComponent},
   {path: 'reestablecimiento', component: ReestContraComponent},
-  {path: 'InicioProfesor', component: InicioProfComponent},
-    {path: 'CrearClase', component: CrearClaseComponent},
-    {path: 'Calificacion', component: CalificacionComponent},
-    {path: 'TomarClase', component: InicioAlumnoComponent},
-    {path: 'ConfigP', component: ConfigPComponent},
-    {path: 'ConfigT', component: ConfigTComponent},
-    {path: 'InicioTutor', component: InicioTComponent},
-    {path: 'BusquedasT', component: BusquedasTComponent},
-    {path: '**', redirectTo: 'home'}
+  {path: 'InicioProfesor/:idUsuario', component: InicioProfComponent},
+  {path: 'CrearClase', component: CrearClaseComponent},
+  {path: 'Calificacion', component: CalificacionComponent},
+  {path: 'TomarClase', component: InicioAlumnoComponent},
+  {path: 'ConfigP', component: ConfigPComponent},
+  {path: 'ConfigT', component: ConfigTComponent},
+  {path: 'InicioTutor/:idUsuario', component: InicioTComponent},
+  {path: 'BusquedasT', component: BusquedasTComponent},
+  {path: '**', redirectTo: 'home'}
 ];
 
 @NgModule({
