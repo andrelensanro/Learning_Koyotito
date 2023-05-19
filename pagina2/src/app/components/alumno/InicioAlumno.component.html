@@ -1,99 +1,11 @@
-<section>
-	<div class="cuadro">  
-        <div class="Psup">
-          <!-- Marca error, pero funciona-->
-            <input class="redondo" type="text" placeholder=""> 
-      
-            <span class="material-icons" id="Icono">campaign</span>
-        </div>
-        <img *ngFor='let preview of previews' [src]="preview" class="preview">
-        <div class="imagen">
-        </div>
-        <div id="content">
-            <div class="overlay">
-                <div class="overlay-element top-left"></div>
-                <div class="overlay-element top-right"></div>
-                <div class="overlay-element bottom-left"></div>
-                <div class="overlay-element bottom-right"></div>
-            </div>
-        </div>
-        <div class="Pinf">
-            <input type="file" accept="audio/*" capture id="recorder" />
-            <audio id="player" controls></audio>
-              <script>
-                const recorder = document.getElementById('recorder');
-                const player = document.getElementById('player');
-            
-                recorder.addEventListener('change', function (e) {
-                  const file = e.target.files[0];
-                  const url = URL.createObjectURL(file);
-                  // Do something with the audio file.
-                  player.src = url;
-                });
-              </script>
 
-            <button id="stop">Stop</button>
-            <script>
-              const downloadLink = document.getElementById('download');
-              const stopButton = document.getElementById('stop');
-            
-            
-              const handleSuccess = function(stream) {
-                const options = {mimeType: 'audio/webm'};
-                const recordedChunks = [];
-                const mediaRecorder = new MediaRecorder(stream, options);
-            
-                mediaRecorder.addEventListener('dataavailable', function(e) {
-                  if (e.data.size > 0) recordedChunks.push(e.data);
-                });
-            
-                mediaRecorder.addEventListener('stop', function() {
-                  downloadLink.href = URL.createObjectURL(new Blob(recordedChunks));
-                  downloadLink.download = 'acetest.wav';
-                });
-            
-                stopButton.addEventListener('click', function() {
-                  mediaRecorder.stop();
-                });
-            
-                mediaRecorder.start();
-              };
-            
-              navigator.mediaDevices.getUserMedia({ audio: true, video: false })
-                  .then(handleSuccess);
-                  navigator.permissions.query({name: 'microphone'}).then(function (result) {
-  if (result.state == 'granted') {
-  } else if (result.state == 'prompt') {
-  } else if (result.state == 'denied') {
-  }
-  result.onchange = function () {};
-});
-            </script>
-                      <p id="respIdioma">Idioma</p>
-<!--          <swiper
-  [slidesPerView]="1"
-  [spaceBetween]="50"
-  [navigation]="true"
-  [pagination]="{ type: 'fraction' }"
-  [centeredSlides]="true"
-  [keyboard]="{
-    enabled: true
-  }"
-  [virtual]="true"
-  class="my-swiper"
->
-  <ng-template swiperSlide *ngFor="let slide of slides$ | async; index as i">
-    <div class="swiper-slide-container">
-      {{ slide }}
-    </div>
-  </ng-template>
-</swiper>         -->
-        </div>
-      <div class='air air1'></div>
-      <div class='air air2'></div>
-      <div class='air air3'></div>
-      <div class='air air4'></div>
-    </div>
-</section>
-  
-  
+<div class="hero"> 
+  <app-HeaderSidebarA></app-HeaderSidebarA>
+  <div class="hero__title">Squares Animation</div>
+  <div class="cube"></div>
+  <div class="cube"></div>
+  <div class="cube"></div>
+  <div class="cube"></div>
+  <div class="cube"></div>
+  <div class="cube"></div>
+</div>

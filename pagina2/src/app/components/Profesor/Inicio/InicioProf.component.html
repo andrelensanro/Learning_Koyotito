@@ -2,8 +2,12 @@
     <app-HeaderSidebarP></app-HeaderSidebarP>
     <app-BarraBusquedas></app-BarraBusquedas>
     <app-navBar1></app-navBar1>   <!--2°do header-->
+    
+    
 
+    
 <section id="Izquierdo">
+  <div *ngIf="greaterThan(1); else elseBlock">
 <div class="ag-format-container" style="overflow: scroll;height: 104%; width: 95%;">
     <div class="ag-courses_box">
       <div class="ag-courses_item">
@@ -155,8 +159,17 @@
     
 
   </div>
+</div>
+<ng-template #elseBlock>Esta un poco vacío esto... <br>  Crea una clase  <button routerLink="/CrearClase">+</button></ng-template>
 </section>
+
+
+
+
+
+
 <section id="Derecha">
+  <div *ngIf="greaterThan(0); else GruposVacios">
   <div class="ag-format-container" style="overflow: scroll;height: 104%; width: 95%;">
     <div class="ag-courses_box">
       <div class="ag-grupos_item">
@@ -302,7 +315,14 @@
     
 
   </div>
+</div>
+<ng-template  #GruposVacios>Esta un poco vacío esto... <br>  Crea un grupo  <app-FooterCrear (click)="CrearGrupoDialog()">+</app-FooterCrear></ng-template>
+
 </section>
+
+
+
+
   <article class="content">  
     <div class="borroso">
 

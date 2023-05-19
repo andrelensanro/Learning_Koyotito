@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { MenuComponent } from '../menu/menu.component';
-import { inicioSesionDialog } from '../menu/inicioSesion.component';
 import { RegistroComponent } from '../registro/registro.component';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from '../services/authService.component';
+import { inicioSesionComponent } from '../menu/inicioSesion.component';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +17,7 @@ export class HomeComponent{
 //constructor(private authService :AuthService){}
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(inicioSesionDialog, {
+    const dialogRef = this.dialog.open(inicioSesionComponent, {
     //  data: {name: this.name},
     });
 

@@ -13,13 +13,12 @@ import { MatInputModule } from "@angular/material/input";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {MatDialogModule} from '@angular/material/dialog';
 import {  MatCardModule } from "@angular/material/card";
-import { inicioSesionDialog } from './components/menu/inicioSesion.component';
+import { inicioSesionComponent } from './components/menu/inicioSesion.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { RecuperarContraComponent } from './components/sesion/RecuperarContra.component';
 import {ToastrModule} from 'ngx-toastr';
 import { ReestContraComponent } from './components/sesion/ReestContra.component';
-import { InicioProfComponent } from './components/Profesor/InicioProf.component';
 import { navBar1Component } from './components/Profesor/navBar1.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { CalificacionComponent } from './components/alumno/calificacion.component';
@@ -41,8 +40,20 @@ import { InicioTComponent } from './components/Tutor/InicioT.component';
 import { BarraBusquedasComponent } from './components/Profesor/BarraBusquedas.component';
 import { BusquedasTComponent } from './components/Tutor/BusquedasT.component';
 import { FooterComponent } from './components/Tutor/Footer.component';
-
+import { HeaderSidebarAComponent } from './components/alumno/HeaderSidebarA.component';
+import { InicioAlumnoComponent } from './components/alumno/InicioAlumno.component';
+import { GruposComponent } from './components/Profesor/Grupos/grupos.component';
+import { GrupoEspComponent } from './components/Profesor/Grupos/grupoEsp.component';
+import { FooterCrearComponent } from './components/Profesor/FooterCrear.component';
+import { InvitacionComponent } from './components/Profesor/Grupos/Invitacion.component';
+import { GruposTComponent } from './components/Tutor/Grupos/gruposT.component';
 //import { SwiperModule } from 'swiper/angular';
+import {MatBadgeModule} from '@angular/material/badge';
+import { DenunciasPComponent } from './components/Profesor/Denuncias/DenunciasP.component';
+import { InicioProfComponent } from './components/Profesor/Inicio/InicioProf.component';
+import { MeGustaPComponent } from './components/Profesor/ClasesMeGusta/MeGustaP.component';
+import { HistorialPComponent } from './components/Profesor/HistorialP/HistorialP.component';
+import { CrearGrupoComponent } from './components/Profesor/Grupos/CrearGrupo.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +61,7 @@ import { FooterComponent } from './components/Tutor/Footer.component';
     MenuComponent,
     RegistroComponent,
     HomeComponent,
-    inicioSesionDialog,
+    inicioSesionComponent,
     RecuperarContraComponent,
     ReestContraComponent,
     InicioProfComponent,
@@ -65,7 +76,18 @@ import { FooterComponent } from './components/Tutor/Footer.component';
     InicioTComponent,
     BarraBusquedasComponent,
     BusquedasTComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderSidebarAComponent,
+    InicioAlumnoComponent,
+    GruposComponent,
+    GrupoEspComponent,
+    FooterCrearComponent,
+    InvitacionComponent,
+    GruposTComponent,
+    DenunciasPComponent,
+    MeGustaPComponent,
+    HistorialPComponent,
+    CrearGrupoComponent,
       ],
   imports: [
     BrowserModule,
@@ -91,7 +113,8 @@ import { FooterComponent } from './components/Tutor/Footer.component';
 //  SwiperModule,
   HttpClientModule,
   ReactiveFormsModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatBadgeModule
   ],
   providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}],
   bootstrap: [AppComponent]

@@ -23,7 +23,7 @@ export class RegistroComponent {
 
   guardarUsuario(usuario:Usuario){
     this.usuarioService
-    .registrar(usuario)
+    .registrar(this.usuario)
     .subscribe(usr => console.log(usr));
   }
 
