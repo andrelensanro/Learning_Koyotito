@@ -34,21 +34,7 @@ export class RegistroComponent {
   guardarUsuario(){
     this.usuarioService
     .registrar(this.usuario)
-    .subscribe(usuario => {
-      this.idUsuario = usuario.idUsuario;
-      this.redirigir(usuario.idTipoUsuario);
-    });
-  }
-
-  redirigir(idTipoUsuario:number){
-    if (idTipoUsuario == 2){
-      this.router.navigate(['/InicioProfesor/:this.idUsuario']);
-    }
-    if(idTipoUsuario == 3){
-      this.router.navigate(['/InicioTutor/:this.idUsuario']);
-    }else{
-      this.router.navigate(['/']);
-    }
+    .subscribe(usr => console.log(usr));
   }
 
   OpProf(){

@@ -6,20 +6,7 @@ import { RegistroComponent } from '../registro/registro.component';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
-/*
-export interface DialogData {
-    contra: string;
-    correo: string;
-  }
 
-  /*
-  export class algo{
-    constructor(
-        public dialogRef: MatDialogRef<inicioSesionDialog>,
-        @Inject(MAT_DIALOG_DATA) public data: DialogData,
-      ) {}
-      
-  }*/
 @Component({
     selector: 'app-inicioSesion',
     templateUrl: 'inicioSesion.component.html',
@@ -28,19 +15,10 @@ export interface DialogData {
 
 
   
-  export class inicioSesionDialog {
-    usuario: Usuario = {
-      idUsuario: 0,
-      nombre: '',
-      apellido1: '',
-      apellido2: '',
-      correo: 'pabloTuto@gmail.com',
-      password: '1234',
-      num_denuncias: 0,
-      idTipoUsuario: 0,
-      instPseudonimo: ''
-    };
-  
+  export class inicioSesionComponent {
+
+    usuario!:Usuario;
+
     constructor(
       public dialog: MatDialog,
       private usuarioService:UsuarioService, 
@@ -66,8 +44,6 @@ export interface DialogData {
   user(){
     return this.authService.userData?.correo;
   }*/
-  ngOnInit():void{
-  }
 
   RegistroDialog(): void{
     const dialogRef = this.dialog.open(RegistroComponent, {

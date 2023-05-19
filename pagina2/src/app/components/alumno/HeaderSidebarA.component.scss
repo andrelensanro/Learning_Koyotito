@@ -319,22 +319,74 @@ input:not(:checked) + .confirm-modal form {
 
 
 
-.notification {
+/*** IN PROGRESS ***/
 
-	color: white;
-	text-decoration: none;
-	padding: 15px 26px;
+:root {
+	--c1: #2187e7;
+	--b2: #222;
+	--b3: #333;
+	--w1: #fff;
+	--w2: #eee;
+	--t1: all 0.5s ease 0s;
+}
+
+
+ul.skills li {
+	--per: 50;
+	--dur: calc(calc(var(--per) / 100) * 1.5s);
+	list-style: none;
+	padding: 20px 0;
 	position: relative;
-	display: inline-block;
-	border-radius: 2px;
-  }
+	text-transform: uppercase;
+	font-size: 13px;
+	color: var(--w2);
+}
 
-  .notification .badge {
+ul.skills li:before {
+	content: "";
 	position: absolute;
-	top: -10px;
-	right: -10px;
-	padding: 5px 10px;
-	border-radius: 50%;
-	background: red;
-	color: white;
-  }
+	background: #1c1c1c;
+	height: 16px;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	border-radius: 2px;
+	border: 1px solid #111;
+	border-color: #111 #323232 #323232 #111;
+	--track: #2292dd40;
+	background: linear-gradient(
+		90deg,
+		var(--track) calc(calc(var(--per) * 1%) + 4px),
+		#1c1c1c calc(calc(var(--per) * 1%) + 4px)
+	);
+}
+
+
+ul.skills li span:after {
+	position: absolute;
+	right: -40px;
+	top: 38px;
+	transition: var(--t1);
+	counter-reset: percent var(--per);
+	/*content: counter(percent) "%";*/
+	content: counter(percent);
+	color: var(--b2);
+	opacity: 1 !important;
+	padding: 4px 6px;
+	border-radius: 1px;
+	font-weight: bold;
+	pointer-events: none;
+}
+
+ul.skills li:hover span:after,
+.profile-skills input:checked + label + ul.skills li span:after {
+	transition: var(--t1);
+	right: calc(calc(85 - var(--per)) * 1%);
+	right: calc(calc(calc(100 - var(--per)) * 1%) - 40px);
+	opacity: 1;
+	background: var(--c1);
+}
+
+ul.skills2 li:hover span:after {
+	background: #3532cd;
+}

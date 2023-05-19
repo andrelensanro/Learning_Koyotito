@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import { inicioSesionDialog } from './inicioSesion.component';
+import { inicioSesionComponent } from './inicioSesion.component';
 import { AuthService } from '../services/authService.component';
 import { RegistroComponent } from '../registro/registro.component';
 import { Router } from '@angular/router';
@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit{
 //constructor(private authService :AuthService){}
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(inicioSesionDialog, {
+    const dialogRef = this.dialog.open(inicioSesionComponent, {
     //  data: {name: this.name},
     });
 

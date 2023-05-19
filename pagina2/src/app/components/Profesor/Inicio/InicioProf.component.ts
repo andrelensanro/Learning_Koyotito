@@ -1,22 +1,21 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import { AuthService } from '../services/authService.component';
-import { Router } from '@angular/router';
-import { CerrarSesionComponent } from '../sesion/CerrarSesioncomponent';
-import { MenuComponent } from '../menu/menu.component';
-import { Dialog } from '@angular/cdk/dialog';
+import { CerrarSesionComponent } from '../../sesion/CerrarSesioncomponent';
+import { CrearGrupoComponent } from '../Grupos/CrearGrupo.component';
 
 @Component({
   selector: 'app-InicioProf',
   templateUrl: './InicioProf.component.html',
-  styleUrls: ['./FondoP.component.scss', './InicioP.component.scss']
+  styleUrls: ['../FondoP.component.scss', './InicioP.component.scss']
 })
 export class InicioProfComponent{
   constructor(public dialog: MatDialog){}
+   public greaterThan(num: number) {    return num > 0;  }
+
 //constructor(private authService :AuthService){}
 
-DCerrarSesion(): void{
-  const dialogRef = this.dialog.open(CerrarSesionComponent, {
+CrearGrupoDialog(): void{
+  const dialogRef = this.dialog.open(CrearGrupoComponent, {
     //  data: {name: this.name},
     });
 }
