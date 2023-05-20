@@ -3,9 +3,11 @@ import { MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialo
 import { AuthService } from '../services/authService.component';
 import { UserDTO } from '../modelo/userDTO.model';
 import { RegistroComponent } from '../registro/registro.component';
-import { UsuarioService } from 'src/app/services/usuario.service';
+
+import { UsuarioService } from 'app/services/usuario.service';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/models/usuario';
+//import { Usuario } from 'src/app/models/usuario';
+import { Usuario } from 'app/models/usuario';
 
 @Component({
     selector: 'app-inicioSesion',
@@ -56,7 +58,7 @@ import { Usuario } from 'src/app/models/usuario';
     this.usuarioService
       .login(this.usuario)
       .subscribe(
-        (usr) => {
+        (usr:Usuario) => {
           console.log("Inicio sesión:" + usr);
           this.router.navigate(['/inicioProfesor']);
         }

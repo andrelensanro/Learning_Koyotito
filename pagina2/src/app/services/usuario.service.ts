@@ -20,7 +20,7 @@ export class UsuarioService {
   }
 
   login(usuario:Usuario):Observable<Object>{
-    return this.http.post(`${this.url+"/login"}`,usuario);
+    return this.http.post<Usuario>(`${this.url+"/login"}`,usuario);
   }
 
   getUsuario(idUsuario:number):Observable<Usuario>{
