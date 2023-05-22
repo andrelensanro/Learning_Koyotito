@@ -6,7 +6,7 @@
       <mat-label>Correo</mat-label>
       <!--<input matInput [(ngModel)]="this.correo" type="email" name="correo">-->
       <input matInput type="email" name="correo1"
-      [(ngModel)]="usuario.correo">
+      > <!--[(ngModel)]="usuario.correo"-->
     </mat-form-field><br>
     
     <mat-card-subtitle>Contraseña</mat-card-subtitle>
@@ -14,14 +14,14 @@
       <mat-label>Contraseña</mat-label>
       <!--<input name="contra" matInput [(ngModel)]="this.contra" type="password">-->
       <input name="contra" matInput type="password"
-      [(ngModel)]="usuario.password">
+      > <!--[(ngModel)]="usuario.password"-->
       <a href="/recpContra">¿Olvidó su contraseña?</a>
     </mat-form-field>
     
     <div mat-dialog-actions>
       <!--<button mat-button (click)="this.login()">Iniciar sesión</button>-->
       <button mat-button role="button" (click)="login(usuario)">Iniciar sesión</button>&nbsp;&nbsp;&nbsp;&nbsp;
-      <a onmouseover="" (click)="RegistroDialog()">¿No tiene cuenta?, Cree una</a>
+      <a routerLink="" (click)="RegistroDialog()">¿No tiene cuenta?, Cree una</a>
     </div>
   </mat-card-content>
 </mat-card>

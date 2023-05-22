@@ -18,7 +18,7 @@ import { Usuario } from 'src/app/models/usuario';
   export class inicioSesionComponent {
 
     usuario!:Usuario;
-
+    public correo: string = "";
     constructor(
       public dialog: MatDialog,
       private usuarioService:UsuarioService, 

@@ -2,11 +2,12 @@ import { HttpClient, HttpEventType, HttpResponse } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { CrearClaseService } from "./CrearClase.service";
+import { FormControl } from "@angular/forms";
 
 @Component({
     selector: 'app-CrearClase',
     templateUrl: "./CrearClase.component.html",
-    styleUrls: ['./CrearClase.component.css']
+    styleUrls: ['./CrearClase.component.scss']
   })
   
   export class CrearClaseComponent implements OnInit{
@@ -59,14 +60,16 @@ import { CrearClaseService } from "./CrearClase.service";
       this.progressInfos[idx] = { value: 0, fileName: file.name };
     
       if (file) {
-        this.uploadService.upload(file).subscribe(
+        const formData = new FormData();
+        formData.append('file', file);
+        this.uploadService.uploadFiles(formData).subscribe(
           (event: any) => {
             if (event.type === HttpEventType.UploadProgress) {
               this.progressInfos[idx].value = Math.round(100 * event.loaded / event.total);
             } else if (event instanceof HttpResponse) {
               const msg = 'Uploaded the file successfully: ' + file.name;
               this.message.push(msg);
-              this.imageInfos = this.uploadService.getFiles();
+             // this.imageInfos = this.uploadService.getFiles();
             }
           },
           (err: any) => {
@@ -77,8 +80,13 @@ import { CrearClaseService } from "./CrearClase.service";
       }
     }
     ngOnInit(): void {
-      this.imageInfos = this.uploadService.getFiles();
+     // this.imageInfos = this.uploadService.getFiles();
     }
+
+    grupos = new FormControl('');
+
+  ListaGrupo: string[] = ['Grupo 1', 'Grupo 2', 'Grupo 3', 'Grupo 4', 'Grupo 5', 'Grupo 6'];
+
 
 
     

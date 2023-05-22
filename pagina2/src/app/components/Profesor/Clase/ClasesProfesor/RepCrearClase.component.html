@@ -1,0 +1,183 @@
+<main>
+<h1 class="page-header">Creación de clases</h1>
+<div class="form-container">
+  <form action="" role="form">
+    <input id='step2' type='checkbox'>
+    <input id='step3' type='checkbox'>
+    <input id='step4' type='checkbox'>
+    <input id='step5' type='checkbox'>
+    <input id='step6' type='checkbox'>
+    <input id='step7' type='checkbox'>
+    <input id='step9' type='checkbox'>
+    <input id='step10' type='checkbox'>
+
+    <div id="part1" class="form-group">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Part 1</h3>
+        </div>
+        <mat-form-field id="Titulo" appearance="fill">
+          <mat-label>Título de la clase.</mat-label>
+          <input matInput requiered maxlength="20">
+        </mat-form-field>
+
+        <mat-form-field id="Idioma" appearance="fill" requiered>
+        <mat-label>Idioma</mat-label>
+        <mat-select>
+          <mat-option value="Español">Español</mat-option>
+          <mat-option value="Inglés">Inglés</mat-option>
+        </mat-select>
+        </mat-form-field>
+        
+      
+        <div>
+          <h3>Etiquetas (Máx. 3)</h3>
+          <form>
+              <tag-input
+              [maxItems]="3"
+                  [theme]="'bootstrap3-info'"
+                  [ngModel]="[]"
+                  name="items">
+              </tag-input>
+          </form>
+        </div>
+
+        <mat-form-field>
+        <mat-label>¿Asignar a algún grupo?</mat-label>
+        <mat-select [formControl]="grupos" multiple>
+          <mat-select-trigger>
+            {{grupos.value?.[0] || ''}}
+            <span *ngIf="(grupos.value?.length || 0) > 1" class="example-additional-selection">
+              (+{{(grupos.value?.length || 0) - 1}} {{grupos.value?.length === 2 ? 'other' : 'others'}})
+            </span>
+          </mat-select-trigger>
+          <mat-option *ngFor="let grupo of ListaGrupo" [value]="grupo">{{grupo}}</mat-option>
+        </mat-select>
+        </mat-form-field>
+        <div class="btn-group btn-group-lg" role="group" aria-label="...">
+        <label for='step2' id="continue-step2" class="continue">
+          <div class="btn btn-default btn-success btn-lg">Continue</div>
+        </label>
+        </div>
+      </div>
+    </div>
+
+    <div id="part2" class="form-group">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Part 2</h3>
+        </div>
+        <section id="Topbar">
+          <div  class="example-button-container">
+            <button id="añadir" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+          <div id="TipoLetra" appearance="fill">
+            <mat-label>Tipo de letra</mat-label>
+            <mat-select [(ngModel)]="datos.TipoLetra" name="TipoLetra">
+              <mat-option default value="Arial">Arial</mat-option>
+              <mat-option value="Arial Black">Arial Black</mat-option>
+              <mat-option value="Verdana">Verdana</mat-option>
+              <mat-option value="Tahoma">Tahoma</mat-option>
+              <mat-option value="MS">MS</mat-option>
+              <mat-option value="Impact">Impact</mat-option>
+              <mat-option value="Gill Sans">Gill Sans</mat-option>
+              <mat-option value="Times New Roman">Times New Roman</mat-option>
+              <mat-option value="Georgia">Georgia</mat-option>
+              <mat-option value="Palatino">Palatino</mat-option>
+              <mat-option value="Courier">Courier</mat-option>
+              <mat-option value="Lucida">Lucida</mat-option>
+              <mat-option value="Brush Script MT">Brush Script MT</mat-option>
+              <mat-option value="Luminari">Luminari</mat-option>
+              <mat-option value="Comic Sans MS">Comic Sans MS</mat-option>
+            </mat-select>
+          </div>
+          <div id="TamLetra" appearance="fill">
+            <mat-label>Tamaño</mat-label>
+            <mat-select [(ngModel)]="datos.TamLetra" name="TamLetra">
+              <mat-option default value="12">12</mat-option>
+              <mat-option value="14">14</mat-option>
+              <mat-option value="16">16</mat-option>
+              <mat-option value="18">18</mat-option>
+              <mat-option value="20">20</mat-option>
+            </mat-select>
+          </div>
+          <div  class="example-button-container">
+            <button id="Hecho" mat-mini-fab style="background-color: rgb(30, 110, 30);" aria-label="">
+              <mat-icon>done</mat-icon>
+            </button>
+          </div>
+          <div  class="example-button-container">
+            <button title="Guardar tarjeta" id="Hecho" mat-mini-fab style="background-color: rgb(30, 110, 30);" aria-label="">
+              <mat-icon>done</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button title="Eliminar tarjeta" id="Borrar" mat-mini-fab style="background-color: rgb(182, 23, 23);" aria-label="">
+              <mat-icon>delete_outline</mat-icon>
+            </button>
+          </div>
+        </section>
+        
+        <section id="derecha">
+          <div id="texto">
+            <p style="text-align: center; background-color: rgb(61, 60, 60);opacity: 0.95;">Modifique los campos y previsualicé como lucirá su tarjeta en el cuadro de la izquierda.</p>
+          </div>
+          <div id="Idioma" appearance="fill" requiered>
+            <mat-label>Idioma</mat-label>
+            <mat-select [(ngModel)]="datos.Idioma" name="=Idioma">
+              <mat-option value="Español">Español</mat-option>
+              <mat-option value="Inglés">Inglés</mat-option>
+            </mat-select>
+          </div>
+          <br>
+          <mat-form-field id="instruccion" appearance="fill" requiered>
+            <mat-label>Instrucción</mat-label>
+            <input matInput [(ngModel)]="datos.Instruccion" name="Instruccion" maxlength="35">
+          </mat-form-field>
+          <mat-form-field id="respuesta" appearance="fill" requiered>
+            <mat-label>Respuesta</mat-label>
+            <input matInput [(ngModel)]="datos.Respuesta" name="respuesta" maxlength="20">
+          </mat-form-field>
+          <mat-form-field  id="SubirImagen">
+            <div>
+              <!--selectedFileNames.length ? selectedFileNames : -->
+                <input readonly matInput [value]="'Seleccionar imagen'" required/>      
+              <input type="file" id="fileInput" name="fileInput" accept="image/*"/>
+            </div>
+          </mat-form-field>
+        </section>
+    
+    
+    <div class="cuadro">  
+      <div class="Psup">
+        <!-- Marca error, pero funciona-->
+       <!--  <input class="redondo" type="text" style="font-size: {{datos.TamLetra}}px; font-family: '{{datos.TipoLetra}}'; " placeholder="{{datos.Instruccion}}" disabled> -->
+       <input class="redondo" type="text" style="font-size: '{{datos.TamLetra}}'px; font-family: '{{datos.TipoLetra}}';" placeholder="{{datos.Instruccion}}" disabled>
+      <span class="material-icons" id="Icono">campaign</span>
+    </div>
+      <div class="imagen">
+          <img *ngFor='let preview of previews' [src]="preview" class="preview">
+      </div>
+      <div id="content">
+          <div class="overlay">
+              <div class="overlay-element top-left"></div>
+              <div class="overlay-element top-right"></div>
+              <div class="overlay-element bottom-left"></div>
+              <div class="overlay-element bottom-right"></div>
+          </div>
+      </div>
+      <div class="Pinf">
+        <input class="redondoInf" style="font-size: 20px;" type="text" placeholder="{{datos.Respuesta}}" disabled> 
+        <p id="respIdioma">{{datos.Idioma}}</p>
+        
+      </div>
+    
+    </div>
+    </div>
+    </div>
+  </form>
+</div>
+
+</main>

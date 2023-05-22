@@ -18,6 +18,8 @@ import { GruposTComponent } from './components/Tutor/Grupos/gruposT.component';
 import { InicioProfComponent } from './components/Profesor/Inicio/InicioProf.component';
 import { MeGustaPComponent } from './components/Profesor/ClasesMeGusta/MeGustaP.component';
 import { HistorialPComponent } from './components/Profesor/HistorialP/HistorialP.component';
+import { PrevisualizarClaseComponent } from './components/Profesor/Visualizar_Clase/PrevisualizarClase.component';
+import { VerClaseComponent } from './components/Profesor/Clase/VerClase/VerClase.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -37,6 +39,8 @@ const routes: Routes = [
     {path: 'GruposT', component: GruposTComponent },
     {path: 'MeGustaP', component: MeGustaPComponent },
     {path: 'HistorialP', component: HistorialPComponent },
+    {path: 'PreviewClaseP', component: PrevisualizarClaseComponent },
+    {path: 'VerClaseP', component: VerClaseComponent },
     {path: '**', redirectTo: 'home'}
 ];
 

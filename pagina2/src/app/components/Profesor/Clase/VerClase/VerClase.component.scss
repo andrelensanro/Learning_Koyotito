@@ -1,0 +1,155 @@
+
+#result{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 20px;
+    width: 40%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 0 10px 0 #bbb;
+    object-position: 2500px 125px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 25px;
+}
+.btnmic{
+    font-size: 20px;
+    position: absolute;
+    top: 240px;
+    left: 50%;
+}
+
+
+
+
+
+.form-container {
+    width: 100%;
+    max-width: 90%;
+    height: auto;
+    margin: 0 auto;
+    input[type=text], input[type=email], input[type=phone], input[type=number], textarea {
+      width: 90%;
+      margin: 20px auto;
+      border: 1px solid white;
+      box-shadow: 0  0 1px 1px white;
+    }
+    textarea {
+      min-height: 150px;
+    }
+    .panel {
+      background: rgba(0,0,0,.2);
+      .panel-heading {
+        margin-bottom: 20px;
+      }
+    }
+    .btn-group {
+      width: 90%;
+      margin: 0 auto 10px auto;
+    }
+    .back {
+      float: left;
+    }
+    .continue {
+      float: right;
+    }
+  }
+  img{
+    background-color: #e6e6e9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-sizing: border-box;
+    width: auto;
+    height: 20%;
+    border: solid #ababb1 2px;
+    transform: translate(-50%, -50%);
+    padding: 5px;  
+  }
+  /* Multi-Part CSS */
+  input[type=checkbox] {
+    position: absolute;
+    /* Position the checkbox in upper left corner */
+    
+    opacity: 0;
+  }
+  
+  /* Styling Parts */
+  #part1,
+  #part2,
+  #part3,
+  #part4,
+  #part5,
+  #part6 {
+    z-index: 2;
+    display: block;
+    height: auto;
+    opacity: 1;
+  }
+  
+  /* Hidden Parts */
+  #part2,
+  #part3,#part4,
+  #part5,#part6 {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  /* Show Step 2 & Hide Step 1 */
+  #step2:checked ~ #part2 {
+    opacity: 1;
+    height: auto;
+  }
+  #step2:checked ~ #part1 {
+    opacity: 0;
+    height: 0;
+    display: none;
+  }
+  
+  /* Show Step 3  & Hide Step 2 */
+  #step3:checked ~ #part3 {
+    opacity: 1;
+    height: auto;
+  }
+  #step3:checked ~ #part2 {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+
+ /* Show Step 4  & Hide Step 3 */
+ #step4:checked ~ #part4 {
+    opacity: 1;
+    height: auto;
+  }
+  #step4:checked ~ #part3 {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+
+ /* Show Step 5  & Hide Step 4 */
+ #step5:checked ~ #part5 {
+    opacity: 1;
+    height: auto;
+  }
+  #step5:checked ~ #part4 {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+   /* Show Step 5  & Hide Step 4 */
+ #step6:checked ~ #part6 {
+    opacity: 1;
+    height: auto;
+  }
+  #step6:checked ~ #part5 {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
