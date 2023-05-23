@@ -18,26 +18,30 @@ import { GruposTComponent } from './components/Tutor/Grupos/gruposT.component';
 import { InicioProfComponent } from './components/Profesor/Inicio/InicioProf.component';
 import { MeGustaPComponent } from './components/Profesor/ClasesMeGusta/MeGustaP.component';
 import { HistorialPComponent } from './components/Profesor/HistorialP/HistorialP.component';
+import { PrevisualizarClaseComponent } from './components/Profesor/Visualizar_Clase/PrevisualizarClase.component';
+import { VerClaseComponent } from './components/Profesor/Clase/VerClase/VerClase.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'recpContra', component: RecuperarContraComponent},
   {path: 'reestablecimiento', component: ReestContraComponent},
-  {path: 'InicioProfesor/:idUsuario', component: InicioProfComponent},
-  {path: 'CrearClase', component: CrearClaseComponent},
-  {path: 'Calificacion', component: CalificacionComponent},
-  {path: 'TomarClase', component: InicioAlumnoComponent},
-  {path: 'ConfigP', component: ConfigPComponent},
-  {path: 'ConfigT', component: ConfigTComponent},
-  {path: 'InicioTutor', component: InicioTComponent},
-  {path: 'BusquedasT', component: BusquedasTComponent},
-  {path: 'InicioAlumno/:idUsuario', component: InicioAlumnoComponent},
-  {path: 'Grupos', component: GruposComponent },
-  {path: 'GrupoEsp', component: GrupoEspComponent },
-  {path: 'GruposT', component: GruposTComponent },
-  {path: 'MeGustaP', component: MeGustaPComponent },
-  {path: 'HistorialP', component: HistorialPComponent },
-  {path: '**', redirectTo: 'home'}
+  {path: 'InicioProfesor', component: InicioProfComponent},
+    {path: 'CrearClase', component: CrearClaseComponent},
+    {path: 'Calificacion', component: CalificacionComponent},
+    {path: 'TomarClase', component: InicioAlumnoComponent},
+    {path: 'ConfigP', component: ConfigPComponent},
+    {path: 'ConfigT', component: ConfigTComponent},
+    {path: 'InicioTutor', component: InicioTComponent},
+    {path: 'BusquedasT', component: BusquedasTComponent},
+    {path: 'InicioAlumno', component: InicioAlumnoComponent},
+    {path: 'Grupos', component: GruposComponent },
+    {path: 'GrupoEsp', component: GrupoEspComponent },
+    {path: 'GruposT', component: GruposTComponent },
+    {path: 'MeGustaP', component: MeGustaPComponent },
+    {path: 'HistorialP', component: HistorialPComponent },
+    {path: 'PreviewClaseP', component: PrevisualizarClaseComponent },
+    {path: 'VerClaseP', component: VerClaseComponent },
+    {path: '**', redirectTo: 'home'}
 ];
 
 @NgModule({
