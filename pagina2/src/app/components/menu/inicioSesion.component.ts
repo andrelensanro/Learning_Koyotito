@@ -57,11 +57,8 @@ import { Usuario } from 'app/models/usuario';
   login():void{
     this.usuarioService
       .login(this.usuario)
-      .subscribe(
-        (usr:Usuario) => {
-          console.log("Inicio sesión:" + usr);
-          this.router.navigate(['/inicioProfesor']);
-        }
-      )
+      .subscribe((user) => {
+        console.log(user)
+      });
   }
 }

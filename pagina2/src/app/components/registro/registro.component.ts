@@ -11,7 +11,7 @@ import { UsuarioService } from 'app/services/usuario.service';
 export class RegistroComponent {
   private idUsuario!: number;
   usuario: Usuario = {
-    idUsuario: 0,
+    idUsuario: 15,
     nombre: '',
     apellido1: '',
     apellido2: '',
@@ -34,7 +34,24 @@ export class RegistroComponent {
   guardarUsuario(){
     this.usuarioService
     .registrar(this.usuario)
-    .subscribe(usr => console.log(usr));
+    .subscribe(usr => 
+      this.redirecccionarUsr(usr)
+    );
+  }
+
+  redirecccionarUsr(usr: Usuario){
+    console.log(this.profesor + " " + this.pseudonimo)
+    if(this.profesor == false){
+      this.router.navigate(['InicioProfesor'],
+      { queryParams:
+        {idUsuario:usr.idUsuario}   
+      })
+    }else{
+      this.router.navigate(['InicioProfesor'],
+      { queryParams:
+        {idUsuario:usr.idUsuario}
+      })
+    }
   }
 
   OpProf(){
