@@ -19,10 +19,6 @@ export class UsuarioService {
     return this.http.post<Usuario>(`${this.url+"/registro"}`,usuario);
   }
 
-  login(usuario:Usuario):Observable<Object>{
-    return this.http.post<Usuario>(`${this.url+"/login"}`,usuario);
-  }
-
   getUsuario(idUsuario:number):Observable<Usuario>{
     return this.http.get<Usuario>(`${this.url+"/consultar/${"+ idUsuario+"}"}`).pipe(
       map((data:Usuario) =>{
