@@ -20,6 +20,7 @@ import { MeGustaPComponent } from './components/Profesor/ClasesMeGusta/MeGustaP.
 import { HistorialPComponent } from './components/Profesor/HistorialP/HistorialP.component';
 import { PrevisualizarClaseComponent } from './components/Profesor/Visualizar_Clase/PrevisualizarClase.component';
 import { VerClaseComponent } from './components/Profesor/Clase/VerClase/VerClase.component';
+import { MisClasesComponent } from './components/Profesor/MisClases/MisClases.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -41,6 +42,7 @@ const routes: Routes = [
     {path: 'HistorialP', component: HistorialPComponent },
     {path: 'PreviewClaseP', component: PrevisualizarClaseComponent },
     {path: 'VerClaseP', component: VerClaseComponent },
+    {path: 'MisClases', component: MisClasesComponent },
     {path: '**', redirectTo: 'home'}
 ];
 

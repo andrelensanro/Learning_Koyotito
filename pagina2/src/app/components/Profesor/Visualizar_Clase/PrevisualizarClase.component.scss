@@ -13,6 +13,7 @@
       min-height: 150px;
     }
     .panel {
+      height: 420px;
       background: rgba(0,0,0,.2);
       .panel-heading {
         margin-bottom: 20px;
@@ -35,8 +36,8 @@
     top: 50%;
     left: 50%;
     box-sizing: border-box;
-    width: auto;
-    height: 60%;
+    max-width: 80%;
+    max-height: 70%;
     border: solid #ababb1 2px;
     transform: translate(-50%, -50%);
     padding: 5px;  
@@ -154,6 +155,7 @@
 
   /*-------------     Botones     -----------------*/
 .btnOP {
+  width: 300px;
   position: relative;
   background: #444;
   color: #fff;
@@ -162,7 +164,7 @@
   border: none;
   letter-spacing: 0.1rem;
   font-size: 1rem;
-  padding: 1rem 3rem;
+  padding: .8rem .8rem;
   transition: 0.2s;
 }
 
@@ -249,5 +251,96 @@
   }
   100% {
     box-shadow: #27272c;
+  }
+}
+
+
+
+
+
+.arrow-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 30%;
+}
+
+.block {
+  width: 300px;
+  height: 100px;
+  background: #eee;
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/***************
+ * Arrow 1
+ ***************/
+
+#arrow_1 .arrow {
+  $size: 30px;
+  $width: 2px;
+
+  cursor: pointer;
+  display: block;
+  width: $size / 1.414;
+  height: $size / 1.414 * 2;
+  position: relative;
+  
+  & span,
+  &:before,
+  &:after {
+    background: #fff;
+    content: '';
+    display: block;
+    width: $size;
+    height: $width;
+    position: absolute;
+    top: calc(50% - (#{$width} / 2));
+  }
+    
+  &:before {
+    transform: rotate(-45deg);
+  }
+  &:after {
+    transform: rotate(45deg);
+  }
+  
+  & span {
+    width: 0;
+  }
+  &:hover span {
+    width: $size * 1.414;
+  }
+  
+  @each $direction in 'left' 'right' {
+    &.arrow--#{$direction} {
+      & span,
+      &:before,
+      &:after {
+        #{$direction}: 0;
+        transform-origin: #{$direction} 50%;
+      }
+
+      &:before,
+      &:after {
+        transition: #{$direction} 0.3s 0.05s;
+      }
+
+      & span {
+        transition: width 0.3s, #{$direction} 0.3s 0.05s;
+      }
+
+      &:hover {
+        & span,
+        &:before,
+        &:after {
+          #{$direction}: $size / 1.414 * -1;
+        }
+      }
+    }
   }
 }

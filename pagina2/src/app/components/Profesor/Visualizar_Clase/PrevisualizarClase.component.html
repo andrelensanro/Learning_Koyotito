@@ -22,7 +22,7 @@
             <div style="align-content: center;">
                 <mat-icon>mail</mat-icon>&nbsp;&nbsp;MailDeContacto@profesor.com.nh.mx
             </div>
-            <button class="btnOP" style="--clr:#39FF14" (click)="this.MeGusta()" ><span><mat-icon>thumb_up_alt</mat-icon>  Me gusta</span><i></i></button><br>
+            <button class="btnOP" style="--clr:#39FF14;" (click)="this.MeGusta()" ><span><mat-icon>thumb_up_alt</mat-icon>  Me gusta</span><i></i></button><br>
   <button class="btnOP" style="--clr:#FF44CC" (click)="AprobarDialog()"><span><mat-icon>done</mat-icon>  Aprobar.</span><i></i></button><br>
   <button class="btnOP" style="--clr:#0FF0FC" routerLink="/VerClaseP"><span><mat-icon>play_arrow</mat-icon>  Reproducir</span><i></i></button><br>
   <button class="btnOP" style="--clr:#8A2BE2" (click)="DenunciaDialog()"><span><mat-icon>report_problem</mat-icon>  Denunciar</span><i></i></button><br>
@@ -54,13 +54,16 @@
     <div id="part1" class="form-group Izquierdo">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h3 class="panel-title">Part 1</h3>
+          <h3 class="panel-title">Página 1</h3>
         </div>
-        <img src="../../../../assets/Mt1.png" alt="Img1">
-        <div class="btn-group btn-group-lg" role="group" aria-label="...">
-          <label for='step2' id="continue-step2" class="continue">
-            <div class="btn btn-default btn-success btn-lg">Continue</div>
-          </label>
+        
+        <img height="150" src="../../../../assets/Mt1.png" alt="Img1">
+        <div id="arrow_1" class="arrow-wrapper">
+          <div class="btn-group btn-group-lg" role="group" aria-label="...">
+            <label for='step2' id="continue-step2" class="continue">
+              <div class="arrow arrow--right" role="button"><span></span></div>
+            </label>
+          </div>
         </div>
       </div>
     </div>
@@ -68,54 +71,58 @@
     <div id="part2" class="form-group Izquierdo">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h3 class="panel-title">Part 2</h3>
+          <h3 class="panel-title">Página 2</h3>
         </div>
-        <img src="../../../../assets/Mt2.png" alt="Img2">
-        <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
-
-          <label for='step2' id="back-step2" class="back">
-            <div class="btn btn-default btn-primary btn-lg" role="button">Back</div>
-          </label>
-          <label for='step3' id="continue-step3" class="continue">
-            <div class="btn btn-default btn-success btn-lg" role="button">Continue</div>
-          </label>
-        </div>
+        <img height="150" src="../../../../assets/Mt2.png" alt="Img2">
+        <div id="arrow_1" class="arrow-wrapper">
+          <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
+            <label for='step2' id="back-step2" class="back">
+              <div class="arrow arrow--left" role="button"><span></span></div>
+             </label>
+            <label for='step3' id="continue-step3" class="continue">
+              <div class="arrow arrow--right" role="button"><span></span></div>
+            </label>
+          </div>
+          </div>
       </div>
     </div>
 
-    <div id="part3" class="form-group Izquierdo">
+    <div height="200" id="part3" class="form-group Izquierdo">
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title">Part 3</h3>
+            <h3 class="panel-title">Página 3</h3>
           </div>
-          <img src="../../../../assets/Mt3.png" alt="Img3">
-          <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
-  
-            <label for='step3' id="back-step3" class="back">
-              <div class="btn btn-default btn-primary btn-lg" role="button">Back</div>
-            </label>
-            <label for='step4' id="continue-step4" class="continue">
-              <div class="btn btn-default btn-success btn-lg" role="button">Continue</div>
-            </label>
-          </div>
+          <img height="150" src="../../../../assets/Mt3.png" alt="Img3">
+          <div id="arrow_1" class="arrow-wrapper">
+            <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
+              <label for='step3' id="back-step3" class="back">
+                <div class="arrow arrow--left" role="button"><span></span></div>
+               </label>
+              <label for='step4' id="continue-step4" class="continue">
+                <div class="arrow arrow--right" role="button"><span></span></div>
+              </label>
+            </div>
+            </div>
         </div>
       </div>
 
       
-      <div id="part4" class="form-group Izquierdo">
+      <div height="200" id="part4" class="form-group Izquierdo">
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title">Part 4</h3>
+            <h3 class="panel-title">Página 4</h3>
           </div>
-          <img src="../../../../assets/Mt4.png" alt="Img4">
-          <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
-            <label for='step4' id="back-step4" class="back">
-              <div class="btn btn-default btn-primary btn-lg" role="button">Back</div>
-            </label>
-            <label for='step5' id="continue-step5" class="continue">
-              <div class="btn btn-default btn-success btn-lg" role="button">Continue</div>
-            </label>
-          </div>
+          <img height="150" src="../../../../assets/Mt4.png" alt="Img4">
+          <div id="arrow_1" class="arrow-wrapper">
+            <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
+              <label for='step4' id="back-step4" class="back">
+                <div class="arrow arrow--left" role="button"><span></span></div>
+               </label>
+              <label for='step5' id="continue-step3" class="continue">
+                <div class="arrow arrow--right" role="button"><span></span></div>
+              </label>
+            </div>
+            </div>
         </div>
       </div>
 
@@ -123,14 +130,16 @@
       <div id="part5" class="form-group Izquierdo">
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title">Part 2</h3>
+            <h3 class="panel-title">Página 5</h3>
           </div>
-          <img src="../../../../assets/Mt5.png" alt="Img5">
-          <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
+          <img height="150" src="../../../../assets/Mt5.png" alt="Img5">
+          <div id="arrow_1" class="arrow-wrapper">
+            <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
   
-            <label for='step5' id="back-step5" class="back">
-              <div class="btn btn-default btn-primary btn-lg" role="button">Back</div>
-            </label>
+              <label for='step5' id="back-step5" class="back">
+                <div class="arrow arrow--left" role="button"><span></span></div>
+              </label>
+            </div>
           </div>
         </div>
       </div>

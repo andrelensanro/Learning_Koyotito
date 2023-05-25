@@ -54,12 +54,14 @@ import { InicioProfComponent } from './components/Profesor/Inicio/InicioProf.com
 import { MeGustaPComponent } from './components/Profesor/ClasesMeGusta/MeGustaP.component';
 import { HistorialPComponent } from './components/Profesor/HistorialP/HistorialP.component';
 import { CrearGrupoComponent } from './components/Profesor/Grupos/CrearGrupo.component';
-import { CrearClaseV2Component } from './components/Profesor/Clase/ClasesProfesor/CrearClaseV2.component';
 import { TagInputModule } from 'ngx-chips';
 import { RepCrearClaseComponent } from './components/Profesor/Clase/ClasesProfesor/RepCrearClase.component';
 import { PrevisualizarClaseComponent } from './components/Profesor/Visualizar_Clase/PrevisualizarClase.component';
 import { AprobarPComponent } from './components/Profesor/Aprobar/Aprobar.component';
 import { VerClaseComponent } from './components/Profesor/Clase/VerClase/VerClase.component';
+import { GuardarClaseComponent } from './components/Profesor/Clase/ClasesProfesor/GuardarClase.component';
+import { MisClasesComponent } from './components/Profesor/MisClases/MisClases.component';
+import { PantallaFinComponent } from './components/Profesor/Clase/VerClase/PantallaFin.component';
 
 @NgModule({
   declarations: [
@@ -94,12 +96,14 @@ import { VerClaseComponent } from './components/Profesor/Clase/VerClase/VerClase
     MeGustaPComponent,
     HistorialPComponent,
     CrearGrupoComponent,
-    CrearClaseV2Component,
     RepCrearClaseComponent,
     PrevisualizarClaseComponent,
     DenunciasPComponent,
     AprobarPComponent,
     VerClaseComponent,
+    GuardarClaseComponent,
+    MisClasesComponent,
+    PantallaFinComponent
       ],
   imports: [
     BrowserModule,

@@ -1,11 +1,11 @@
-<main style="height: 80vh; background-size: cover;">
-  <app-HeaderSidebarP></app-HeaderSidebarP>
+<app-HeaderSidebarP></app-HeaderSidebarP>
+<main style="height: 80vh;">
 <h1>Grupo titulo</h1>
 <section id="Izquierdo" style="z-index: 3;">
   <div class="ag-format-container" style="overflow: scroll;height: 104%; width: 95%;">
     <div class="ag-courses_box">
       <div class="ag-courses_item">
-        <a routerLink="/VisualizarClase" class="ag-courses-item_link">
+        <a routerLink="/PreviewClaseP" class="ag-courses-item_link">
           <div class="ag-courses-item_bg"></div>
   
           <div class="ag-courses-item_title">
@@ -152,7 +152,7 @@
 
 </div>
 
-<app-FooterCrear style="position: relative; left: -0%; top: -25%; z-index: 10;"></app-FooterCrear>
+<app-FooterCrear routerLink="/CrearClase" style="position: relative; left: -0%; top: -25%; z-index: 10;"></app-FooterCrear>
 </section>
 
 <section id="Derecha">
@@ -204,7 +204,7 @@
       </tbody>
     </table>
   </div>
-<app-FooterCrear (click)="DInvitacion()" style="position: relative; left: -0%; top: 0%; z-index: 10;"></app-FooterCrear>
+<app-FooterCrear (click)="DInvitacion()" style="position: relative; left: -0%; top: -10%; z-index: 10;"></app-FooterCrear>
 </section>
 
 </main>

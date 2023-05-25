@@ -2,7 +2,8 @@
   position: absolute;
   background: none;
   width: 65%;
-  height: 60%;
+  height: 80%;
+  overflow: scroll;
 }
 
 
@@ -11,8 +12,9 @@
   background: none;
   right: 2%;
   width: 400px;
-  height: 60%;
+  height: 70%;
   padding: 30px 20px;
+  overflow: scroll;
 }
 
 /******************** Tarjetas  ***********************/
@@ -130,7 +132,7 @@
   font-size: 18px;
   color: #FFF;
 
-  z-index: 2;
+  z-index: 1;
   left: 72%;
   position: relative;
 }

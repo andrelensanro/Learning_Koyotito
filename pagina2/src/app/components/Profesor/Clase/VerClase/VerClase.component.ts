@@ -1,6 +1,7 @@
 import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
-import {script} from './script.js'
 import { DOCUMENT } from '@angular/common';
+import { PantallaFinComponent } from './PantallaFin.component';
+import { MatDialog } from '@angular/material/dialog';
 declare var jQuery: any;
 declare var webkitSpeechRecognition: any;
 
@@ -14,15 +15,17 @@ var Puntos = 0;
 })
 export class VerClaseComponent {
     isDisabled = false;
-    constructor() {
-     }
+    constructor(public dialog: MatDialog){
+
+    }
     startConverting (result:InnerHTML) {
+       // result.innerHTML = "Escuchando...";
         this.isDisabled=true;
       if('webkitSpeechRecognition' in window) {
           var speechRecognizer = new webkitSpeechRecognition();
           speechRecognizer.continuous = true;
           speechRecognizer.interimResults = true;
-          speechRecognizer.lang = 'en-MX';
+          speechRecognizer.lang = 'es-ES';
           speechRecognizer.start();
           console.log("Speech recognition has started.");	
           var finalTranscripts = '';
@@ -61,26 +64,40 @@ export class VerClaseComponent {
         return new Promise( resolve => setTimeout(resolve, ms) );
     }
 
-
+ xpTot: number=0;
     validacion(solucion: string, result:InnerHTML){
+        var xpMal = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+        var xpBien = Math.floor(Math.random() *(10 - 6 + 1)) + 6;
         if(solucion.toUpperCase() === alumnoVoz.toUpperCase()){
             Puntos++;
             console.log("Correcto"+Puntos);
-            result.innerHTML = 'Correcto, sigue así.';
+            result.innerHTML = 'Correcto, sigue así.<br> +'+xpBien+"xp";
+            this.xpTot=this.xpTot+xpBien;
         }else{
             Puntos--;
             console.log("Incorrecto"+Puntos);
-            result.innerHTML = 'Incorrecto, la respuesta es '+solucion+', tenlo en cuenta para la próxima vez.';
+            result.innerHTML = 'Casi, la respuesta es '+solucion+', tenlo en cuenta para la próxima vez.<br> +'+xpMal+"xp";
+            this.xpTot=this.xpTot+xpMal;
         }
-
-
         this.isDisabled=true;
         this.show = false;
     }
 
-Disables(){
+Disables(Solucion:InnerHTML, dos:InnerHTML){
     this.show=!this.show;  
     this.isDisabled=false;
+    Solucion.innerHTML='';
+    dos.innerHTML="<- Presiona y habla.";
 }
         show = true;
+
+    
+      
+      
+        PantallaFinDialog(): void{
+            localStorage.setItem("xp",this.xpTot.toString());
+          const dialogRef = this.dialog.open(PantallaFinComponent, { disableClose: true
+            //  data: {name: this.name},
+            });
+        }
 }  

@@ -1,30 +1,19 @@
-
-#result{
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    height: 20px;
-    width: 40%;
-    border: 1px solid #ccc;
-    padding: 10px;
-    box-shadow: 0 0 10px 0 #bbb;
-    object-position: 2500px 125px;
-    margin-bottom: 30px;
-    font-size: 14px;
-    line-height: 25px;
-}
 .btnmic{
     font-size: 20px;
     position: absolute;
-    top: 240px;
-    left: 50%;
+    top: 74%;
+    left: 20%;
 }
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 480px;
+  }
 
 
 
 
-
-.form-container {
+  .form-container {
     width: 100%;
     max-width: 90%;
     height: auto;
@@ -54,15 +43,28 @@
     .continue {
       float: right;
     }
+    .BtnContinuar{              /* Bug, muestra solo el resultado del último que llama a esta calse */
+        font-size: 20px;
+        position: absolute;
+        top: 70%;
+        right: 5%;
+    }
   }
+
+
+
+  
   img{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #e6e6e9;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     box-sizing: border-box;
     width: auto;
-    height: 20%;
+    height: 30%;
     border: solid #ababb1 2px;
     transform: translate(-50%, -50%);
     padding: 5px;  
@@ -153,3 +155,98 @@
     width: 0;
     height: 0;
   }
+
+  .Solucion{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 16%;
+    right: 0;
+    height: 30px;
+    width: 50%;
+    padding: 40px;
+    margin-bottom: 30px;
+    font-size: 60px;
+    line-height: 25px;
+    font-size: 1.5em;
+  }
+
+  .result {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 65%;
+    right: 0;
+    height: 30px;
+    width: 40%;
+    border: 1px solid #ccc;
+    padding: 40px;
+    box-shadow: 0 0 10px 0 #bbb;
+    margin-bottom: 30px;
+    font-size: 60px;
+    line-height: 25px;
+    font-size: 1.5em;
+  
+    --border-size: 0.3rem;
+    border: var(--border-size) solid transparent;
+  
+    /* Paint an image in the border */
+    border-image: conic-gradient(
+        from var(--angle),
+        #d53e33 0deg 90deg,
+        #fbb300 90deg 180deg,
+        #377af5 180deg 270deg,
+        #399953 270deg 360deg
+      )
+      1 stretch;
+    background: rgb(255 255 255 / var(--opacity));
+  }
+  
+  /** show a warning in browers that don't support it **/
+  .warning {
+    margin: 2em;
+    padding: 1em;
+    border: 1px solid #ccc;
+  }
+  .warning p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  /* Animate when Houdini is available */
+  @supports (background: paint(houdini)) {
+    @property --opacity {
+      syntax: "<number>";
+      initial-value: 0.5;
+      inherits: false;
+    }
+  
+    @property --angle {
+      syntax: "<angle>";
+      initial-value: 0deg;
+      inherits: false;
+    }
+  
+    @keyframes opacityChange {
+      to {
+        --opacity: 1;
+      }
+    }
+  
+    @keyframes rotate {
+      to {
+        --angle: 360deg;
+      }
+    }
+  
+    .result {
+      animation: rotate 4s linear infinite;
+    }
+}
+
+
+
+
+/*    Botón de continuar          */

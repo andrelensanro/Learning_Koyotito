@@ -1,17 +1,12 @@
 <main style="height: 80vh;">
     <app-HeaderSidebarP></app-HeaderSidebarP>
-    <app-BarraBusquedas></app-BarraBusquedas>
-    <app-navBar1></app-navBar1>   <!--2°do header-->
-    
-    
-
-    
+    <app-BarraBusquedas></app-BarraBusquedas>  
 <section id="Izquierdo">
   <div *ngIf="greaterThan(1); else elseBlock">
-<div class="ag-format-container" style="overflow: scroll;height: 104%; width: 95%;">
+<div class="ag-format-container" style="height: 104%; width: 95%;">
     <div class="ag-courses_box">
       <div class="ag-courses_item">
-        <a routerLink="/PreviewClaseP" class="ag-courses-item_link">
+        <a href="/PreviewClaseP" class="ag-courses-item_link">
           <div class="ag-courses-item_bg"></div>
   
           <div class="ag-courses-item_title">
@@ -20,7 +15,7 @@
           <div class="ag-autor-item_title">
             José Alfredo UnNombreMuyLargo Jimenez
           </div>
-          <div class="ag-grupo-item_Vistas-box">
+          <div class="ag-courses-item_Vistas-box">
             Vistas:
             <span class="ag-courses-item_Vistas">
               80
@@ -36,45 +31,7 @@
       </div>
   
       <div class="ag-courses_item">
-        <a href="#" class="ag-courses-item_link">
-          <div class="ag-courses-item_bg"></div>
-  
-          <div class="ag-courses-item_title">
-            UX/UI Web-Design&#160;+ Mobile Design
-          </div>
-          <div class="ag-autor-item_title">
-            José Alfredo UnNombreMuyLargo Jimenez
-          </div>
-          <div class="ag-courses-item_date-box">
-            Start:
-            <span class="ag-courses-item_date">
-              04.11.2022
-            </span>
-          </div>
-        </a>
-      </div>
-  
-      <div class="ag-courses_item">
-        <a href="#" class="ag-courses-item_link">
-          <div class="ag-courses-item_bg"></div>
-  
-          <div class="ag-courses-item_title">
-            Annual package "Product+UX/UI+Graph designer&#160;2022"
-          </div>
-          <div class="ag-autor-item_title">
-            José Alfredo UnNombreMuyLargo Jimenez
-          </div>
-          <div class="ag-courses-item_date-box">
-            Start:
-            <span class="ag-courses-item_date">
-              04.11.2022
-            </span>
-          </div>
-        </a>
-      </div>
-  
-      <div class="ag-courses_item">
-        <a href="#" class="ag-courses-item_link">
+        <a href="/BusquedasT" class="ag-courses-item_link">
           <div class="ag-courses-item_bg"></div>
   
           <div class="ag-courses-item_title">
@@ -93,7 +50,7 @@
       </div>
   
       <div class="ag-courses_item">
-        <a href="#" class="ag-courses-item_link">
+        <a href="/BusquedasT" class="ag-courses-item_link">
           <div class="ag-courses-item_bg"></div>
           <div class="ag-autor-item_title">
             José Alfredo UnNombreMuyLargo Jimenez
@@ -112,7 +69,7 @@
       </div>
   
       <div class="ag-courses_item">
-        <a href="#" class="ag-courses-item_link">
+        <a href="/BusquedasT" class="ag-courses-item_link">
           <div class="ag-courses-item_bg"></div>
           <div class="ag-autor-item_title">
             José Alfredo UnNombreMuyLargo Jimenez
@@ -124,7 +81,7 @@
       </div>
   
       <div class="ag-courses_item">
-        <a href="#" class="ag-courses-item_link">
+        <a href="/BusquedasT" class="ag-courses-item_link">
           <div class="ag-courses-item_bg">
           </div>
           <div class="ag-courses-item_title">
@@ -137,7 +94,7 @@
       </div>
   
       <div class="ag-courses_item">
-        <a href="#" class="ag-courses-item_link">
+        <a href="/BusquedasT" class="ag-courses-item_link">
           <div class="ag-courses-item_bg"></div>
   
           <div class="ag-courses-item_title">
@@ -154,13 +111,12 @@
           </div>
         </a>
       </div>
-  
     </div>
-    
-
   </div>
 </div>
 <ng-template #elseBlock>Esta un poco vacío esto... <br>  Crea una clase  <button routerLink="/CrearClase">+</button></ng-template>
+<app-FooterCrear routerLink="/CrearClase" style="z-index: 100; position: sticky; bottom: -30%; right: 32.5%;">+</app-FooterCrear>
+
 </section>
 
 
@@ -169,17 +125,36 @@
 
 
 <section id="Derecha">
-  <div *ngIf="greaterThan(0); else GruposVacios">
-  <div class="ag-format-container" style="overflow: scroll;height: 104%; width: 95%;">
+  <div *ngIf="greaterThan(8); else GruposVacios">
+  <div class="ag-format-container" style="height: 104%; width: 95%;">
     <div class="ag-courses_box">
       <div class="ag-grupos_item">
-        <a href="#" class="ag-grupo-item_link">
+        <a href="/GrupoEsp" class="ag-courses-item_link">
           <div class="ag-courses-item_bg"></div>
   
           <div class="ag-courses-item_title">
             Grupo III
           </div>
-          <div class="ag-grupo-autor-item_title">
+          <div class="ag-autor-item_title">
+            Matemáticas
+          </div>
+          <div class="ag-courses-item_Vistas-box">
+            Integrantes:
+            <span class="ag-courses-item_Vistas">
+              30
+            </span>
+          </div>
+        </a>
+      </div>
+  
+      <div class="ag-grupos_item">
+        <a href="/PreviewClaseP" class="ag-courses-item_link">
+          <div class="ag-courses-item_bg"></div>
+  
+          <div class="ag-courses-item_title">
+            Grupo III
+          </div>
+          <div class="ag-autor-item_title">
             Matemáticas
           </div>
           <div class="ag-courses-item_Vistas-box">
@@ -196,25 +171,6 @@
           <div class="ag-courses-item_bg"></div>
   
           <div class="ag-courses-item_title">
-            UX/UI Web-Design&#160;+ Mobile Design
-          </div>
-          <div class="ag-grupo-autor-item_title">
-            José Alfredo UnNombreMuyLargo Jimenez
-          </div>
-          <div class="ag-courses-item_date-box">
-            Start:
-            <span class="ag-courses-item_date">
-              04.11.2022
-            </span>
-          </div>
-        </a>
-      </div>
-  
-      <div class="ag-grupos_item">
-        <a href="#" class="ag-grupo-item_link">
-          <div class="ag-courses-item_bg"></div>
-  
-          <div class="ag-courses-item_title">
             Annual package "Product+UX/UI+Graph designer&#160;2022"
           </div>
           <div class="ag-grupo-autor-item_title">
@@ -310,14 +266,11 @@
           </div>
         </a>
       </div>
-  
     </div>
-    
-
   </div>
 </div>
 <ng-template  #GruposVacios>Esta un poco vacío esto... <br>  Crea un grupo  <app-FooterCrear (click)="CrearGrupoDialog()">+</app-FooterCrear></ng-template>
-
+<app-FooterCrear (click)="CrearGrupoDialog()" style="z-index: 100; position: sticky; bottom: -42.5%; right: 32.5%;">+</app-FooterCrear>
 </section>
 
 
