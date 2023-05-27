@@ -47,7 +47,7 @@ export class RegistroComponent {
         {idUsuario:usr.idUsuario}   
       })
     }else{
-      this.router.navigate(['InicioProfesor'],
+      this.router.navigate(['InicioAlumno'],
       { queryParams:
         {idUsuario:usr.idUsuario}
       })
