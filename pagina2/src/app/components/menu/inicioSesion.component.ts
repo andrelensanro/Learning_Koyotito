@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 //import { Usuario } from 'src/app/models/usuario';
 import { Usuario } from 'app/models/usuario';
 
+
 @Component({
     selector: 'app-inicioSesion',
     templateUrl: 'inicioSesion.component.html',
@@ -33,11 +34,32 @@ export class inicioSesionComponent{
 
   send(): any{
     this.loginService.login(this.usuario)
-    .subscribe((user) => {
-      this.cookieService.set('token', this.usuario.correo);
-      this.cookieService.set('token', this.usuario.password);
+    .subscribe(user => {
+      this.redirecccionarUsr(user)
+      // this.cookieService.set('token', this.usuario.correo);
+      // this.cookieService.set('token', this.usuario.password);
     });
   }
+
+  redirecccionarUsr(usr: Usuario){
+    if(usr == null){
+      console.log("error, no está registrado");
+
+    }else{
+      if(usr.idTipoUsuario == 2){
+        this.router.navigate(['InicioProfesor'],
+        { queryParams:
+          {idUsuario:usr.idUsuario}   
+        })
+      }else if(usr.idTipoUsuario == 1){
+        this.router.navigate(['InicioAlumno'],
+        { queryParams:
+          {idUsuario:usr.idUsuario}
+        })
+      }
+    }
+  }
+
   /* En caso de no tener una cuenta, lo redigire a un formulario de registro*/
   RegistroDialog(): void{
     const dialogRef = this.dialog.open(RegistroComponent, {

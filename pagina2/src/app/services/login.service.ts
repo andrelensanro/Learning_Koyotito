@@ -12,7 +12,7 @@ export class LoginService {
 
   constructor(private http:HttpClient) { }
 
-  login(usuario:Usuario):Observable<Object>{
+  login(usuario:Usuario):Observable<Usuario>{
     return this.http.post<Usuario>(`${this.url+"/login"}`,usuario);
   }
 

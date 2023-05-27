@@ -40,17 +40,21 @@ export class RegistroComponent {
   }
 
   redirecccionarUsr(usr: Usuario){
-    console.log(this.profesor + " " + this.pseudonimo)
-    if(this.profesor == false){
-      this.router.navigate(['InicioProfesor'],
-      { queryParams:
-        {idUsuario:usr.idUsuario}   
-      })
+    if(usr == null){
+      console.log("error, el usuario ya esta registrado");
+
     }else{
-      this.router.navigate(['InicioAlumno'],
-      { queryParams:
-        {idUsuario:usr.idUsuario}
-      })
+      if(this.profesor == false){
+        this.router.navigate(['InicioProfesor'],
+        { queryParams:
+          {idUsuario:usr.idUsuario}   
+        })
+      }else{
+        this.router.navigate(['InicioAlumno'],
+        { queryParams:
+          {idUsuario:usr.idUsuario}
+        })
+      }
     }
   }
 
