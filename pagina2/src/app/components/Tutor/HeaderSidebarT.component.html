@@ -29,12 +29,10 @@
 
 
 <nav id="menu">
-  
-<a href="#"><mat-icon>thumb_up_alt</mat-icon>  Clases que me gustan</a>
-<a href="#"><mat-icon>history</mat-icon>  Historial  </a>
-<a routerLink="/GruposT" class="notification"><mat-icon>group</mat-icon>  Grupos  <span class="badge">0</span></a>
-<a href="#"><mat-icon>collections</mat-icon>  Mi multimedia.  </a>
-<a href="#"><mat-icon>delete_outline</mat-icon>  Papelera.  </a>
-<a href="#"><mat-icon>report_problem</mat-icon>  Denuncias</a>
+  <a href="/InicioTutor"><mat-icon>home</mat-icon>  Inicio</a>
+<a href="/Tutor/Clases"  value="Me gusta" (click)="SelClase('Likes')" for="navcheck" aria-hidden="true"><mat-icon>thumb_up_alt</mat-icon>  Clases que me gustan</a>
+<a href="/Tutor/Clases" value="Historial" (click)="SelClase('Historial')"><mat-icon>history</mat-icon>  Historial  </a>
+<a href="/GruposT" class="notification"><mat-icon>group</mat-icon>  Grupos  <span class="badge">0</span></a>
+<a href="/Tutor/Clases" value="Aprobados" (click)="SelClase('Clases aprobadas')"><mat-icon>done_all</mat-icon>  Clases aprobadas</a>
 </nav>
 

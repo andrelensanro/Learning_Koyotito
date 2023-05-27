@@ -8,7 +8,7 @@ SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);
 @Component({
     selector: 'app-InicioAlumno',
     templateUrl: "./InicioAlumno.component.html",
-    styleUrls: ['./FondoA.component.css']
+    styleUrls: ['./FondoA.component.scss', 'inicioA.component.scss']
   })
   
   export class InicioAlumnoComponent{

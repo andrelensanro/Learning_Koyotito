@@ -6,4 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./gruposT.component.scss', '../FondoT.component.scss']
 })
 export class GruposTComponent{
+  SelClase(valor:string): void{
+      localStorage.setItem("clase",valor);
+    }
 }

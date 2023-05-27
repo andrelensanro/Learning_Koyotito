@@ -9,4 +9,9 @@ import { Component } from '@angular/core';
 export class  HeaderSidebarAComponent{
   menuType: String = "General";
   constructor() {}
+
+  
+  SelClase(valor:string): void{
+    localStorage.setItem("clase",valor);
+}
 }

@@ -10,65 +10,60 @@
         <label for="tab1" >Datos personales</label>
           
         <input id="tab2" type="radio" name="tabs">
-        <label for="tab2">Tutorados</label>
+        <label for="tab2">Correos de contacto</label>
           
         <input id="tab3" type="radio" name="tabs">
         <label for="tab3">Cuenta</label>
             
         <section id="content1" scrollable style="overflow-y: auto; height: 350px;">
-          <table>
-            <td>
-              <div class="example-button-row">
-                Datos
-                <button mat-flat-button color="primary">Cambiar</button>
-              </div>
               <br><br>
               <p>
-                <mat-form-field class="example-full-width">
+                <mat-form-field style="width: 35%;">
                   <mat-label>Nombre</mat-label>
-                    <textarea matInput placeholder="Nombre" value="Mostrar el nombre"></textarea>
+                    <input matInput placeholder="Ingrese un nombre" value="Mostrar el nombre">
                   </mat-form-field>
                 </p>
                     
-                <table class="example-full-width" cellspacing="0"><tr>
-                    <td><mat-form-field class="example-full-width">
-                        <mat-label>Apellido 1</mat-label>
-                          <textarea matInput value="Valor Apellido 1"></textarea>
-                        </mat-form-field></td>
-                    <td><mat-form-field class="example-full-width">
-                        <mat-label>Apellido 2</mat-label>
-                          <textarea matInput value="Valor Apellido 2"></textarea>
-                        </mat-form-field></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <mat-form-field class="example-full-width">
-                        <mat-label>Contraseña</mat-label>
-                          <textarea matInput placeholder="Nombre" value="Mostrar el nombre"></textarea>
-                      </mat-form-field>
-                    </td>
-                </tr></table>
-            </td>
-          </table>    
+                <div class="example-container">
+                  <mat-form-field style="width: 35%;">
+                    <mat-label>Appelido 1</mat-label>
+                    <input matInput name="ap1_usu"  placeholder="Ingrese un apellido" value="Peréz">
+                  </mat-form-field>
+                  <mat-form-field style="width: 35%; padding: 0px 40px">
+                    <mat-label>Apellido 2</mat-label>
+                    <input matInput name="ap2_usu"  placeholder="Ingrese un apellido" value="Gonzaléz">
+                  </mat-form-field>
+                  </div>
+
+
+          <button mat-flat-button color="primary" style="background-color: green;">Guardar cambios</button>
         </section>
-        <section id="content2">
-          
-          <div class="tableFixHead" >
-            <table class="tableC">
+        <section id="content2" style="width: 1200px;">
+            <mat-form-field style="width: 400px;position: absolute; top: 10px;"><!--<mat-form-field class="example-full-width">-->
+              <mat-label>Tutorados</mat-label>
+              <input  matInput placeholder="¿Un nuevo tutorado?, ingrese un Alias">
+            </mat-form-field>
+          <button mat-flat-button style="background-color: rgb(63, 134, 30); position: absolute; top: 30px; left: 400px;">Añadir</button>      
+             
+          <div style="position: absolute; top: 80px;">
+          <div class="tbl-header">
+            <table>
               <thead>
                 <tr>
-                  <th>Pseudonio</th>
+                  <th>Alias</th>
                   <th>Nivel</th>
-                  <th>Editar</th>
                   <th>Eliminar</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td class="tdG">Juan Paco De La Mar</td>
-                  <td  style="text-align: center;" class="tdG">8</td>
-                  <td style="text-align: center;" class="tdG"><mat-icon>create</mat-icon></td>
-                  <td style="text-align: center;" class="tdG"><mat-icon>delete_forever</mat-icon></td>
+            </table>
+          </div>
+            <div class="tbl-content">
+              <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                  <tr>
+                  <td style="word-wrap: break-word;" ><a href="Alumno/Inicio"><input type="text" class="form-control" id="">Martín Elizalde</a></td>
+                  <td style="word-wrap: break-word; text-align: center;" > 8 </td>
+                  <td style="text-align: center;" class="tdG"><button mat-icon-button><mat-icon>delete_forever</mat-icon></button></td>
                 </tr>
                 <tr>
                   <td>1.2</td>
@@ -100,23 +95,31 @@
                 </tr>
               </tbody>
             </table>
-
-
-            Añadir Tutorado
-            <div class="example-button-row">
-              <mat-form-field><!--<mat-form-field class="example-full-width">-->
-                <mat-label>Pseudonimo</mat-label>
-                <textarea matInput placeholder="Nombre"></textarea>
-              </mat-form-field>
-            </div>
-            <button mat-flat-button style="background-color: rgb(63, 134, 30);">Añadir</button> 
+          </div>
           </div>
         </section>
-     
-            <br><br><br>
-
 <section id="content3">
-  Contraseña, dar de baja cuenta
+       
+  <br><br>
+  <p>
+    <mat-form-field style="width: 35%;">
+      <mat-label>Correo</mat-label>
+        <input matInput placeholder="Ingrese un nombre" value="CorreoDelTutor@outlook.com.mx">
+      </mat-form-field>
+    </p>
+        
+    <div class="example-container">
+      <mat-form-field style="width: 35%;">
+        <mat-label>Contraseña</mat-label>
+        <input matInput name="ap1_usu"  placeholder="¿Quiere cambiar su contraseña?">
+      </mat-form-field>
+      <mat-form-field style="width: 35%; padding: 0px 40px">
+        <mat-label>Repetir contraseña</mat-label>
+        <input matInput name="ap2_usu"  placeholder="Ingrese la contraseña de nuevo">
+      </mat-form-field>
+      </div>
+<button mat-flat-button color="primary" style="background-color: green;">Guardar cambios</button>
+<button mat-flat-button color="primary" style="background-color: red;" routerLink="/Inicio">Dar cuentra de baja</button>
 </section>
         
       </div>

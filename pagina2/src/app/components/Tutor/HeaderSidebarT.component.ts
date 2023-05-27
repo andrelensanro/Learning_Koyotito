@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
 })
 export class  HeaderSidebarTComponent{
   menuType: String = "General";
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
+
+  SelClase(valor:string): void{
+    localStorage.setItem("clase",valor);
+}
 }

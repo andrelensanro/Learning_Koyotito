@@ -21,7 +21,6 @@ import {ToastrModule} from 'ngx-toastr';
 import { ReestContraComponent } from './components/sesion/ReestContra.component';
 import { navBar1Component } from './components/Profesor/navBar1.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import { CalificacionComponent } from './components/alumno/calificacion.component';
 import { CrearClaseComponent } from './components/Profesor/Clase/ClasesProfesor/CrearClase.component';
 import { RouterModule } from '@angular/router';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field';
@@ -62,6 +61,17 @@ import { VerClaseComponent } from './components/Profesor/Clase/VerClase/VerClase
 import { GuardarClaseComponent } from './components/Profesor/Clase/ClasesProfesor/GuardarClase.component';
 import { MisClasesComponent } from './components/Profesor/MisClases/MisClases.component';
 import { PantallaFinComponent } from './components/Profesor/Clase/VerClase/PantallaFin.component';
+import { ClasesComponent } from './components/Tutor/Clases/Clases.component';
+import { PrevisualizarClaseTComponent } from './components/Tutor/Visualizar_Clase/PrevisualizarClase.component';
+import { DenunciasTComponent } from './components/Tutor/Denuncias/Denuncias.component';
+import { AprobarTComponent } from './components/Tutor/Aprobar/Aprobar.component';
+import { DenunciasPagComponent } from './components/Profesor/Denuncias/DenunciasPag.component';
+import { EditarClaseComponent } from './components/Profesor/Clase/EditarMiClase/EditarClase.component';
+import { PrevisualizarMiClaseComponent } from './components/Profesor/MisClases/PrevisualizarMiClase.component';
+import { GruposAComponent } from './components/alumno/Grupos/grupos.component';
+import { ClasesAComponent } from './components/alumno/Clases/Clases.component';
+import { PantallaFinAComponent } from './components/alumno/VerClase/PantallaFin.component';
+import { VerClaseAComponent } from './components/alumno/VerClase/VerClase.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +84,6 @@ import { PantallaFinComponent } from './components/Profesor/Clase/VerClase/Panta
     ReestContraComponent,
     InicioProfComponent,
     navBar1Component,
-    CalificacionComponent,
     CrearClaseComponent,
     CerrarSesionComponent,
     ConfigPComponent,
@@ -103,7 +112,19 @@ import { PantallaFinComponent } from './components/Profesor/Clase/VerClase/Panta
     VerClaseComponent,
     GuardarClaseComponent,
     MisClasesComponent,
-    PantallaFinComponent
+    PantallaFinComponent,
+    ClasesComponent,
+    PrevisualizarClaseTComponent,
+    DenunciasTComponent,
+    AprobarTComponent,
+    DenunciasPagComponent,
+    EditarClaseComponent,
+    PrevisualizarMiClaseComponent,
+    PrevisualizarClaseTComponent,
+    GruposAComponent,
+    ClasesAComponent,
+    PantallaFinAComponent,
+    VerClaseAComponent
       ],
   imports: [
     BrowserModule,

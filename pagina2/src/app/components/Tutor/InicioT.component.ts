@@ -21,6 +21,7 @@ DCerrarSesion(): void{
     });
 }
   
+public greaterThan(num: number) {    return num > 0;  }
 /*
   display(){
     if (this.authService.isLoggedIn()) {
@@ -29,6 +30,22 @@ DCerrarSesion(): void{
     return "Iniciar sesión";
   }
   */
-
-
+  SelClase(valor:string): void{
+    if(valor==="matematicas"){
+      localStorage.setItem("clase","Matemáticas");
+    }else if(valor==="espanol"){
+      localStorage.setItem("clase","Español");
+    }else if(valor==="artes"){
+      localStorage.setItem("clase","Artes");
+    }else if(valor==="ciencias"){
+      localStorage.setItem("clase","Conocimientos Naturales");
+    }else if(valor==="logica"){
+      localStorage.setItem("clase","Razonamiento lógico");
+    }else if(valor==="ingles"){
+      localStorage.setItem("clase","Inglés");
+    }else{
+      localStorage.setItem("clase",valor);
+    }
 }
+
+} 
