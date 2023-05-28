@@ -6,5 +6,7 @@ import { Component } from "@angular/core";
     styleUrls: ['./Footer.component.scss']
   })
   export class  FooterComponent{
-
+    SelClase(): void{
+      localStorage.setItem("clase","");
+  }
   }

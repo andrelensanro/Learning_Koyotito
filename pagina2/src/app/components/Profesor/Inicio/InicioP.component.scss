@@ -2,7 +2,8 @@
   position: absolute;
   background: none;
   width: 65%;
-  height: 60%;
+  height: 80%;
+  overflow: scroll;
 }
 
 
@@ -11,8 +12,9 @@
   background: none;
   right: 2%;
   width: 400px;
-  height: 60%;
+  height: 70%;
   padding: 30px 20px;
+  overflow: scroll;
 }
 
 /******************** Tarjetas  ***********************/
@@ -130,7 +132,7 @@
   font-size: 18px;
   color: #FFF;
 
-  z-index: 2;
+  z-index: 1;
   left: 72%;
   position: relative;
 }
@@ -158,40 +160,6 @@
   -o-transition: all .5s ease;
   transition: all .5s ease;
 }
-.ag-courses_item:nth-child(2n) .ag-courses-item_bg {
-  background-color: #3ecd5e;
-}
-.ag-courses_item:nth-child(3n) .ag-courses-item_bg {
-  background-color: #e44002;
-}
-.ag-courses_item:nth-child(4n) .ag-courses-item_bg {
-  background-color: #952aff;
-}
-.ag-courses_item:nth-child(5n) .ag-courses-item_bg {
-  background-color: #cd3e94;
-}
-.ag-courses_item:nth-child(6n) .ag-courses-item_bg {
-  background-color: #4c49ea;
-}
-
-
-
-.ag-grupos_item:nth-child(2n) .ag-courses-item_bg {
-  background-color: #3ecd5e;
-}
-.ag-grupos_item:nth-child(3n) .ag-courses-item_bg {
-  background-color: #e44002;
-}
-.ag-grupos_item:nth-child(4n) .ag-courses-item_bg {
-  background-color: #952aff;
-}
-.ag-grupos_item:nth-child(5n) .ag-courses-item_bg {
-  background-color: #cd3e94;
-}
-.ag-grupos_item:nth-child(6n) .ag-courses-item_bg {
-  background-color: #4c49ea;
-}
-
 
 @media only screen and (max-width: 979px) {
   .ag-courses_item {

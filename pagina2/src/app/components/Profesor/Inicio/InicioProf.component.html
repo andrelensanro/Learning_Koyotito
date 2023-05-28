@@ -1,26 +1,21 @@
 <main style="height: 80vh;">
     <app-HeaderSidebarP></app-HeaderSidebarP>
-    <app-BarraBusquedas></app-BarraBusquedas>
-    <app-navBar1></app-navBar1>   <!--2°do header-->
-    
-    
-
-    
+    <app-BarraBusquedas></app-BarraBusquedas>  
 <section id="Izquierdo">
   <div *ngIf="greaterThan(1); else elseBlock">
-<div class="ag-format-container" style="overflow: scroll;height: 104%; width: 95%;">
+<div class="ag-format-container" style="height: 104%; width: 95%;">
     <div class="ag-courses_box">
       <div class="ag-courses_item">
-        <a routerLink="/PreviewClaseP" class="ag-courses-item_link">
-          <div class="ag-courses-item_bg"></div>
+        <a href="/PreviewClaseP" class="ag-courses-item_link">
+          <div class="matematicas"><div class="ag-courses-item_bg"></div></div>
   
           <div class="ag-courses-item_title">
             Clase de matematicas
           </div>
           <div class="ag-autor-item_title">
-            José Alfredo UnNombreMuyLargo Jimenez
+            José Alfredo Jimenez
           </div>
-          <div class="ag-grupo-item_Vistas-box">
+          <div class="ag-courses-item_Vistas-box">
             Vistas:
             <span class="ag-courses-item_Vistas">
               80
@@ -36,84 +31,58 @@
       </div>
   
       <div class="ag-courses_item">
-        <a href="#" class="ag-courses-item_link">
-          <div class="ag-courses-item_bg"></div>
+        <a href="/PreviewClaseEsp" class="ag-courses-item_link">
+          <div class="español"><div class="ag-courses-item_bg"></div></div>
   
           <div class="ag-courses-item_title">
-            UX/UI Web-Design&#160;+ Mobile Design
+            Comunicación I
           </div>
           <div class="ag-autor-item_title">
-            José Alfredo UnNombreMuyLargo Jimenez
+            María Peréz Peréz
+          </div>
+          <div class="ag-courses-item_Vistas-box">
+            Vistas:
+            <span class="ag-courses-item_Vistas">
+              20
+            </span>
           </div>
           <div class="ag-courses-item_date-box">
-            Start:
+            Likes:
             <span class="ag-courses-item_date">
-              04.11.2022
+              10
             </span>
           </div>
         </a>
       </div>
   
       <div class="ag-courses_item">
-        <a href="#" class="ag-courses-item_link">
-          <div class="ag-courses-item_bg"></div>
-  
-          <div class="ag-courses-item_title">
-            Annual package "Product+UX/UI+Graph designer&#160;2022"
-          </div>
+        <a href="/BusquedasT" class="ag-courses-item_link">
+          <div class="español"><div class="ag-courses-item_bg"></div></div>
           <div class="ag-autor-item_title">
-            José Alfredo UnNombreMuyLargo Jimenez
+           Alberto MArtínez Damián
+          </div>
+          <div class="ag-courses-item_title">
+            Vocabulario II
+          </div>
+  
+          <div class="ag-courses-item_Vistas-box">
+            Vistas:
+            <span class="ag-courses-item_Vistas">
+              0
+            </span>
           </div>
           <div class="ag-courses-item_date-box">
-            Start:
+            Likes:
             <span class="ag-courses-item_date">
-              04.11.2022
+              0
             </span>
           </div>
         </a>
       </div>
   
       <div class="ag-courses_item">
-        <a href="#" class="ag-courses-item_link">
-          <div class="ag-courses-item_bg"></div>
-  
-          <div class="ag-courses-item_title">
-            Graphic Design
-          </div>
-          <div class="ag-autor-item_title">
-            José Alfredo UnNombreMuyLargo Jimenez
-          </div>
-          <div class="ag-courses-item_date-box">
-            Start:
-            <span class="ag-courses-item_date">
-              04.11.2022
-            </span>
-          </div>
-        </a>
-      </div>
-  
-      <div class="ag-courses_item">
-        <a href="#" class="ag-courses-item_link">
-          <div class="ag-courses-item_bg"></div>
-          <div class="ag-autor-item_title">
-            José Alfredo UnNombreMuyLargo Jimenez
-          </div>
-          <div class="ag-courses-item_title">
-            Motion Design
-          </div>
-  
-          <div class="ag-courses-item_date-box">
-            Start:
-            <span class="ag-courses-item_date">
-              30.11.2022
-            </span>
-          </div>
-        </a>
-      </div>
-  
-      <div class="ag-courses_item">
-        <a href="#" class="ag-courses-item_link">
-          <div class="ag-courses-item_bg"></div>
+        <a href="/BusquedasT" class="ag-courses-item_link">
+          <div class="ciencias"><div class="ag-courses-item_bg"></div></div>
           <div class="ag-autor-item_title">
             José Alfredo UnNombreMuyLargo Jimenez
           </div>
@@ -124,9 +93,8 @@
       </div>
   
       <div class="ag-courses_item">
-        <a href="#" class="ag-courses-item_link">
-          <div class="ag-courses-item_bg">
-          </div>
+        <a href="/BusquedasT" class="ag-courses-item_link">
+          <div class="artes"><div class="ag-courses-item_bg"></div></div>
           <div class="ag-courses-item_title">
             Digital Marketing
           </div>
@@ -137,8 +105,8 @@
       </div>
   
       <div class="ag-courses_item">
-        <a href="#" class="ag-courses-item_link">
-          <div class="ag-courses-item_bg"></div>
+        <a href="/BusquedasT" class="ag-courses-item_link">
+          <div class="artes"><div class="ag-courses-item_bg"></div></div>
   
           <div class="ag-courses-item_title">
             Interior Design
@@ -154,13 +122,12 @@
           </div>
         </a>
       </div>
-  
     </div>
-    
-
   </div>
 </div>
 <ng-template #elseBlock>Esta un poco vacío esto... <br>  Crea una clase  <button routerLink="/CrearClase">+</button></ng-template>
+<app-FooterCrear routerLink="/CrearClase" style="z-index: 100; position: sticky; bottom: -30%; right: 32.5%;">+</app-FooterCrear>
+
 </section>
 
 
@@ -169,17 +136,17 @@
 
 
 <section id="Derecha">
-  <div *ngIf="greaterThan(0); else GruposVacios">
-  <div class="ag-format-container" style="overflow: scroll;height: 104%; width: 95%;">
+  <div *ngIf="greaterThan(8); else GruposVacios">
+  <div class="ag-format-container" style="height: 104%; width: 95%;">
     <div class="ag-courses_box">
       <div class="ag-grupos_item">
-        <a href="#" class="ag-grupo-item_link">
-          <div class="ag-courses-item_bg"></div>
+        <a href="/GrupoEsp" class="ag-courses-item_link">
+          <div class="grupo"><div class="ag-courses-item_bg"></div></div>
   
           <div class="ag-courses-item_title">
             Grupo III
           </div>
-          <div class="ag-grupo-autor-item_title">
+          <div class="ag-autor-item_title">
             Matemáticas
           </div>
           <div class="ag-courses-item_Vistas-box">
@@ -192,46 +159,27 @@
       </div>
   
       <div class="ag-grupos_item">
-        <a href="#" class="ag-grupo-item_link">
-          <div class="ag-courses-item_bg"></div>
+        <a href="/PreviewClaseP" class="ag-courses-item_link">
+          <div class="grupo"><div class="ag-courses-item_bg"></div></div>
   
           <div class="ag-courses-item_title">
-            UX/UI Web-Design&#160;+ Mobile Design
+            Grupo MCV4-2
           </div>
-          <div class="ag-grupo-autor-item_title">
-            José Alfredo UnNombreMuyLargo Jimenez
+          <div class="ag-autor-item_title">
+            Jardín de niños "La luciernaga"
           </div>
-          <div class="ag-courses-item_date-box">
-            Start:
-            <span class="ag-courses-item_date">
-              04.11.2022
+          <div class="ag-courses-item_Vistas-box">
+            Integrantes:
+            <span class="ag-courses-item_Vistas">
+              10
             </span>
           </div>
         </a>
       </div>
-  
-      <div class="ag-grupos_item">
+
+      <!--<div class="ag-grupos_item">
         <a href="#" class="ag-grupo-item_link">
-          <div class="ag-courses-item_bg"></div>
-  
-          <div class="ag-courses-item_title">
-            Annual package "Product+UX/UI+Graph designer&#160;2022"
-          </div>
-          <div class="ag-grupo-autor-item_title">
-            José Alfredo UnNombreMuyLargo Jimenez
-          </div>
-          <div class="ag-courses-item_date-box">
-            Start:
-            <span class="ag-courses-item_date">
-              04.11.2022
-            </span>
-          </div>
-        </a>
-      </div>
-  
-      <div class="ag-grupos_item">
-        <a href="#" class="ag-grupo-item_link">
-          <div class="ag-courses-item_bg"></div>
+          <div class="español"><div class="ag-courses-item_bg"></div></div>
   
           <div class="ag-courses-item_title">
             Graphic Design
@@ -246,78 +194,13 @@
             </span>
           </div>
         </a>
-      </div>
-  
-      <div class="ag-grupos_item">
-        <a href="#" class="ag-grupo-item_link">
-          <div class="ag-courses-item_bg"></div>
-          <div class="ag-grupo-autor-item_title">
-            José Alfredo UnNombreMuyLargo Jimenez
-          </div>
-          <div class="ag-courses-item_title">
-            Motion Design
-          </div>
-  
-          <div class="ag-courses-item_date-box">
-            Start:
-            <span class="ag-courses-item_date">
-              30.11.2022
-            </span>
-          </div>
-        </a>
-      </div>
-  
-      <div class="ag-grupos_item">
-        <a href="#" class="ag-grupo-item_link">
-          <div class="ag-courses-item_bg"></div>
-          <div class="ag-grupo-autor-item_title">
-            José Alfredo UnNombreMuyLargo Jimenez
-          </div>
-          <div class="ag-courses-item_title">
-            Front-end development&#160;+ jQuery&#160;+ CMS
-          </div>
-        </a>
-      </div>
-  
-      <div class="ag-grupos_item">
-        <a href="#" class="ag-grupo-item_link">
-          <div class="ag-courses-item_bg">
-          </div>
-          <div class="ag-courses-item_title">
-            Digital Marketing
-          </div>
-          <div class="ag-grupo-autor-item_title">
-            José Alfredo UnNombreMuyLargo Jimenez
-          </div>
-        </a>
-      </div>
-  
-      <div class="ag-grupos_item">
-        <a href="#" class="ag-grupo-item_link">
-          <div class="ag-courses-item_bg"></div>
-  
-          <div class="ag-courses-item_title">
-            Interior Design
-          </div>
-          <div class="ag-grupo-autor-item_title">
-            José Alfredo UnNombreMuyLargo Jimenez
-          </div>
-          <div class="ag-courses-item_date-box">
-            Start:
-            <span class="ag-courses-item_date">
-              31.10.2022
-            </span>
-          </div>
-        </a>
-      </div>
+      </div>    -->
   
     </div>
-    
-
   </div>
 </div>
 <ng-template  #GruposVacios>Esta un poco vacío esto... <br>  Crea un grupo  <app-FooterCrear (click)="CrearGrupoDialog()">+</app-FooterCrear></ng-template>
-
+<app-FooterCrear (click)="CrearGrupoDialog()" style="z-index: 100; position: sticky; bottom: -42.5%; right: 32.5%;">+</app-FooterCrear>
 </section>
 
 

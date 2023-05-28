@@ -1,0 +1,11 @@
+<mat-card style="width: 500px;">
+    <mat-card-content>
+      <H2>¡Felicidades!<br></H2>
+      <H3>Clase finalizada.<br></H3>
+      <div style="text-align: center; margin-left: 100px; margin-right: 100px;">
+        <div >Bien, has obtenido {{cargar()}}xp, sigue así.</div>
+        <button mat-raised-button style="width:200px" color="accent" mat-dialog-close onClick="window.location.reload();">¿Reproducir de nuevo la clase?</button><br><br>
+        <button mat-raised-button style="width:200px" color="accent" mat-dialog-close routerLink="/Alumno/Inicio">  Ir al inicio  </button>
+      </div>
+    </mat-card-content>
+  </mat-card>

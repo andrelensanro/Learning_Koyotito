@@ -1,165 +1,107 @@
 <main style="height: 78vh;">
   <app-HeaderSidebarT></app-HeaderSidebarT>
   <app-BarraBusquedas></app-BarraBusquedas>
-  <app-navBar1></app-navBar1>   <!--2°do header-->
 
-
-<div class="ag-format-container" style="overflow: scroll;height: 95%; width: 90%;">
-  <div class="ag-courses_box">
-    <div class="ag-courses_item">
-      <a href="/BusquedasT" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          Clase de matematicas
-        </div>
-        <div class="ag-autor-item_title">
-          José Alfredo UnNombreMuyLargo Jimenez
-        </div>
-        <div class="ag-courses-item_Vistas-box">
-          Vistas:
-          <span class="ag-courses-item_Vistas">
-            80
-          </span>
-        </div>
-        <div class="ag-courses-item_date-box">
-          Likes:
-          <span class="ag-courses-item_date">
-            80
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="/BusquedasT" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          Ciencias
-        </div>
-        <div class="ag-autor-item_title">
-          José Alfredo UnNombreMuyLargo Jimenez
-        </div>
-        <div class="ag-courses-item_date-box">
-          Start:
-          <span class="ag-courses-item_date">
-            04.11.2022
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="/BusquedasT" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          Annual package "Product+UX/UI+Graph designer&#160;2022"
-        </div>
-        <div class="ag-autor-item_title">
-          José Alfredo UnNombreMuyLargo Jimenez
-        </div>
-        <div class="ag-courses-item_date-box">
-          Start:
-          <span class="ag-courses-item_date">
-            04.11.2022
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="/BusquedasT" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          Graphic Design
-        </div>
-        <div class="ag-autor-item_title">
-          José Alfredo UnNombreMuyLargo Jimenez
-        </div>
-        <div class="ag-courses-item_date-box">
-          Start:
-          <span class="ag-courses-item_date">
-            04.11.2022
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="/BusquedasT" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-autor-item_title">
-          José Alfredo UnNombreMuyLargo Jimenez
-        </div>
-        <div class="ag-courses-item_title">
-          Motion Design
-        </div>
-
-        <div class="ag-courses-item_date-box">
-          Start:
-          <span class="ag-courses-item_date">
-            30.11.2022
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="/BusquedasT" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-autor-item_title">
-          José Alfredo UnNombreMuyLargo Jimenez
-        </div>
-        <div class="ag-courses-item_title">
-          Front-end development&#160;+ jQuery&#160;+ CMS
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="/BusquedasT" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg">
-        </div>
-        <div class="ag-courses-item_title">
-          Digital Marketing
-        </div>
-        <div class="ag-autor-item_title">
-          José Alfredo UnNombreMuyLargo Jimenez
-        </div>
-      </a>
-    </div>
-
-    <div class="ag-courses_item">
-      <a href="/BusquedasT" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
-
-        <div class="ag-courses-item_title">
-          Interior Design
-        </div>
-        <div class="ag-autor-item_title">
-          José Alfredo UnNombreMuyLargo Jimenez
-        </div>
-        <div class="ag-courses-item_date-box">
-          Start:
-          <span class="ag-courses-item_date">
-            31.10.2022
-          </span>
-        </div>
-      </a>
-    </div>
-
+Elige un tema de tu interés
+<section id="Izquierdo">
+  <div class="ag-format-container" style="overflow: scroll;height: 104%; width: 95%;">
+    <div class="ag-courses_box">
+  <div class="ag-courses_item">
+    <a routerLink="/Tutor/Clases"  value="matematicas" (click)="SelClase('matematicas')" class="ag-courses-item_link">
+      <div class="matematicas"><div class="ag-courses-item_bg"></div></div>
+      <div class="ag-courses-item_title" style="text-align: center;height: 150px;">
+        <br><br><br> Matemáticas
+      </div>
+    </a>
   </div>
-  
+
+  <div class="ag-courses_item">
+    <a routerLink="/Tutor/Clases"  value="espanol" (click)="SelClase('espanol')" class="ag-courses-item_link">
+      <div class="ag-courses-item_title" style="text-align: center;height: 150px;">
+        <br><br><br> Español
+      </div>
+    </a>
+  </div>
+
+  <div class="ag-courses_item">
+    <a routerLink="/Tutor/Clases"  value="ingles" (click)="SelClase('ingles')" class="ag-courses-item_link">
+      <div class="ingles"><div class="ag-courses-item_bg"></div></div>
+      <div class="ag-courses-item_title" style="text-align: center;height: 150px;">
+        <br><br><br> Inglés
+      </div>
+    </a>
+  </div>
+
+  <div class="ag-courses_item">
+    <a routerLink="/Tutor/Clases"  value="artes" (click)="SelClase('artes')" class="ag-courses-item_link">
+      <div class="artes"><div class="ag-courses-item_bg"></div></div>
+      <div class="ag-courses-item_title" style="text-align: center;height: 150px;">
+        <br><br><br> Artes
+      </div>
+    </a>
+  </div>
+
+  <div class="ag-courses_item">
+    <a routerLink="/Tutor/Clases"  value="logica" (click)="SelClase('logica')" class="ag-courses-item_link">
+      <div class="logica"><div class="ag-courses-item_bg"></div></div>
+      <div class="ag-courses-item_title" style="text-align: center;height: 150px;">
+        <br><br><br> Lógica y razonamiento
+      </div>
+    </a>
+  </div>
+
+  <div class="ag-courses_item">
+    <a routerLink="/Tutor/Clases"  value="ciencias" (click)="SelClase('ciencias')" class="ag-courses-item_link">
+      <div class="ciencias"><div class="ag-courses-item_bg"></div></div>
+      <div class="ag-courses-item_title" style="text-align: center;height: 150px;">
+        <br><br><br> Conocimientos naturales
+      </div>
+    </a>
+  </div>
 
 
 </div>
+
+</div>
+</section>
+
+<section id="Derecha">
+  <div *ngIf="greaterThan(8); else GruposVacios">
+    <div class="ag-format-container" style="height: 104%; width: 95%;">
+      <div class="ag-courses_box">
+    
+        <div class="ag-grupos_item">
+          <a href="/GrupoEsp" class="ag-courses-item_link">
+            <div class="grupo"><div class="ag-courses-item_bg"></div></div>
+            <div class="ag-courses-item_title">
+              Grupo 1 <br>
+
+            </div>
+            <div class="ag-autor-item_title">
+              Tutorado: Alguien   <br>
+              Maestro:  Alguien   <br>
+              Institución:  Un lugar<br><br><br><br>
+            </div>
+            <div class="ag-courses-item_Vistas-box">
+              Integrantes:
+              <span class="ag-courses-item_Vistas">
+                30
+              </span>
+            </div>
+          </a>
+        </div>
+          
+      </div>
+    </div>
+  </div>
+  <ng-template  #GruposVacios>No está asociado con ningún grupo, contacte a algún docente para que lo invite.</ng-template>
+  
+</section>
+
 <div class='air air1  Iborroso' style="z-index: 1;"></div>
 <div class='air air2  Iborroso' style="z-index: 1;"></div>
 <div class='air air3  Iborroso' style="z-index: 1;"></div>
 <div class='air air4  Iborroso' style="z-index: 1;"></div>	
-<app-Footer style="z-index: 20; position: fixed; right: 36%; bottom: -25%;"></app-Footer>
+<app-Footer style="z-index: 20; position: fixed; right: 36%; bottom: -25%;" routerLink="/Tutor/Clases" (click)="SelClase('Te recomendamos')"></app-Footer>
 
 </main>

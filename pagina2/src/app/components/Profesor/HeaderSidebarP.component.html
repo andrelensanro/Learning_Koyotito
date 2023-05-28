@@ -18,8 +18,8 @@
       <form action="#do-something" method="get">
         <p>¿Cerrar sesión?</p>
         <div class="options">
-            <button class="btn si">Si</button>
-            <button class="btn no" href="#popup1">No</button>
+            <button class="btn si" routerLink="/home">Si</button>
+            <button class="btn no" close>No</button>
           </div>
       </form>
     </div>
@@ -33,8 +33,9 @@
 <a routerLink="/MeGustaP"><mat-icon>thumb_up_alt</mat-icon>  Clases que me gustan</a>
 <a routerLink="/HistorialP"><mat-icon>history</mat-icon>  Historial  </a>
 <a routerLink="/Grupos"><mat-icon>group</mat-icon>  Grupos  </a>
-<a href="#"><mat-icon>collections</mat-icon>  Mi multimedia.  </a>
-<a href="#"><mat-icon>delete_outline</mat-icon>  Papelera.  </a>
-<a routerLink="DenunciasP"><mat-icon>report_problem</mat-icon>  Denuncias</a>
+<!--<a href="#"><mat-icon>collections</mat-icon>  Mi multimedia.  </a>
+<a href="/Papelera"><mat-icon>delete_outline</mat-icon>  Papelera.  </a>-->
+<a routerLink="/Profesor/Denuncias"><mat-icon>report_problem</mat-icon>  Denuncias</a>
+<a routerLink="/MisClases"><mat-icon>M</mat-icon>  Mis clases</a>
 </nav>
 

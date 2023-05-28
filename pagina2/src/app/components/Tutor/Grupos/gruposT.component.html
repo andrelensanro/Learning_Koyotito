@@ -3,7 +3,7 @@
     <h1 style="white-space: nowrap;">Grupos 
       <label>
         <div class="content-wrapper" id="popup1">
-          <a style="float: right;"  class="notification">
+          <a style="position: absolute; right: 20px; top: 10%;" class="notification">
             <mat-icon matBadge="5" matBadgeColor="warn">notifications</mat-icon>
             </a>
         <input type="checkbox" />
@@ -26,14 +26,14 @@
     <div class="ag-format-container" style="overflow: scroll;height: 104%; width: 95%;">
     <div class="ag-courses_box">
       <div class="ag-courses_item">
-        <a routerLink="/GrupoEsp" class="ag-courses-item_link">
+        <a routerLink="/Tutor/Clases" (click)="SelClase('Grupo 1')" class="ag-courses-item_link">
           <div class="ag-courses-item_bg"></div>
   
           <div class="ag-courses-item_title">
-            Grupo 1
-          </div>
-          <div class="ag-autor-item_title">
-            dd/mm/aa
+            Grupo 1 <br>
+            Tutorado: Alguien   <br>
+            Maestro:  Alguien   <br>
+            Institución:  Un lugar<br><br><br><br>
           </div>
           <div class="ag-courses-item_Vistas-box">
             Integrantes:

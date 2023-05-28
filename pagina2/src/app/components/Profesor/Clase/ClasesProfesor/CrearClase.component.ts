@@ -1,17 +1,30 @@
 import { HttpClient, HttpEventType, HttpResponse } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
+import { of,Observable } from "rxjs";
 import { CrearClaseService } from "./CrearClase.service";
 import { FormControl } from "@angular/forms";
+import { GuardarClaseComponent } from "./GuardarClase.component";
+import { MatDialog } from "@angular/material/dialog";
 
+
+interface Leng {
+  valor: string;
+  viewValue: string;
+}
+var ImgHidden = false;
 @Component({
     selector: 'app-CrearClase',
     templateUrl: "./CrearClase.component.html",
-    styleUrls: ['./CrearClase.component.scss']
+    styleUrls: ['./CrearClase.component.scss','../../FondoP.component.scss']
   })
   
-  export class CrearClaseComponent implements OnInit{
-  
+  export class CrearClaseComponent{
+    idiomas: Leng[] = [
+
+      {valor: 'esp-1', viewValue: 'Español'},
+      {valor: 'eng-2', viewValue: 'Inglés'},
+    ];
+    selectedFood = this.idiomas[1].valor;
   selectedFiles?: FileList;
   selectedFileNames: string[] = [];
 
@@ -21,76 +34,72 @@ import { FormControl } from "@angular/forms";
   previews: string[] = [];
   imageInfos?: Observable<any>;
 
-  constructor(private uploadService: CrearClaseService) { }
-    
-
-    selectFiles(event: any): void {
-      this.message = [];
-      this.progressInfos = [];
-      this.selectedFileNames = [];
-      this.selectedFiles = event.target.files;
-    
-      this.previews = [];
-      if (this.selectedFiles && this.selectedFiles[0]) {
-        const numberOfFiles = this.selectedFiles.length;
-        for (let i = 0; i < numberOfFiles; i++) {
-          const reader = new FileReader();
-    
-          reader.onload = (e: any) => {
-            console.log(e.target.result);
-            this.previews.push(e.target.result);
-          };
-    
-          reader.readAsDataURL(this.selectedFiles[i]);
-    
-          this.selectedFileNames.push(this.selectedFiles[i].name);
-        }
-      }
-    }
-    uploadFiles(): void {
-      this.message = [];
-    
-      if (this.selectedFiles) {
-        for (let i = 0; i < this.selectedFiles.length; i++) {
-          this.upload(i, this.selectedFiles[i]);
-        }
-      }
-    }
-    upload(idx: number, file: File): void {
-      this.progressInfos[idx] = { value: 0, fileName: file.name };
-    
-      if (file) {
-        const formData = new FormData();
-        formData.append('file', file);
-        this.uploadService.uploadFiles(formData).subscribe(
-          (event: any) => {
-            if (event.type === HttpEventType.UploadProgress) {
-              this.progressInfos[idx].value = Math.round(100 * event.loaded / event.total);
-            } else if (event instanceof HttpResponse) {
-              const msg = 'Uploaded the file successfully: ' + file.name;
-              this.message.push(msg);
-             // this.imageInfos = this.uploadService.getFiles();
-            }
-          },
-          (err: any) => {
-            this.progressInfos[idx].value = 0;
-            const msg = 'Could not upload the file: ' + file.name;
-            this.message.push(msg);
-          });
-      }
-    }
-    ngOnInit(): void {
-     // this.imageInfos = this.uploadService.getFiles();
-    }
 
     grupos = new FormControl('');
 
   ListaGrupo: string[] = ['Grupo 1', 'Grupo 2', 'Grupo 3', 'Grupo 4', 'Grupo 5', 'Grupo 6'];
-
-
-
     
     datos = new Tarjeta(); 
+    itemsAsObjects = [{id: 0, name: 'Clase', readonly: true}];
+
+    autocompleteItemsAsObjects = [
+      {value: 'Ciencias', id: 0},
+      {value: 'Matemáticas', id: 1},
+      {value: 'Historia', id: 2},
+      {value: 'Vocabulario', id: 3},
+      {value: '1', id: 4},
+      {value: '2', id: 5},
+      {value: '3', id: 6},
+      {value: 'Básico', id: 7},
+      {value: 'Intermedio', id: 8},
+      {value: 'Difícil', id: 9},
+  ];
+
+  public imagePath;
+  imgURL: any;
+  public message1!: string;
+ 
+  preview(files) {
+    if (files.length === 0)
+      return;
+ 
+    var mimeType = files[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      this.message1 = "Only images are supported.";
+      return;
+    }
+ 
+    var reader = new FileReader();
+    this.imagePath = files;
+    reader.readAsDataURL(files[0]); 
+    reader.onload = (_event) => { 
+      this.imgURL = reader.result;
+      console.log(this.imagePath);
+    }
+  }
+
+
+  vacio(files){
+    console.log("Vacio: "+ files);
+    if (files.length === 0){
+      ImgHidden=true;
+      console.log("Vacio 2: "+ files);
+    }else{
+      console.log("Falso");
+    }
+  }
+
+
+  constructor(public dialog: MatDialog){
+
+  }
+
+
+  GuardarDialog(): void{
+    const dialogRef = this.dialog.open(GuardarClaseComponent, { disableClose: true
+      //  data: {name: this.name},
+      });
+  }
 }
 
 
