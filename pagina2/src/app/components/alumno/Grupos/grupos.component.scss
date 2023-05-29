@@ -1,0 +1,339 @@
+
+/******************** Tarjetas  ***********************/
+.ag-format-container {
+    width: 1142px;
+    margin: 0 auto;
+  }
+  
+  
+  
+  .ag-courses_box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  
+    padding: 20px 0;        /* Espacio entre el segundo header y los cuadros*/
+  }
+  .ag-courses_item {
+    -ms-flex-preferred-size: calc(33.3333% - 30px);
+    flex-basis: calc(33.3333% - 30px);
+  
+    margin: 0 15px 30px;
+  
+    overflow: hidden;
+  
+    border-radius: 28px;
+  }
+  .ag-courses-item_link {
+    display: block;
+    padding: 20px 20px;
+    background-color: #121212;
+  
+    overflow: hidden;
+  
+    position: relative;
+  }
+  .ag-courses-item_link:hover,
+  .ag-courses-item_link:hover .ag-courses-item_date,
+  .ag-courses-item_link:hover .ag-courses-item_Vistas {
+    text-decoration: none;
+    color: #FFF;
+  }
+  .ag-courses-item_link:hover .ag-courses-item_bg {
+    -webkit-transform: scale(10);
+    -ms-transform: scale(10);
+    transform: scale(10);
+  }
+  .ag-courses-item_title {
+  
+    overflow: hidden;
+  
+    font-weight: bold;
+    font-size: 20px;
+    color: #FFF;
+  
+    z-index: 2;
+    position: relative;
+  }
+  .ag-autor-item_title {
+    min-height: 87px;
+  
+    overflow: hidden;
+  
+    font-weight: bold;
+    font-size: 15px;
+    color: #FFF;
+  
+    z-index: 2;
+    position: relative;
+  }
+  .ag-courses-item_Vistas-box {
+    font-size: 18px;
+    color: #FFF;
+  
+    z-index: 2;
+    position: relative;
+  }
+  .ag-courses-item_Vistas {
+    font-weight: bold;
+    color: #f9b234;
+  
+    -webkit-transition: color .5s ease;
+    -o-transition: color .5s ease;
+    transition: color .5s ease
+  }
+  .ag-courses-item_date-box {   /* Cambiar date por like */
+    font-size: 18px;
+    color: #FFF;
+  
+    z-index: 2;
+    left: 72%;
+    position: relative;
+  }
+  .ag-courses-item_date {
+    font-weight: bold;
+    color: #f9b234;
+  
+    -webkit-transition: color .5s ease;
+    -o-transition: color .5s ease;
+    transition: color .5s ease
+  }
+  .ag-courses-item_bg {
+    height: 128px;
+    width: 128px;
+    background-color: #f9b234;
+  
+    z-index: 1;
+    position: absolute;
+    top: -75px;
+    right: -75px;
+  
+    border-radius: 50%;
+  
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+  }
+  @media only screen and (max-width: 979px) {
+    .ag-courses_item {
+      -ms-flex-preferred-size: calc(33.3333% - 30px);
+      flex-basis: calc(33.3333% - 30px);
+    }
+    .ag-courses-item_title {
+      font-size: 24px;
+    }
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .ag-format-container {
+      width: 96%;
+    }
+  
+  }
+  @media only screen and (max-width: 639px) {
+    .ag-courses_item {
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+    }
+    .ag-courses-item_title {
+      min-height: 72px;
+      line-height: 1;
+  
+      font-size: 24px;
+    }
+    .ag-courses-item_link {
+      padding: 22px 40px;
+    }
+    .ag-courses-item_date-box {
+      font-size: 16px;
+    }
+    .ag-courses-item_Vistas-box {
+      font-size: 16px;
+    }
+  }
+  
+  
+  
+  
+  .notification {
+
+    color: white;
+    text-decoration: none;
+    padding: 15px 26px;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+    }
+  
+    .notification .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+    }
+
+
+
+
+
+/* Cerrar sesión PopUp */
+
+input[type=checkbox] {
+  display: none;
+}
+
+p, button, .btn {
+  font-size: 20px;
+}
+
+button {
+  outline: none !important;
+}
+
+/* Wraps everyting, nothing special */
+.content-wrapper {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+/* helper */
+.visuallyhidden { border:0; clip:rect(0 0 0 0);	height:1px; margin:-1px; overflow:hidden; padding:0; position:absolute; width:1px; }
+
+/* misc */
+/*body { overflow-x: hidden; background: #444; color: white; font: 1em/1.4 "lato"; }*/
+
+
+/*
+  The sort of button-ish thingy.
+  It should be wrapped by a label and
+  should be followed by the checkbox.
+*/
+.btn {
+  color:inherit;
+    font-family:inherit;
+  font-size: inherit;
+  background: white;
+  padding: 0.3rem 3.4rem;
+  border: 3px black; //solid
+  margin-right: 2.6rem;
+  box-shadow: 0 0 0 black;
+  transition: all 0.2s;
+}
+
+.btn:last-child {
+  margin: 0;
+}
+
+.btn:hover {
+
+  box-shadow: 0.4rem 0.4rem 0 black;
+  transform: translate(-0.4rem, -0.4rem);
+}
+.si:hover {
+  background-color: rgb(12, 75, 192);
+}
+.no:hover {
+  background-color: red;
+}
+.btn:active {
+  box-shadow: 0 0 0 black;
+  transform: translate(0, 0);
+}
+/*
+  The modal background (the dark-ish overlay),
+  which obviously could be a class instead of a form.
+  
+  For scroll to work as expected, the position is absolute,
+  as position: fixed would not allow the page to scroll when the screen isn't tall enough.
+*/
+.confirm-modal {
+  display: block;
+  pointer-events: none;
+  .btn {
+    width: auto;
+    max-width: auto;
+    margin: auto;
+  }
+  
+  &::before {
+    /*
+      The shadow/backdrop which also is clickable to close the modal.
+    */
+    content: "";
+    display: block;
+    background-color: rgba(0,0,0,0.4);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 200px;
+    z-index: 1020;
+    opacity: 1;
+    pointer-events: all;
+  }
+  form {
+    /*
+      The actual modal.
+
+      Note: to not have clicks inside the modal
+      bleed through to the label (which would uncheck the checkbox),
+      pointer-events are set to none on the modal.
+    */
+    position: absolute;
+    z-index: 5000;
+    top: 50px;
+    transition: transform 0s;
+    max-width: 90%;
+    width: 450px;
+    background-color: #fafafa;
+    padding: 20px;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.2);
+    color: #080808;
+    border-radius: 5px;
+    pointer-events: none;
+  }
+}
+
+/* Hide the modal when the checkbox isn't checked. */
+input:not(:checked) + .confirm-modal {
+  /* Uncomment this for a sharper switch, which might work better on older browsers. */
+  /* display: none; */
+  
+  /*
+    Might be wonky on older browsers, but allows for the fly down.
+    Also does the fade in.
+  */
+  &, & * {
+    opacity: 0; 
+  }
+  &::before {
+    height: 0;
+    width: 0;
+  }
+}
+
+/* For that cute little fly down effect */
+input:not(:checked) + .confirm-modal form {
+  transform: translate(-50%, -100px);
+}
+
+/* Allow buttons to be clickable. */
+.confirm-modal button {
+  pointer-events: all;
+}
+
+
+
+
+

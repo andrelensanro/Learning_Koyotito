@@ -1,0 +1,35 @@
+
+<mat-card class="center">
+    <style>
+        .center {
+            position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+  width: 50%;
+  border: 3px solid rgb(197, 73, 170);
+
+}
+    </style>
+    <mat-card-content><h1>Recuperar contraseña</h1>
+        <div style="color:Grey;"> La cuenta se podrá recuperar correctamente si el correo que proporciona tiene una cuenta en Koyotito.</div>
+        <br>
+        <h2>Ingrese su correo eléctronico.</h2>
+        <mat-form-field appearance="fill">  
+        <input name="rec_corr" matInput type="email" placeholder="email@algo.algomas">
+        </mat-form-field>
+        <br>
+        <div class="example-button-row">
+            <style>
+                .example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+            </style>
+            <button type="submit" mat-raised-button color="primary" (click)="this.Correcto()" routerLink="/reestablecimiento">Correcto</button>
+            <button mat-flat-button color="warn" (click)="Error()">Erroneo</button>
+        </div>
+    </mat-card-content>
+    
+  </mat-card>

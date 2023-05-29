@@ -1,0 +1,240 @@
+<app-HeaderSidebarP></app-HeaderSidebarP>
+<main style="height: 80vh">
+    <div class="form-group Derecha">
+      <div class="panel panel-primary">
+        <div class="example-container">
+          <mat-form-field>
+            <mat-label>Título de la clase</mat-label>
+            <input matInput name="tit_cls">
+          </mat-form-field>&nbsp;&nbsp;
+          <mat-form-field>
+            <mat-label>Idioma</mat-label>
+            <mat-select  name="idioma">
+              <mat-option *ngFor="let idioma of idiomas" [value]="idioma.valor">
+                {{idioma.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        
+        <div>
+          <h3>Ingresa algunas etiquetas (Máx. 2)</h3>
+          <tag-input [(ngModel)]="itemsAsObjects"
+              [maxItems]="3"
+              [displayBy]="'name'"
+                         [onlyFromAutocomplete]="true">
+                  <tag-input-dropdown [showDropdownIfEmpty]="true"
+                                      [focusFirstElement]="true"
+                                      [displayBy]="'value'"
+                                      [identifyBy]="'id'"
+                                      [autocompleteItems]="autocompleteItemsAsObjects">
+                      <ng-template let-item="item" let-index="index">
+                          {{ item.value }}
+                      </ng-template>
+                  </tag-input-dropdown>
+          </tag-input>
+        </div>
+         　<br>
+            <div style="align-content: center;">
+              <mat-form-field style="width: 350px;">
+              <mat-label><mat-icon>portrait</mat-icon>Autor</mat-label>
+              <input matInput name="nomb_autor" value="Alejandro Jiménez" requiered>
+              </mat-form-field>
+            </div>
+            <div style="align-content: center;">
+              <mat-form-field style="width: 350px;">
+              <mat-label><mat-icon>school</mat-icon>Escuela</mat-label>
+              <input matInput  name="esc_Prof" value="Escuela técnica del kinder" requiered>
+              </mat-form-field>
+            </div>
+            <div style="align-content: center;">
+              <mat-form-field style="width: 350px;">
+              <mat-label><mat-icon>mail</mat-icon>Correo de contacto</mat-label>
+              <input matInput name="mail_cont" value="CorreoDeContacto@mensaje.com.mx" requiered>
+              </mat-form-field>
+            </div>
+        </div>
+        <button mat-raised-button color="primary" style="z-index: 10;  background-color: green;">Actualizar </button>
+        <button mat-raised-button color="primary" style="left:200px; z-index: 10; background-color: red;" >Eliminar</button>
+    </div>
+
+<h1>Crear clase</h1>
+<div class="form-container">
+  <form action="" role="form">
+    <input id='step2' type='checkbox'>
+    <input id='step3' type='checkbox'>
+    <input id='step4' type='checkbox'>
+    <input id='step5' type='checkbox'>
+
+    <div id="part1" #part1 class="form-group Izquierdo">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Página 1</h3>
+        </div>
+        <div class="example-container">
+          <mat-form-field style="width: 35%; padding: 0px 75px">
+            <mat-label>Instrucción de la clase</mat-label>
+            <input matInput name="tit_cls">
+          </mat-form-field>
+          <mat-form-field style="width: 35%;">
+            <mat-label>Resultado de la clase</mat-label>
+            <input matInput name="tit_cls">
+          </mat-form-field>
+          </div>
+
+
+        <span style="color:red;" *ngIf="message1">{{message1}}</span>
+        <input #file1 type="file" accept='image/*' (change)="preview(file1.files)" />
+        <img [src]="imgURL" height="200" *ngIf="imgURL">
+
+
+        <div id="arrow_1" class="arrow-wrapper">
+          <div class="btn-group btn-group-lg" role="group" aria-label="...">
+            <label for='step2' id="continue-step2" class="continue">
+              <div class="arrow arrow--right" (click)="preview(file2.files)" role="button"><span></span></div>
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="part2" class="form-group Izquierdo">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Página 2</h3>
+        </div>
+        <div class="example-container">
+          <mat-form-field style="width: 35%; padding: 0px 75px">
+            <mat-label>Instrucción de la clase</mat-label>
+            <input matInput name="tit_cls">
+          </mat-form-field>
+          <mat-form-field style="width: 35%;">
+            <mat-label>Resultado de la clase</mat-label>
+            <input matInput name="tit_cls">
+          </mat-form-field>
+          </div>
+
+<span style="color:red;" *ngIf="message1">{{message1}}</span>
+<input #file2 type="file" accept='image/*' (change)="preview(file2.files)" />
+<img [src]="imgURL" height="200" *ngIf="imgURL">
+
+<div id="arrow_1" class="arrow-wrapper">
+        <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
+          <label for='step2' id="back-step2" class="back">
+            <div class="arrow arrow--left" (click)="preview(file1.files)" role="button"><span></span></div>
+           </label>
+          <label for='step3' id="continue-step3" class="continue">
+            <div class="arrow arrow--right" (click)="preview(file3.files)" role="button"><span></span></div>
+          </label>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="part3" class="form-group Izquierdo">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Página 3</h3>
+          </div>
+          <div class="example-container">
+            <mat-form-field style="width: 35%; padding: 0px 75px">
+              <mat-label>Instrucción de la clase</mat-label>
+              <input matInput name="tit_cls">
+            </mat-form-field>
+            <mat-form-field style="width: 35%;">
+              <mat-label>Resultado de la clase</mat-label>
+              <input matInput name="tit_cls">
+            </mat-form-field>
+            </div>  
+          <span style="color:red;" *ngIf="message1">{{message1}}</span>
+          <input #file3 type="file" accept='image/*' (change)="preview(file3.files)" />
+          <img [src]="imgURL" height="200" *ngIf="imgURL">
+
+          <div id="arrow_1" class="arrow-wrapper">
+          <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
+  
+            <label for='step3' id="back-step3" class="back">
+              <div class="arrow arrow--left" (click)="preview(file2.files)" role="button"><span></span></div>
+            </label>
+            <label for='step4' id="continue-step4" class="continue">
+              <div class="arrow arrow--right" (click)="preview(file4.files)" role="button"><span></span></div>
+            </label>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      
+      <div id="part4" class="form-group Izquierdo">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Página 4</h3>
+          </div>
+          <div class="example-container">
+            <mat-form-field style="width: 35%; padding: 0px 75px">
+              <mat-label>Instrucción de la clase</mat-label>
+              <input matInput name="tit_cls">
+            </mat-form-field>
+            <mat-form-field style="width: 35%;">
+              <mat-label>Resultado de la clase</mat-label>
+              <input matInput name="tit_cls">
+            </mat-form-field>
+            </div>
+          
+          <span style="color:red;" *ngIf="message1">{{message1}}</span>
+          <input #file4 type="file" accept='image/*' (change)="preview(file4.files)" />
+          <img [src]="imgURL" height="200" *ngIf="imgURL">
+
+          <div id="arrow_1" class="arrow-wrapper">          
+          <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
+            <label for='step4' id="back-step4" class="back">
+              <div class="arrow arrow--left" (click)="preview(file3.files)" role="button"><span></span></div>
+            </label>
+            <label for='step5' id="continue-step5" class="continue">
+              <div class="arrow arrow--right" (click)="preview(file5.files)" role="button"><span></span></div>
+            </label>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+      <div id="part5" class="form-group Izquierdo">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Página 5</h3>
+          </div>
+          <div class="example-container">
+            <mat-form-field style="width: 35%; padding: 0px 75px">
+              <mat-label>Instrucción de la clase</mat-label>
+              <input matInput name="tit_cls">
+            </mat-form-field>
+            <mat-form-field style="width: 35%;">
+              <mat-label>Resultado de la clase</mat-label>
+              <input matInput name="tit_cls">
+            </mat-form-field>
+            </div>
+          
+          <span style="color:red;" *ngIf="message1">{{message1}}</span>
+          <input #file5 type="file" accept='image/*' (change)="preview(file5.files)" />
+          <img [src]="imgURL" height="200" *ngIf="imgURL">
+
+          <div id="arrow_1" class="arrow-wrapper">
+          <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
+
+            <label for='step5' id="back-step5" class="back">
+              <div class="arrow arrow--left" (click)="preview(file4.files)" role="button"><span></span></div>
+            </label>
+          </div>
+        </div>
+        </div>
+      </div>
+  </form>
+</div>
+
+<div class='air air1  Iborroso' style="z-index: 1;"></div>
+<div class='air air2  Iborroso' style="z-index: 1;"></div>
+<div class='air air3  Iborroso' style="z-index: 1;"></div>
+<div class='air air4  Iborroso' style="z-index: 1;"></div>	    
+</main>

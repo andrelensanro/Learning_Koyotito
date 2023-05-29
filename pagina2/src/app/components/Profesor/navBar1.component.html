@@ -1,0 +1,26 @@
+<!--<mat-toolbar class="navbar" style="background-color: transparent; position: relative;">
+    <mat-toolbar-row>
+        <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
+            <mat-button-toggle value="red">Título de la clase</mat-button-toggle>
+            <mat-button-toggle value="green">Autor</mat-button-toggle>
+            <mat-button-toggle value="blue">Institución</mat-button-toggle>
+            <mat-button-toggle value="blue">Tags</mat-button-toggle>
+          </mat-button-toggle-group>
+
+          <mat-icon>search</mat-icon>
+          <mat-form-field c>
+              <input type="tel" matInput placeholder="Search">
+              </mat-form-field>
+    </mat-toolbar-row>
+</mat-toolbar>-->
+
+
+<mat-toolbar class="navbar" style="background-color: transparent; ">
+    <mat-toolbar-row>
+
+          <mat-form-field c>
+              </mat-form-field>
+              <button mat-flat-button color="primary" routerLink="/CrearClase">Crear clase</button>
+              <a mat-raised-button color="warn" (click)="openDialog()">Cerrar sesión</a>
+              <mat-icon>notifications</mat-icon>
+    </mat-toolbar-row>

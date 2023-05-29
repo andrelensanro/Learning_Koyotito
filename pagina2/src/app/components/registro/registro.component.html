@@ -1,0 +1,48 @@
+<form>
+<mat-card>
+  <mat-card-content>
+    <H2>Hola, necesitamos algunos datos tuyos<br></H2>
+  <mat-button-toggle-group requiered>
+    <mat-button-toggle value="Profesor" (click)="OpProf()" (click)="limpiar()"><mat-icon>school</mat-icon> Profesor</mat-button-toggle>
+    <mat-button-toggle value="Tutor" (click)="OpTut()" (click)="limpiar()"><mat-icon>person_outline</mat-icon> Tutor</mat-button-toggle>
+  </mat-button-toggle-group>
+  <br><br>
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre(s)</mat-label>
+    <input matInput name="nom_usu" requiered  [(ngModel)]='usuario.nombre'>
+  </mat-form-field><br>
+  <mat-form-field appearance="fill">
+    <mat-label>Apellido 1</mat-label>
+    <input matInput name="ape1"  [(ngModel)]='usuario.apellido1'>
+  </mat-form-field>  
+  <mat-form-field appearance="fill">
+    <mat-label>Apellido 2</mat-label>
+    <input matInput name="ape2" [(ngModel)]='usuario.apellido2'>
+  </mat-form-field><br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Institución</mat-label>
+    <input matInput [disabled]='profesor' [(ngModel)]='usuario.instPseudonimo' name="inst" >
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Pseudonimo del alumno</mat-label>
+    <input matInput name="pseud" [disabled]='pseudonimo' title="El nombre que tendrá su tutorado, será necesario tener al menos 1 para usar los servicios del sistema." [(ngModel)]='usuario.instPseudonimo'>
+  </mat-form-field><br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Correo</mat-label>
+    <input matInput name="email" type="email" [(ngModel)]='usuario.correo'>
+  </mat-form-field><br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Contraseña</mat-label>
+    <input matInput name="contra" type="password" [(ngModel)]='usuario.password'>
+  </mat-form-field><br>
+          <button type="submit" mat-raised-button color="primary"  role="button" (click)="guardarUsuario()"  >Registrarme.  </button>
+    <i class=" tim-icons icon-alert-circle-exc"> </i>
+
+
+</mat-card-content>
+</mat-card>
+</form>

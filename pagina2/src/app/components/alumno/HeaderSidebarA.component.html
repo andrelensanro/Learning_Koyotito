@@ -1,0 +1,50 @@
+<input type="checkbox" id="navcheck" role="button" title="menu"/>
+<label class="label" for="navcheck" aria-hidden="true" title="menu">
+  <span class="burger">
+    <span class="bar">
+      <span class="visuallyhidden">Menu</span>
+    </span>
+  </span>
+</label>
+
+
+
+
+		<ul class="skills skills2" style="position: relative; top: -4%; right: -35%;">
+			<li style=" --per: 70; width: 150px;"><span>Puntos</span></li>
+    </ul>
+    <ul class="skills skills2" style="position: relative; top: -14.5%; right: -50%;">
+			<li style=" --per: 20; width: 150px;"><span>Nivel</span></li>
+    </ul>
+
+
+
+
+  <button style="position: fixed; top: 0.1%; right: 20%;" routerLink="/ConfigT" mat-icon-button>
+    <mat-icon>settings</mat-icon>
+  </button>
+
+  <label>
+    <div class="content-wrapper" id="popup1">
+    <span class="btn" disable style="position: fixed; top: 1.5%; right: 2%; background-color: rgb(235, 31, 31);">Modo tutor</span>
+    <input type="checkbox" />
+    <div class="confirm-modal">
+      <form action="#do-something" method="get">
+        <p>¿Pasar a modo tutor?</p>
+        <div class="options">
+            <button class="btn si">Si</button>
+            <button class="btn no" href="#popup1">No</button>
+          </div>
+      </form>
+    </div>
+    </div>
+  </label>
+
+
+
+<nav id="menu">
+  
+<a href="/Alumno/Inicio"><mat-icon>home</mat-icon>  Inicio</a>
+<a href="/Alumno/Grupo"><mat-icon>group</mat-icon>  Grupos  </a>
+</nav>
+

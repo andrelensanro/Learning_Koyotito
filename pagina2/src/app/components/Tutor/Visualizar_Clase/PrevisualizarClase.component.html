@@ -1,0 +1,151 @@
+<app-HeaderSidebarT></app-HeaderSidebarT>
+<main style="height: 80vh">
+    <div class="form-group Derecha">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Matemáticas I </h3>
+            <div>
+                <h3>Tags within a form group</h3>
+                    <tag-input
+                    [ngModel]="['Matemáticas', '1°', 'Español']"
+                        [disable]="true"
+                         [removable]="false"
+                        [maxItems]="3">
+                    </tag-input>
+            </div>
+            <div style="align-content: center;">
+                <mat-icon>portrait</mat-icon>&nbsp;&nbsp;José Luis Rodríguez
+            </div>
+            <div style="align-content: center;">
+                <mat-icon>school</mat-icon>&nbsp;&nbsp;Escuela técnica Jardín de Niños: "Niños héroes".
+            </div>
+            <div style="align-content: center;">
+                <mat-icon>mail</mat-icon>&nbsp;&nbsp;MailDeContacto@profesor.com.nh.mx
+            </div>
+            <button class="btnOP" style="--clr:#39FF14;" (click)="this.MeGusta()" ><span><mat-icon>thumb_up_alt</mat-icon>  Me gusta</span><i></i></button><br>
+            <button class="btnOP" style="--clr:#FF44CC" (click)="AprobarDialog()"><span><mat-icon>done</mat-icon>  Aprobar.</span><i></i></button><br>  <button class="btnOP" style="--clr:#8A2BE2" (click)="DenunciaDialog()"><span><mat-icon>report_problem</mat-icon>  Denunciar</span><i></i></button><br>
+          </div>
+        </div>
+    </div>
+
+<!--    <dialog id="dialog">
+    <h2>¿Cuál es el motivo de su denuncia?</h2>
+    <mat-label>Motivo</mat-label>
+    <mat-select style="z-index: 20000;" multiple>
+    <option value="1">Texto erróneo</option>
+    <option value="2">Contenido inapropiado</option>
+    <option value="3">Imagen errónea</option>
+    <option value="4">No se distingue la imagen</option>
+</mat-select>
+    <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+</dialog>
+-->
+    
+<h1 class="page-header">Vista Previa</h1>
+<div class="form-container">
+  <form action="" role="form">
+    <input id='step2' type='checkbox'>
+    <input id='step3' type='checkbox'>
+    <input id='step4' type='checkbox'>
+    <input id='step5' type='checkbox'>
+
+    <div id="part1" class="form-group Izquierdo">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Página 1</h3>
+        </div>
+        
+        <img height="150" src="../../../../assets/Mt1.png" alt="Img1">
+        <div id="arrow_1" class="arrow-wrapper">
+          <div class="btn-group btn-group-lg" role="group" aria-label="...">
+            <label for='step2' id="continue-step2" class="continue">
+              <div class="arrow arrow--right" role="button"><span></span></div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="part2" class="form-group Izquierdo">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Página 2</h3>
+        </div>
+        <img height="150" src="../../../../assets/Mt2.png" alt="Img2">
+        <div id="arrow_1" class="arrow-wrapper">
+          <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
+            <label for='step2' id="back-step2" class="back">
+              <div class="arrow arrow--left" role="button"><span></span></div>
+             </label>
+            <label for='step3' id="continue-step3" class="continue">
+              <div class="arrow arrow--right" role="button"><span></span></div>
+            </label>
+          </div>
+          </div>
+      </div>
+    </div>
+
+    <div height="200" id="part3" class="form-group Izquierdo">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Página 3</h3>
+          </div>
+          <img height="150" src="../../../../assets/Mt3.png" alt="Img3">
+          <div id="arrow_1" class="arrow-wrapper">
+            <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
+              <label for='step3' id="back-step3" class="back">
+                <div class="arrow arrow--left" role="button"><span></span></div>
+               </label>
+              <label for='step4' id="continue-step4" class="continue">
+                <div class="arrow arrow--right" role="button"><span></span></div>
+              </label>
+            </div>
+            </div>
+        </div>
+      </div>
+
+      
+      <div height="200" id="part4" class="form-group Izquierdo">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Página 4</h3>
+          </div>
+          <img height="150" src="../../../../assets/Mt4.png" alt="Img4">
+          <div id="arrow_1" class="arrow-wrapper">
+            <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
+              <label for='step4' id="back-step4" class="back">
+                <div class="arrow arrow--left" role="button"><span></span></div>
+               </label>
+              <label for='step5' id="continue-step3" class="continue">
+                <div class="arrow arrow--right" role="button"><span></span></div>
+              </label>
+            </div>
+            </div>
+        </div>
+      </div>
+
+
+      <div id="part5" class="form-group Izquierdo">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Página 5</h3>
+          </div>
+          <img height="150" src="../../../../assets/Mt5.png" alt="Img5">
+          <div id="arrow_1" class="arrow-wrapper">
+            <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
+  
+              <label for='step5' id="back-step5" class="back">
+                <div class="arrow arrow--left" role="button"><span></span></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+  </form>
+</div>
+
+<div class='air air1  Iborroso' style="z-index: 1;"></div>
+<div class='air air2  Iborroso' style="z-index: 1;"></div>
+<div class='air air3  Iborroso' style="z-index: 1;"></div>
+<div class='air air4  Iborroso' style="z-index: 1;"></div>	    
+</main>
