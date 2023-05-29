@@ -72,6 +72,7 @@ import { GruposAComponent } from './components/alumno/Grupos/grupos.component';
 import { ClasesAComponent } from './components/alumno/Clases/Clases.component';
 import { PantallaFinAComponent } from './components/alumno/VerClase/PantallaFin.component';
 import { VerClaseAComponent } from './components/alumno/VerClase/VerClase.component';
+import { MediaComponent } from './media/media.component';
 
 @NgModule({
   declarations: [
@@ -124,10 +125,12 @@ import { VerClaseAComponent } from './components/alumno/VerClase/VerClase.compon
     GruposAComponent,
     ClasesAComponent,
     PantallaFinAComponent,
-    VerClaseAComponent
+    VerClaseAComponent,
+    MediaComponent
       ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,

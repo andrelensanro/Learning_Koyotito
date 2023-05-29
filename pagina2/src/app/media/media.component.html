@@ -1,0 +1,22 @@
+<p>media works!</p>
+<label for="image">Imagen</label>
+<input type="file" id="image" accept="image/*,video/*" (change)="upload($event)">
+<br>
+<label for="video">Video</label>
+<input type="file" id="video" accept="video/*" (change)="upload($event)">
+<br>
+<label for="audio">Audio</label>
+<input type="file" id="audio" accept="audio/*" (change)="upload($event)">
+
+<div *ngIf="url">
+    <img [src]="url" alt="">
+</div>
+
+<div *ngIf="url">
+    <video [src]="url" controls></video>
+</div>
+
+<div *ngIf="url2">
+    <audio [src]="url2" controls></audio>
+</div>
+

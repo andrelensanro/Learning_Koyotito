@@ -29,36 +29,43 @@ import { PrevisualizarClaseTComponent } from './components/Tutor/Visualizar_Clas
 import { GruposAComponent } from './components/alumno/Grupos/grupos.component';
 import { ClasesAComponent } from './components/alumno/Clases/Clases.component';
 import { VerClaseAComponent } from './components/alumno/VerClase/VerClase.component';
+import { MediaComponent } from './media/media.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'recpContra', component: RecuperarContraComponent},
   {path: 'reestablecimiento', component: ReestContraComponent},
-  {path: 'InicioProfesor', component: InicioProfComponent},
-    {path: 'CrearClase', component: CrearClaseComponent},
-    {path: 'Alumno/Inicio', component: InicioAlumnoComponent},
-    {path: 'ConfigP', component: ConfigPComponent},
-    {path: 'ConfigT', component: ConfigTComponent},
-    {path: 'InicioTutor', component: InicioTComponent},
-    {path: 'BusquedasT', component: BusquedasTComponent},
-    {path: 'InicioAlumno', component: InicioAlumnoComponent},
-    {path: 'Grupos', component: GruposComponent },
-    {path: 'GrupoEsp', component: GrupoEspComponent },
-    {path: 'GruposT', component: GruposTComponent },
-    {path: 'MeGustaP', component: MeGustaPComponent },
-    {path: 'HistorialP', component: HistorialPComponent },
-    {path: 'MisClases', component: MisClasesComponent },
-    {path: 'PreviewClaseP', component: PrevisualizarClaseComponent },
-    {path: 'VerClaseP', component: VerClaseComponent },
-    {path: 'Tutor/Clases', component: ClasesComponent },
-    {path: 'Tutor/PreviewClase', component: PrevisualizarClaseTComponent },
-    {path: 'Profesor/Denuncias', component: DenunciasPagComponent },
-    {path: 'Profesor/EditarClase', component: EditarClaseComponent },
-    {path: 'Profesor/PreviewMiClase', component: PrevisualizarMiClaseComponent },
-    {path: 'Alumno/Grupo', component: GruposAComponent },
-    {path: 'Alumno/Clases', component: ClasesAComponent },
-    {path: 'Alumno/ReproducirClase', component: VerClaseAComponent },
-    {path: '**', redirectTo: 'home'}
+
+  /*    http:localhost/idusuario/clase-crear/idclase     */
+  {path: 'alumno/inicio', component: InicioAlumnoComponent},
+  {path: 'alumno/ver-grupos', component: GruposAComponent }, 
+  {path: 'alumno/ver-clases', component: ClasesAComponent },
+  {path: 'alumno/reproducir-clase', component: VerClaseAComponent },
+
+  {path: 'tutor/config', component: ConfigTComponent},
+  {path: 'tutor/inicio', component: InicioTComponent},
+  {path: 'tutor/ver-grupos', component: GruposTComponent },
+  {path: 'tutor/ver-clases', component: ClasesComponent },
+  {path: 'tutor/previa-clase', component: PrevisualizarClaseTComponent },
+  
+  {path: 'koyotito/busquedas', component: BusquedasTComponent},
+  {path: 'koyotito/ver-vista-previa/:idClase', component: PrevisualizarClaseComponent },
+
+  {path: 'profesor-inicio', component: InicioProfComponent},
+  {path: 'profesor/crear-clase/:idclase', component: CrearClaseComponent},
+  {path: 'profesor/config', component: ConfigPComponent},
+  {path: 'profesor/ver-grupos', component: GruposComponent },
+  {path: 'profesor/grupo/:idGrupo', component: GrupoEspComponent },
+  {path: 'profesor/ver-clases-gusta', component: MeGustaPComponent },
+  {path: 'profesor/ver-historial', component: HistorialPComponent },
+  {path: 'profesor/mis-clases', component: MisClasesComponent },
+  {path: 'profesor/mi-multimedia/:idUsuario', component: MediaComponent },
+  {path: 'profesor/ver-clase/:idClase', component: VerClaseComponent },
+  {path: 'profesor/ver-denuncias', component: DenunciasPagComponent },
+  {path: 'profesor/editar-clase', component: EditarClaseComponent },
+  {path: 'profesor/previa-mi-clase', component: PrevisualizarMiClaseComponent },
+
+  {path: '**', redirectTo: 'home'}
 ];
 
 @NgModule({
