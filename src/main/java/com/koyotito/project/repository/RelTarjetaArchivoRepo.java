@@ -10,13 +10,14 @@ import com.koyotito.project.model.RelTarjetaArchivo;
 
 
 @Repository
-public interface RelTarjetaArchivoRepo extends JpaRepository<RelTarjetaArchivo, Integer>{
+public interface RelTarjetaArchivoRepo extends JpaRepository<RelTarjetaArchivo, Long>{
 	
-	@Query(value="SELECT idRelacion "
-			+ "FROM RelTarjetaArchivo r "
-			+ "WHERE r.clase_idClase = :idClase", nativeQuery = true)
-	public List<Integer> findByIdClase(int idClase);
+//	@Query(value="SELECT idRelacion "
+//			+ "FROM RelTarjetaArchivo r "
+//			+ "WHERE r.clase_idClase = :idClase", nativeQuery = true)
+//	List<Integer> findByClaseIdClase(Long idClase);
 	
+	List<RelTarjetaArchivo> findByClaseIdClase(Long id);
 
 	
 }

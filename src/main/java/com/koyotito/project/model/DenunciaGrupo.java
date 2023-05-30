@@ -13,47 +13,39 @@ import jakarta.persistence.ManyToOne;
 public class DenunciaGrupo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(unique = true, nullable = false)
-	private Integer idDenuncia;
+	private Long idDenuncia;
 	private String motivo;
 	private Date fechaDenuncia;
 	
 
 	@ManyToOne
 	private Grupo grupo;
-	@ManyToOne
-	private Usuario usuario;
+
 
 	public DenunciaGrupo() {
 
 	}
 	
-	public DenunciaGrupo(Integer idDenuncia, String motivo, Date fechaDenuncia, Grupo grupo, Usuario usuario) {
+	public DenunciaGrupo(Long idDenuncia, String motivo, Date fechaDenuncia, Grupo grupo) {
 		super();
 		this.idDenuncia = idDenuncia;
 		this.motivo = motivo;
 		this.fechaDenuncia = fechaDenuncia;
 		this.grupo = grupo;
-		this.usuario = usuario;
+		
 	}
 
 	@Override
 	public String toString() {
 		return "DenunciaGrupo [idDenuncia=" + idDenuncia + ", motivo=" + motivo + ", fechaDenuncia=" + fechaDenuncia
-				+ ", grupo=" + grupo + ", usuario=" + usuario + "]";
+				+ ", grupo=" + grupo + "]";
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
-	}
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-	public Integer getIdDenuncia() {
+	public Long getIdDenuncia() {
 		return idDenuncia;
 	}
 
-	public void setIdDenuncia(Integer idDenuncia) {
+	public void setIdDenuncia(Long idDenuncia) {
 		this.idDenuncia = idDenuncia;
 	}
 

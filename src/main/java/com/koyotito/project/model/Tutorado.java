@@ -16,10 +16,10 @@ public class Tutorado {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(unique = true, nullable = false)
-	private Integer idTutorado;
+	private Long idTutorado;
 	private String pseudonimo;
 	private Integer nivel;
-	private Integer puntos;
+	private Long puntos;
 	
 	@ManyToOne
 	private Tutor tutor;
@@ -33,10 +33,14 @@ public class Tutorado {
 	@OneToMany(mappedBy = "tutorado")
 	private List<Likes> likes;
 	
+	@OneToMany(mappedBy = "tutorado")
+	private List<RelTutoradoInvitacion> rel;
+	
+	
 	public Tutorado() {
 
 	}
-	public Tutorado(Integer idTutorado, String pseudonimo, Integer nivel, Integer puntos, Usuario usuario, Tutor tutor,
+	public Tutorado(Long idTutorado, String pseudonimo, Integer nivel, Long puntos, Usuario usuario, Tutor tutor,
 			List<RelTutoradoGrupo> relUsuarioGrupos, List<Visitas> visitas, List<Likes> likes) {
 		super();
 		this.idTutorado = idTutorado;
@@ -54,10 +58,10 @@ public class Tutorado {
 				+ puntos + ", tutor=" + tutor + ", relUsuarioGrupos=" + relUsuarioGrupos
 				+ ", visitas=" + visitas + ", likes=" + likes + "]";
 	}
-	public Integer getIdTutorado() {
+	public Long getIdTutorado() {
 		return idTutorado;
 	}
-	public void setIdTutorado(Integer idTutorado) {
+	public void setIdTutorado(Long idTutorado) {
 		this.idTutorado = idTutorado;
 	}
 	public String getPseudonimo() {
@@ -72,10 +76,10 @@ public class Tutorado {
 	public void setNivel(Integer nivel) {
 		this.nivel = nivel;
 	}
-	public Integer getPuntos() {
+	public Long getPuntos() {
 		return puntos;
 	}
-	public void setPuntos(Integer puntos) {
+	public void setPuntos(Long puntos) {
 		this.puntos = puntos;
 	}
 	public Tutor getTutor() {

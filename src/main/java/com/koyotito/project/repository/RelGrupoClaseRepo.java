@@ -5,12 +5,11 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.koyotito.project.model.Archivo;
+import com.koyotito.project.model.RelGrupoClase;
 
 @Repository
-public interface ArchivoRepo extends JpaRepository<Archivo, Long> {
+public interface RelGrupoClaseRepo extends JpaRepository<RelGrupoClase, Long> {
 	
-	List<Archivo> findByProfesorIdProfesor(Long id);
-	
+	List<RelGrupoClase> findByClaseIdClase(Long id);
 	
 }

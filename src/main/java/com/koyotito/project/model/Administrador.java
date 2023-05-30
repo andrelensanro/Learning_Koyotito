@@ -15,8 +15,7 @@ public class Administrador {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(unique = true, nullable = false)
-	private Integer idAdministrador;
+	private Long idAdministrador;
 	
 	@OneToMany(mappedBy = "administrador")
 	private List<ControlUsuario> controlUsuarios;
@@ -33,11 +32,11 @@ public class Administrador {
 		return "Administrador [idAdministrador=" + idAdministrador + ", controlUsuarios=" + controlUsuarios + ", usuario="
 				+ usuario + "]";
 	}
-	public Integer getIdAdministrador() {
+	public Long getIdAdministrador() {
 		return idAdministrador;
 	}
 
-	public void setIdAdministrador(Integer idAdministrador) {
+	public void setIdAdministrador(Long idAdministrador) {
 		this.idAdministrador = idAdministrador;
 	}
 
@@ -57,7 +56,7 @@ public class Administrador {
 		this.usuario = usuario;
 	}
 
-	public Administrador(Integer idAdministrador, List<ControlUsuario> controlUsuarios, Usuario usuario) {
+	public Administrador(Long idAdministrador, List<ControlUsuario> controlUsuarios, Usuario usuario) {
 		super();
 		this.idAdministrador = idAdministrador;
 		this.controlUsuarios = controlUsuarios;

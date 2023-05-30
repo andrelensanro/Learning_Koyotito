@@ -14,8 +14,8 @@ import jakarta.persistence.OneToOne;
 public class Profesor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(unique = true, nullable = false)
-	private Integer idProfesor;
+	
+	private Long idProfesor;
 	private String correoContacto;
 	private Integer numFaltasTotales; 
 	private String institucion;
@@ -44,7 +44,7 @@ public class Profesor {
 		
 	}
 
-	public Profesor(Integer idProfesor, String correoContacto, Integer numFaltasTotales, Usuario usuario,
+	public Profesor(Long idProfesor, String correoContacto, Integer numFaltasTotales, Usuario usuario,
 			List<Likes> likes, List<Visitas> visitas, List<Clase> clases, List<Grupo> grupos, List<Archivo> archivos) {
 		super();
 		this.idProfesor = idProfesor;
@@ -74,11 +74,11 @@ public class Profesor {
 		this.institucion = institucion;
 	}
 
-	public Integer getIdProfesor() {
+	public Long getIdProfesor() {
 		return idProfesor;
 	}
 
-	public void setIdProfesor(Integer idProfesor) {
+	public void setIdProfesor(Long idProfesor) {
 		this.idProfesor = idProfesor;
 	}
 

@@ -1,5 +1,7 @@
 package com.koyotito.project.services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +17,18 @@ public class TutorService {
 		return tutorRepo.save(tutor);
 	}
 	
+	public Tutor findById(Long id) {
+		Optional<Tutor> tutor = tutorRepo.findById(id);
+		if(tutor.isPresent())
+			return tutor.get();
+		return null;
+	}
 	
+	public void delete(Tutor tutor) {
+		tutorRepo.delete(tutor);
+	}
+	
+	public void deleteById(Long id) {
+		tutorRepo.deleteById(id);
+	}
 }

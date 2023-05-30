@@ -15,7 +15,7 @@ public class Tutor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(unique = true, nullable = false)
-	private Integer idTutor; 
+	private Long idTutor; 
 	private Integer numTutorados;
 	@OneToOne(mappedBy = "tutor")
 	private Usuario usuario;
@@ -28,7 +28,7 @@ public class Tutor {
 		this.numTutorados=0;
 	}
 	
-	public Tutor(Integer idTutor, Integer numTutorados, Usuario usuario, List<Tutorado> tutorados) {
+	public Tutor(Long idTutor, Integer numTutorados, Usuario usuario, List<Tutorado> tutorados) {
 		this.idTutor = idTutor;
 		this.numTutorados = numTutorados;
 		this.usuario = usuario;
@@ -41,10 +41,10 @@ public class Tutor {
 				+ ", usuario=" + usuario + ", tutorados=" + tutorados + "]";
 	}
 
-	public Integer getIdTutor() {
+	public Long getIdTutor() {
 		return idTutor;
 	}
-	public void setIdTutor(Integer idTutor) {
+	public void setIdTutor(Long idTutor) {
 		this.idTutor = idTutor;
 	}
 	public Integer getNumTutorados() {

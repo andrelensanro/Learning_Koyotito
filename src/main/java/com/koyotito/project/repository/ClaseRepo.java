@@ -9,7 +9,8 @@ import org.springframework.stereotype.Repository;
 import com.koyotito.project.model.Clase;
 
 @Repository
-public interface ClaseRepo extends JpaRepository<Clase, Integer>{
+public interface ClaseRepo extends JpaRepository<Clase, Long>{
+	
 	@Query(value="select nombreClase from clase", nativeQuery=true)
     List<String> todasClases();
 	
@@ -25,6 +26,6 @@ public interface ClaseRepo extends JpaRepository<Clase, Integer>{
 	List<String> todasClase_institucion(@Param("institucion") String institucion);
 	
 	
-
-
+	List<Clase> findByProfesorIdProfesor(Long id);
+	
 }

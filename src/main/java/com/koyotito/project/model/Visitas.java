@@ -12,7 +12,7 @@ public class Visitas {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(unique = true, nullable = false)
-	private Integer idVisita;
+	private Long idVisita;
 	
 	@ManyToOne
 	private Tutorado tutorado;
@@ -24,7 +24,7 @@ public class Visitas {
 	public Visitas() {
 
 	}
-	public Visitas(Integer idVisita, Tutorado tutorado, Profesor profesor, Clase clase) {
+	public Visitas(Long idVisita, Tutorado tutorado, Profesor profesor, Clase clase) {
 		super();
 		this.idVisita = idVisita;
 		this.tutorado = tutorado;
@@ -36,10 +36,10 @@ public class Visitas {
 		return "Visitas [idVisita=" + idVisita + ", tutorado=" + tutorado + ", profesor=" + profesor + ", clase="
 				+ clase + "]";
 	}
-	public Integer getIdVisita() {
+	public Long getIdVisita() {
 		return idVisita;
 	}
-	public void setIdVisita(Integer idVisita) {
+	public void setIdVisita(Long idVisita) {
 		this.idVisita = idVisita;
 	}
 	public Tutorado getTutorado() {

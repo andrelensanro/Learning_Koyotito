@@ -2,6 +2,7 @@ package com.koyotito.project.model;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,17 +14,19 @@ import jakarta.persistence.OneToMany;
 public class Tag {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(unique = true, nullable = false)
-	private Integer idTag;
+	
+	private Long idTag;
 	private String nombre;
 	
-	@OneToMany(mappedBy = "tag")
+	@OneToMany(mappedBy = "tag", cascade = {
+		      CascadeType.REMOVE
+	  })
 	private List<RelClaseTag> relClaseTags;
 	
 	public Tag() {
 
 	}
-	public Tag(Integer idTag, String nombre, List<RelClaseTag> relClaseTags) {
+	public Tag(Long idTag, String nombre, List<RelClaseTag> relClaseTags) {
 		super();
 		this.idTag = idTag;
 		this.nombre = nombre;
@@ -33,10 +36,10 @@ public class Tag {
 	public String toString() {
 		return "Tag [idTag=" + idTag + ", nombre=" + nombre + ", relClaseTags=" + relClaseTags + "]";
 	}
-	public Integer getIdTag() {
+	public Long getIdTag() {
 		return idTag;
 	}
-	public void setIdTag(Integer idTag) {
+	public void setIdTag(Long idTag) {
 		this.idTag = idTag;
 	}
 	public String getNombre() {

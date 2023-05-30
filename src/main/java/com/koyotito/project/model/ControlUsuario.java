@@ -10,8 +10,7 @@ import jakarta.persistence.ManyToOne;
 public class ControlUsuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(unique = true, nullable = false)
-	private Integer idControlUsuario;
+	private Long idControlUsuario;
 	private String motivo;
 
 	@ManyToOne
@@ -25,7 +24,7 @@ public class ControlUsuario {
 		
 	}
 
-	public ControlUsuario(Integer idControlUsuario, String motivo, Accion accion, Administrador administrador,
+	public ControlUsuario(Long idControlUsuario, String motivo, Accion accion, Administrador administrador,
 			Usuario usuario) {
 		super();
 		this.idControlUsuario = idControlUsuario;
@@ -41,11 +40,11 @@ public class ControlUsuario {
 				+ ", administrador=" + administrador + ", usuario=" + usuario + "]";
 	}
 
-	public Integer getIdControlUsuario() {
+	public Long getIdControlUsuario() {
 		return idControlUsuario;
 	}
 
-	public void setIdControlUsuario(Integer idControlUsuario) {
+	public void setIdControlUsuario(Long idControlUsuario) {
 		this.idControlUsuario = idControlUsuario;
 	}
 

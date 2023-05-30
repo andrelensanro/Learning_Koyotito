@@ -2,6 +2,7 @@ package com.koyotito.project.model;
 import java.util.Date;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,22 +15,25 @@ import jakarta.persistence.OneToMany;
 public class Clase {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(unique = true, nullable = false)
-	private Integer idClase;
+	private Long idClase;
 	private String nombreClase;
 	private Date fecha;
 	private String estado; // finalizado o en proceso
-	private Integer numMeGusta;
+	private Long numMeGusta;
 	private Integer numTarjetas;
-	private Integer numVisitas;
+	private Long numVisitas;
 	private Integer numDenuncias;
 	private boolean isPapelera;
 	
 	@ManyToOne
 	private Profesor profesor;
 	
-	@OneToMany(mappedBy = "clase")
+//	@OneToMany(cascade=CascadeType.REMOVE, mappedBy = "clase")
+	@OneToMany(cascade=CascadeType.REMOVE, mappedBy = "clase")
 	private List<Visitas> visitas;
+//	public void deleteVisitas(Visitas visita) {
+//		visitas.remove(visita);
+//	}
 
 	@OneToMany(mappedBy = "clase")
 	private List<Likes> likes;
@@ -50,7 +54,6 @@ public class Clase {
 	private List<RelTarjetaArchivo> relTarjetaArchivos;
 	
 	public Clase() {
-
 	}
  	
 	@Override
@@ -62,8 +65,8 @@ public class Clase {
 				+ relClaseTags + ", tarjetas=" + tarjetas + ", relGrupoClases=" + relGrupoClases
 				+ ", relTarjetaArchivos=" + relTarjetaArchivos + "]";
 	}
-	public Clase(Integer idClase, String nombreClase, Date fecha, String estado, Integer numMeGusta,
-			Integer numTarjetas, Integer numVisitas, Integer numDenuncias, boolean isPapelera, Profesor profesor,
+	public Clase(Long idClase, String nombreClase, Date fecha, String estado, Long numMeGusta,
+			Integer numTarjetas, Long numVisitas, Integer numDenuncias, boolean isPapelera, Profesor profesor,
 			List<Visitas> visitas, List<Likes> likes, List<DenunciaClase> denuncias, List<RelClaseTag> relClaseTags,
 			List<Tarjeta> tarjetas, List<RelGrupoClase> relGrupoClases, List<RelTarjetaArchivo> relTarjetaArchivos) {
 		super();
@@ -85,10 +88,10 @@ public class Clase {
 		this.relGrupoClases = relGrupoClases;
 		this.relTarjetaArchivos = relTarjetaArchivos;
 	}
-	public Integer getIdClase() {
+	public Long getIdClase() {
 		return idClase;
 	}
-	public void setIdClase(Integer idClase) {
+	public void setIdClase(Long idClase) {
 		this.idClase = idClase;
 	}
 	public String getNombreClase() {
@@ -109,10 +112,10 @@ public class Clase {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	public Integer getNumMeGusta() {
+	public Long getNumMeGusta() {
 		return numMeGusta;
 	}
-	public void setNumMeGusta(Integer numMeGusta) {
+	public void setNumMeGusta(Long numMeGusta) {
 		this.numMeGusta = numMeGusta;
 	}
 	public Integer getNumTarjetas() {
@@ -121,10 +124,10 @@ public class Clase {
 	public void setNumTarjetas(Integer numTarjetas) {
 		this.numTarjetas = numTarjetas;
 	}
-	public Integer getNumVisitas() {
+	public Long getNumVisitas() {
 		return numVisitas;
 	}
-	public void setNumVisitas(Integer numVisitas) {
+	public void setNumVisitas(Long numVisitas) {
 		this.numVisitas = numVisitas;
 	}
 	public Integer getNumDenuncias() {
