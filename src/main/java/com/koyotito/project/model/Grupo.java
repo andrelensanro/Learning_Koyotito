@@ -10,16 +10,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Grupo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(unique = true, nullable = false)
-	private Integer idGrupo;
+	private Long idGrupo;
 	private String nombreGrupo;
 	private Date fechaCreacion;
-
 	@ManyToOne
 	private Profesor profesor;
 	@OneToMany(mappedBy = "grupo")
@@ -28,12 +27,15 @@ public class Grupo {
 	private List<RelTutoradoGrupo> relUsuarioGrupos;
 	@OneToMany(mappedBy = "grupo")
 	private List<RelGrupoClase> relGrupoClases;
+	@OneToOne
+	private Invitaciones invitacion;
+	
 	
 	public Grupo() {
 
 	}
 
-	public Grupo(Integer idGrupo, String nombreGrupo, Date fechaCreacion, Profesor profesor,
+	public Grupo(Long idGrupo, String nombreGrupo, Date fechaCreacion, Profesor profesor,
 			List<DenunciaGrupo> denunciaGrupos, List<RelTutoradoGrupo> relUsuarioGrupos,
 			List<RelGrupoClase> relGrupoClases) {
 		super();
@@ -53,11 +55,11 @@ public class Grupo {
 				+ relUsuarioGrupos + ", relGrupoClases=" + relGrupoClases + "]";
 	}
 
-	public Integer getIdGrupo() {
+	public Long getIdGrupo() {
 		return idGrupo;
 	}
 
-	public void setIdGrupo(Integer idGrupo) {
+	public void setIdGrupo(Long idGrupo) {
 		this.idGrupo = idGrupo;
 	}
 

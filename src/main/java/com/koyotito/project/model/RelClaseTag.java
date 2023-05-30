@@ -11,8 +11,7 @@ import jakarta.persistence.ManyToOne;
 public class RelClaseTag {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(unique = true, nullable = false)
-	private Integer idRelacion;
+	private Long idRelacion;
 	
 	@ManyToOne
 	private Clase clase;
@@ -22,7 +21,7 @@ public class RelClaseTag {
 	public RelClaseTag() {
 		
 	}
-	public RelClaseTag(Integer idRelacion, Clase clase, Tag tag) {
+	public RelClaseTag(Long idRelacion, Clase clase, Tag tag) {
 		super();
 		this.idRelacion = idRelacion;
 		this.clase = clase;
@@ -32,10 +31,10 @@ public class RelClaseTag {
 	public String toString() {
 		return "RelClaseTag [idRelacion=" + idRelacion + ", clase=" + clase + ", tag=" + tag + "]";
 	}
-	public Integer getIdRelacion() {
+	public Long getIdRelacion() {
 		return idRelacion;
 	}
-	public void setIdRelacion(Integer idRelacion) {
+	public void setIdRelacion(Long idRelacion) {
 		this.idRelacion = idRelacion;
 	}
 	public Clase getClase() {

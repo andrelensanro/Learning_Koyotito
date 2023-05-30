@@ -15,8 +15,7 @@ import jakarta.persistence.OneToOne;
 public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(unique = true, nullable = false)
-	private Integer idUsuario;
+	private Long idUsuario;
 	private String nombre;
 	private String apellido1;
 	private String apellido2;
@@ -29,20 +28,11 @@ public class Usuario {
 	@OneToMany(mappedBy = "usuario")
 	private List<ControlUsuario> controlUsuario;
 	
-	@OneToMany(mappedBy = "usuario")
-	private List<DenunciaClase> denunciasC;
-	
-	@OneToMany(mappedBy = "usuario")
-	private List<DenunciaGrupo> denunciasG;
-	
 	@OneToOne
 	private Administrador administrador;
 	
 	@OneToOne
 	private Tutor tutor;
-	
-	@ManyToOne
-	private TipoUsuario tipoUsuario;
 	
 	@OneToOne
 	private Profesor profesor;
@@ -50,9 +40,8 @@ public class Usuario {
 	public Usuario() {
 		this.num_denuncias = 0;
 	}
-	public Usuario(Integer idUsuario, String nombre, String apellido1, String apellido2, String correo, String password,
-			Integer num_denuncias, Integer idTipoUsuario, List<ControlUsuario> controlUsuario,
-			List<DenunciaClase> denunciasC, List<DenunciaGrupo> denunciasG, Administrador administrador, Tutor tutor, TipoUsuario tipoUsuario, Profesor profesor,  String instPseudonimo) {
+	public Usuario(Long idUsuario, String nombre, String apellido1, String apellido2, String correo, String password,
+			Integer num_denuncias, Integer idTipoUsuario, List<ControlUsuario> controlUsuario, Administrador administrador, Tutor tutor, Profesor profesor,  String instPseudonimo) {
 		super();
 		this.idUsuario = idUsuario;
 		this.nombre = nombre;
@@ -63,11 +52,9 @@ public class Usuario {
 		this.num_denuncias = num_denuncias;
 		this.idTipoUsuario = idTipoUsuario;
 		this.controlUsuario = controlUsuario;
-		this.denunciasC = denunciasC;
-		this.denunciasG = denunciasG;
+
 		this.administrador = administrador;
 		this.tutor = tutor;
-		this.tipoUsuario = tipoUsuario;
 		this.profesor = profesor;
 		this.instPseudonimo = instPseudonimo;
 	}
@@ -75,9 +62,8 @@ public class Usuario {
 	public String toString() {
 		return "Usuario [idUsuario=" + idUsuario + ", nombre=" + nombre + ", apellido=" + apellido1 + ", apellido2="
 				+ apellido2 + ", correo=" + correo + ", password=" + password + ", num_denuncias=" + num_denuncias
-				+ ", idTipoUsuario=" + idTipoUsuario + ", controlUsuario=" + controlUsuario + ", denunciasC="
-				+ denunciasC + ", denunciasG=" + denunciasG + ", administrador=" + administrador + ", tutor=" + tutor
-				+ ", tipoUsuario=" + tipoUsuario + ", profesor=" + profesor + "instPseudonimo=" + instPseudonimo +"]";
+				+ ", idTipoUsuario=" + idTipoUsuario + ", controlUsuario=" + controlUsuario + ", administrador=" + administrador + ", tutor=" + tutor
+				+   ", profesor=" + profesor + "instPseudonimo=" + instPseudonimo +"]";
 	}
 	public Integer getNum_denuncias() {
 		return num_denuncias;
@@ -85,18 +71,7 @@ public class Usuario {
 	public void setNum_denuncias(Integer num_denuncias) {
 		this.num_denuncias = num_denuncias;
 	}
-	public List<DenunciaClase> getDenunciasC() {
-		return denunciasC;
-	}
-	public void setDenunciasC(List<DenunciaClase> denunciasC) {
-		this.denunciasC = denunciasC;
-	}
-	public List<DenunciaGrupo> getDenunciasG() {
-		return denunciasG;
-	}
-	public void setDenunciasG(List<DenunciaGrupo> denunciasG) {
-		this.denunciasG = denunciasG;
-	}
+	
 	public Administrador getAdministrador() {
 		return administrador;
 	}
@@ -110,22 +85,16 @@ public class Usuario {
 		this.tutor = tutor;
 	}
 	
-	public TipoUsuario getTipoUsuario() {
-		return tipoUsuario;
-	}
-	public void setTipoUsuario(TipoUsuario tipoUsuario) {
-		this.tipoUsuario = tipoUsuario;
-	}
 	public Profesor getProfesor() {
 		return profesor;
 	}
 	public void setProfesor(Profesor profesor) {
 		this.profesor = profesor;
 	}
-	public Integer getIdUsuario() {
+	public Long getIdUsuario() {
 		return idUsuario;
 	}
-	public void setIdUsuario(Integer idUsuario) {
+	public void setIdUsuario(Long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
 	public String getNombre() {

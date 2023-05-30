@@ -10,8 +10,8 @@ import jakarta.persistence.ManyToOne;
 public class Likes {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(unique = true, nullable = false)
-	private Integer idLike;
+	
+	private Long idLike;
 	
 	@ManyToOne
 	private Clase clase;
@@ -25,7 +25,7 @@ public class Likes {
 	public Likes() {
 		
 	}
-	public Likes(Integer idLike, Clase clase, Tutorado tutorado, Profesor profesor) {
+	public Likes(Long idLike, Clase clase, Tutorado tutorado, Profesor profesor) {
 		super();
 		this.idLike = idLike;
 		this.clase = clase;
@@ -37,10 +37,10 @@ public class Likes {
 		return "Likes [idLike=" + idLike + ", clase=" + clase + ", tutorado=" + tutorado + ", profesor=" + profesor
 				+ "]";
 	}
-	public Integer getIdLike() {
+	public Long getIdLike() {
 		return idLike;
 	}
-	public void setIdLike(Integer idLike) {
+	public void setIdLike(Long idLike) {
 		this.idLike = idLike;
 	}
 	public Clase getClase() {

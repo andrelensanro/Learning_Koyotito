@@ -10,10 +10,14 @@ import org.springframework.stereotype.Repository;
 import com.koyotito.project.model.Usuario;
 
 @Repository
-public interface UsuarioRepo extends JpaRepository<Usuario, Integer>{
-	public Usuario findByCorreo(String email);
+public interface UsuarioRepo extends JpaRepository<Usuario, Long>{
+	
+	@Query(value = "SELECT * from usuario where usuario.correo=:correo", nativeQuery = true)
+	public Usuario findByCorreo(String correo);
+	
 	@Query(value = "SELECT profesor_idProfesor "
 			+ "FROM usuario "
-			+ "WHERE usuario.idUsuario = :idUsuario", nativeQuery = true)
-	public int getId_profesor(@Param("idUsuario") int usuario);
+			+ "WHERE usuario.idUsuario=:idUsuario", nativeQuery = true)
+	public Long getId_profesor(@Param("idUsuario") Long usuario);
+	
 }

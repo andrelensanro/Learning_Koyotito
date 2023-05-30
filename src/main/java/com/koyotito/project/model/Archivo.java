@@ -14,7 +14,7 @@ public class Archivo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idArchivo;
+	private Long idArchivo;
 
 	private String nombre;
 	private String tipo;
@@ -30,7 +30,7 @@ public class Archivo {
 
 	}
 
-	public Archivo(Integer idArchivo, String nombre, String tipo, String enlace, boolean isPapelera, Profesor profesor,
+	public Archivo(Long idArchivo, String nombre, String tipo, String enlace, boolean isPapelera, Profesor profesor,
 			List<RelTarjetaArchivo> relTarjetaArchivos) {
 		super();
 		this.idArchivo = idArchivo;
@@ -49,11 +49,11 @@ public class Archivo {
 				+ "]";
 	}
 
-	public Integer getIdArchivo() {
+	public Long getIdArchivo() {
 		return idArchivo;
 	}
 
-	public void setIdArchivo(Integer idArchivo) {
+	public void setIdArchivo(Long idArchivo) {
 		this.idArchivo = idArchivo;
 	}
 

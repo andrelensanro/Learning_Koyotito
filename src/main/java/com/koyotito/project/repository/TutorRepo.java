@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.koyotito.project.model.Tutor;
 
 @Repository
-public interface TutorRepo extends JpaRepository<Tutor, Integer>{
+public interface TutorRepo extends JpaRepository<Tutor, Long>{
+	
 }

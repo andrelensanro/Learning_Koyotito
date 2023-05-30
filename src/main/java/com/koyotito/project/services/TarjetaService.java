@@ -14,10 +14,6 @@ public class TarjetaService {
 	@Autowired
 	private TarjetaRepo tarjetaRepo;
 	
-	public List<Integer> findByIdClase(int idClase){
-		return tarjetaRepo.findByIdClase(idClase);
-	}
-	
 	public Tarjeta save(Tarjeta tarjeta) {
 		return tarjetaRepo.save(tarjeta);
 	}
@@ -25,9 +21,18 @@ public class TarjetaService {
 	public void delete(Tarjeta tarjeta) {
 		tarjetaRepo.delete(tarjeta);
 	}
-	public Tarjeta findById(int id) {
+	
+	public void deleteById(Long id) {
+		tarjetaRepo.deleteById(id);
+	}
+	
+	public Tarjeta findById(Long id) {
 		return tarjetaRepo.findById(id).get();
 	}
+	public List<Tarjeta> findByClaseIdClase(Long idClase){
+		return tarjetaRepo.findByClaseIdClase(idClase);
+	}
+	
 	
 	
 }

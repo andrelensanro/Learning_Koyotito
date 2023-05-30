@@ -13,8 +13,7 @@ import jakarta.persistence.OneToMany;
 public class Accion {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(unique = true, nullable = false)
-	private Integer idAccion;
+	private Long idAccion;
 	private String accion;
 
 	
@@ -23,7 +22,7 @@ public class Accion {
 	
 	public Accion() {	
 	}
-	public Accion(Integer idAccion, String accion) {
+	public Accion(Long idAccion, String accion) {
 		super();
 		this.idAccion = idAccion;
 		this.accion = accion;
@@ -32,10 +31,10 @@ public class Accion {
 	public String toString() {
 		return "Accion [idAccion=" + idAccion + ", accion=" + accion + "]";
 	}
-	public Integer getIdAccion() {
+	public Long getIdAccion() {
 		return idAccion;
 	}
-	public void setIdAccion(Integer idAccion) {
+	public void setIdAccion(Long idAccion) {
 		this.idAccion = idAccion;
 	}
 	public String getAccion() {

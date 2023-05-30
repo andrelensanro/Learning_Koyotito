@@ -8,9 +8,12 @@ import org.springframework.stereotype.Repository;
 import com.koyotito.project.model.Tarjeta;
 
 @Repository
-public interface TarjetaRepo extends JpaRepository<Tarjeta, Integer> {
-	@Query(value="SELECT idTarjeta "
-			+ "FROM tarjeta "
-			+ "WHERE tarjeta.clase_idClase = :idClase",  nativeQuery=true)
-	List<Integer> findByIdClase(@Param("idClase") int idClase); 
+public interface TarjetaRepo extends JpaRepository<Tarjeta, Long> {
+//	@Query(value="SELECT idTarjeta "
+//			+ "FROM tarjeta "
+//			+ "WHERE tarjeta.clase_idClase = :idClase",  nativeQuery=true)
+//	List<Integer> findByIdClase(@Param("idClase") int idClase); 
+	
+	List<Tarjeta> findByClaseIdClase(Long id);
+	
 }

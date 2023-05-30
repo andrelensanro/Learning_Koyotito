@@ -14,8 +14,8 @@ import jakarta.persistence.OneToMany;
 public class Tarjeta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(unique = true, nullable = false)
-	private Integer idTarjeta;
+	
+	private Long idTarjeta;
 	private String instruccion;
 	private String clave;
 	
@@ -28,7 +28,7 @@ public class Tarjeta {
 	public Tarjeta() {
 
 	}
-	public Tarjeta(Integer idTarjeta, String instruccion, String clave, List<RelTarjetaArchivo> relTarjetaArchivos,
+	public Tarjeta(Long idTarjeta, String instruccion, String clave, List<RelTarjetaArchivo> relTarjetaArchivos,
 			Clase clase) {
 		super();
 		this.idTarjeta = idTarjeta;
@@ -42,10 +42,10 @@ public class Tarjeta {
 		return "Tarjeta [idTarjeta=" + idTarjeta + ", instruccion=" + instruccion + ", clave=" + clave
 				+ ", relTarjetaArchivo=" + relTarjetaArchivos + ", clase=" + clase + "]";
 	}
-	public Integer getIdTarjeta() {
+	public Long getIdTarjeta() {
 		return idTarjeta;
 	}
-	public void setIdTarjeta(Integer idTarjeta) {
+	public void setIdTarjeta(Long idTarjeta) {
 		this.idTarjeta = idTarjeta;
 	}
 	public String getInstruccion() {

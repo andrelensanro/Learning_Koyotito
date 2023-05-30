@@ -11,8 +11,8 @@ import jakarta.persistence.ManyToOne;
 public class RelGrupoClase {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(unique = true, nullable = false)
-	private Integer idRelacion;
+	
+	private Long idRelacion;
 	@ManyToOne
 	private Grupo grupo;
 	@ManyToOne
@@ -22,7 +22,7 @@ public class RelGrupoClase {
 
 	}
 
-	public RelGrupoClase(Integer idRelacion, Grupo grupo, Clase clase) {
+	public RelGrupoClase(Long idRelacion, Grupo grupo, Clase clase) {
 		super();
 		this.idRelacion = idRelacion;
 		this.grupo = grupo;
@@ -34,11 +34,11 @@ public class RelGrupoClase {
 		return "RelGrupoClase [idRelacion=" + idRelacion + ", grupo=" + grupo + ", clase=" + clase + "]";
 	}
 
-	public Integer getIdRelacion() {
+	public Long getIdRelacion() {
 		return idRelacion;
 	}
 
-	public void setIdRelacion(Integer idRelacion) {
+	public void setIdRelacion(Long idRelacion) {
 		this.idRelacion = idRelacion;
 	}
 
