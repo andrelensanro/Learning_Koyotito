@@ -1,0 +1,129 @@
+
+<app-HeaderSidebarP></app-HeaderSidebarP>
+<main>
+	<article class="content">
+      <div class="borroso">
+			  <h1>Configuración de la cuenta</h1>
+        <br>
+
+        <input id="tab1" type="radio" name="tabs" checked>
+        <label for="tab1" >Datos personales</label>
+          
+        <input id="tab2" type="radio" name="tabs">
+        <label for="tab2">Correos de contacto</label>
+          
+        <input id="tab3" type="radio" name="tabs">
+        <label for="tab3">Cuenta</label>
+            
+        <section id="content1" scrollable style="overflow-y: auto; height: 350px;">
+              <br><br>
+              <p>
+                <mat-form-field style="width: 35%;">
+                  <mat-label>Nombre</mat-label>
+                    <input matInput placeholder="Ingrese un nombre" value="Mostrar el nombre">
+                  </mat-form-field>
+                </p>
+                    
+                <div class="example-container">
+                  <mat-form-field style="width: 35%;">
+                    <mat-label>Appelido 1</mat-label>
+                    <input matInput name="ap1_usu"  placeholder="Ingrese un apellido" value="Peréz">
+                  </mat-form-field>
+                  <mat-form-field style="width: 35%; padding: 0px 40px">
+                    <mat-label>Apellido 2</mat-label>
+                    <input matInput name="ap2_usu"  placeholder="Ingrese un apellido" value="Gonzaléz">
+                  </mat-form-field>
+                  </div>
+
+
+          <button mat-flat-button color="primary" style="background-color: green;">Guardar cambios</button>
+        </section>
+        <section id="content2" style="width: 1200px;">
+            <mat-form-field style="position: absolute; top: 10px;"><!--<mat-form-field class="example-full-width">-->
+              <mat-label>Coreo de contacto</mat-label>
+              <input matInput placeholder="¿Un nuevo correo?">
+            </mat-form-field>
+          <button mat-flat-button style="background-color: rgb(63, 134, 30); position: absolute; top: 30px; left: 400px;">Añadir</button>      
+             
+          <div style="position: absolute; top: 80px;">
+          <div class="tbl-header">
+            <table>
+              <thead>
+                <tr>
+                  <th>Correo</th>
+                  <th>Eliminar</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+            <div class="tbl-content">
+              <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                  <tr>
+                  <td style="word-wrap: break-word;" ><input type="text" class="form-control" id="">UnCorreoMuyLargoDePrueba@hotmail.outlook.html.com.mx.org</td>
+                  <td style="text-align: center;" class="tdG"><button mat-icon-button><mat-icon>delete_forever</mat-icon></button></td>
+                </tr>
+                <tr>
+                  <td>1.2</td>
+                  <td>2.2</td>
+                </tr>
+                <tr>
+                  <td>1.3</td>
+                  <td>2.3</td>
+                </tr>
+                <tr>
+                  <td>1.4</td>
+                  <td>2.4</td>
+                </tr>
+                <tr>
+                            <td>1.5</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr>
+                            <td>1.6</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr>
+                            <td>1.7</td>
+                            <td>2.5</td>
+                          </tr>
+                          <tr>
+                            <td>1.8</td>
+                            <td>2.5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </div>
+        </section>
+<section id="content3">
+       
+  <br><br>
+  <p>
+    <mat-form-field style="width: 35%;">
+      <mat-label>Correo</mat-label>
+        <input matInput placeholder="Ingrese un nombre" value="CorreoDelMaestro@outlook.com.mx">
+      </mat-form-field>
+    </p>
+        
+    <div class="example-container">
+      <mat-form-field style="width: 35%;">
+        <mat-label>Contraseña</mat-label>
+        <input matInput name="ap1_usu"  placeholder="¿Quiere cambiar su contraseña?">
+      </mat-form-field>
+      <mat-form-field style="width: 35%; padding: 0px 40px">
+        <mat-label>Repetir contraseña</mat-label>
+        <input matInput name="ap2_usu"  placeholder="Ingrese la contraseña de nuevo">
+      </mat-form-field>
+      </div>
+<button mat-flat-button color="primary" style="background-color: green;">Guardar cambios</button>
+<button mat-flat-button color="primary" style="background-color: red;" routerLink="/Inicio">Dar cuentra de baja</button>
+</section>
+        
+      </div>
+    </article>
+    <div class='air air1  Iborroso' style="z-index: 1;"></div>
+    <div class='air air2  Iborroso' style="z-index: 1;"></div>
+    <div class='air air3  Iborroso' style="z-index: 1;"></div>
+    <div class='air air4  Iborroso' style="z-index: 1;"></div>	
+</main>

@@ -1,0 +1,218 @@
+<main style="height: 80vh;">
+    <app-HeaderSidebarP></app-HeaderSidebarP>
+    <app-BarraBusquedas></app-BarraBusquedas>  
+<section id="Izquierdo">
+  <div *ngIf="greaterThan(1); else elseBlock">
+<div class="ag-format-container" style="height: 104%; width: 95%;">
+    <div class="ag-courses_box">
+      <div class="ag-courses_item">
+        <a href="/PreviewClaseP" class="ag-courses-item_link">
+          <div class="matematicas"><div class="ag-courses-item_bg"></div></div>
+  
+          <div class="ag-courses-item_title">
+            Clase de matematicas
+          </div>
+          <div class="ag-autor-item_title">
+            José Alfredo Jimenez
+          </div>
+          <div class="ag-courses-item_Vistas-box">
+            Vistas:
+            <span class="ag-courses-item_Vistas">
+              80
+            </span>
+          </div>
+          <div class="ag-courses-item_date-box">
+            Likes:
+            <span class="ag-courses-item_date">
+              80
+            </span>
+          </div>
+        </a>
+      </div>
+  
+      <div class="ag-courses_item">
+        <a href="/PreviewClaseEsp" class="ag-courses-item_link">
+          <div class="español"><div class="ag-courses-item_bg"></div></div>
+  
+          <div class="ag-courses-item_title">
+            Comunicación I
+          </div>
+          <div class="ag-autor-item_title">
+            María Peréz Peréz
+          </div>
+          <div class="ag-courses-item_Vistas-box">
+            Vistas:
+            <span class="ag-courses-item_Vistas">
+              20
+            </span>
+          </div>
+          <div class="ag-courses-item_date-box">
+            Likes:
+            <span class="ag-courses-item_date">
+              10
+            </span>
+          </div>
+        </a>
+      </div>
+  
+      <div class="ag-courses_item">
+        <a href="/BusquedasT" class="ag-courses-item_link">
+          <div class="español"><div class="ag-courses-item_bg"></div></div>
+          <div class="ag-autor-item_title">
+           Alberto MArtínez Damián
+          </div>
+          <div class="ag-courses-item_title">
+            Vocabulario II
+          </div>
+  
+          <div class="ag-courses-item_Vistas-box">
+            Vistas:
+            <span class="ag-courses-item_Vistas">
+              0
+            </span>
+          </div>
+          <div class="ag-courses-item_date-box">
+            Likes:
+            <span class="ag-courses-item_date">
+              0
+            </span>
+          </div>
+        </a>
+      </div>
+  
+      <div class="ag-courses_item">
+        <a href="/BusquedasT" class="ag-courses-item_link">
+          <div class="ciencias"><div class="ag-courses-item_bg"></div></div>
+          <div class="ag-autor-item_title">
+            José Alfredo UnNombreMuyLargo Jimenez
+          </div>
+          <div class="ag-courses-item_title">
+            Front-end development&#160;+ jQuery&#160;+ CMS
+          </div>
+        </a>
+      </div>
+  
+      <div class="ag-courses_item">
+        <a href="/BusquedasT" class="ag-courses-item_link">
+          <div class="artes"><div class="ag-courses-item_bg"></div></div>
+          <div class="ag-courses-item_title">
+            Digital Marketing
+          </div>
+          <div class="ag-autor-item_title">
+            José Alfredo UnNombreMuyLargo Jimenez
+          </div>
+        </a>
+      </div>
+  
+      <div class="ag-courses_item">
+        <a href="/BusquedasT" class="ag-courses-item_link">
+          <div class="artes"><div class="ag-courses-item_bg"></div></div>
+  
+          <div class="ag-courses-item_title">
+            Interior Design
+          </div>
+          <div class="ag-autor-item_title">
+            José Alfredo UnNombreMuyLargo Jimenez
+          </div>
+          <div class="ag-courses-item_date-box">
+            Start:
+            <span class="ag-courses-item_date">
+              31.10.2022
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #elseBlock>Esta un poco vacío esto... <br>  Crea una clase  <button routerLink="/CrearClase">+</button></ng-template>
+<app-FooterCrear routerLink="/CrearClase" style="z-index: 100; position: sticky; bottom: -30%; right: 32.5%;">+</app-FooterCrear>
+
+</section>
+
+
+
+
+
+
+<section id="Derecha">
+  <div *ngIf="greaterThan(8); else GruposVacios">
+  <div class="ag-format-container" style="height: 104%; width: 95%;">
+    <div class="ag-courses_box">
+      <div class="ag-grupos_item">
+        <a href="/GrupoEsp" class="ag-courses-item_link">
+          <div class="grupo"><div class="ag-courses-item_bg"></div></div>
+  
+          <div class="ag-courses-item_title">
+            Grupo III
+          </div>
+          <div class="ag-autor-item_title">
+            Matemáticas
+          </div>
+          <div class="ag-courses-item_Vistas-box">
+            Integrantes:
+            <span class="ag-courses-item_Vistas">
+              30
+            </span>
+          </div>
+        </a>
+      </div>
+  
+      <div class="ag-grupos_item">
+        <a href="/PreviewClaseP" class="ag-courses-item_link">
+          <div class="grupo"><div class="ag-courses-item_bg"></div></div>
+  
+          <div class="ag-courses-item_title">
+            Grupo MCV4-2
+          </div>
+          <div class="ag-autor-item_title">
+            Jardín de niños "La luciernaga"
+          </div>
+          <div class="ag-courses-item_Vistas-box">
+            Integrantes:
+            <span class="ag-courses-item_Vistas">
+              10
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <!--<div class="ag-grupos_item">
+        <a href="#" class="ag-grupo-item_link">
+          <div class="español"><div class="ag-courses-item_bg"></div></div>
+  
+          <div class="ag-courses-item_title">
+            Graphic Design
+          </div>
+          <div class="ag-grupo-autor-item_title">
+            José Alfredo UnNombreMuyLargo Jimenez
+          </div>
+          <div class="ag-courses-item_date-box">
+            Start:
+            <span class="ag-courses-item_date">
+              04.11.2022
+            </span>
+          </div>
+        </a>
+      </div>    -->
+  
+    </div>
+  </div>
+</div>
+<ng-template  #GruposVacios>Esta un poco vacío esto... <br>  Crea un grupo  <app-FooterCrear (click)="CrearGrupoDialog()">+</app-FooterCrear></ng-template>
+<app-FooterCrear (click)="CrearGrupoDialog()" style="z-index: 100; position: sticky; bottom: -42.5%; right: 32.5%;">+</app-FooterCrear>
+</section>
+
+
+
+
+  <article class="content">  
+    <div class="borroso">
+
+</div>
+</article>
+<div class='air air1  Iborroso' style="z-index: 1;"></div>
+<div class='air air2  Iborroso' style="z-index: 1;"></div>
+<div class='air air3  Iborroso' style="z-index: 1;"></div>
+<div class='air air4  Iborroso' style="z-index: 1;"></div>	
+</main>

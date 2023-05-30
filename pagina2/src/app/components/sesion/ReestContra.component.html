@@ -1,0 +1,29 @@
+
+<mat-card class="center">
+    <style>
+        .center {
+            position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+  width: 50%;
+  border: 3px solid rgb(197, 73, 170);
+
+}
+    </style>
+    <mat-card-content><h1>Reestablecer contraseña</h1>
+        <br>
+        <h2>Contraseña nueva</h2>
+        <mat-form-field appearance="fill">  
+        <input name="rec_corr" matInput type="text">
+        </mat-form-field>
+        <br>
+        <h2>Repetir contraseña</h2>
+        <mat-form-field appearance="fill">  
+        <input name="rec_corr" matInput type="text">
+        </mat-form-field>
+            <button type="submit" mat-raised-button color="primary" (click)="this.Correcto()" routerLink="/home">Correcto</button>
+            <button mat-flat-button color="warn" (click)="Error()">Erroneo</button>
+    </mat-card-content>
+  </mat-card>

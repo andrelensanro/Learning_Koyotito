@@ -1,0 +1,18 @@
+<mat-card style="width: 500px;">
+    <mat-card-content>
+      <H2>Clase guardada.<br></H2>
+      <div class="success-checkmark">
+        <div class="check-icon">
+          <span class="icon-line line-tip"></span>
+          <span class="icon-line line-long"></span>
+          <div class="icon-circle"></div>
+          <div class="icon-fix"></div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-left: 100px; margin-right: 100px;">
+        <button mat-raised-button style="width:200px" color="accent" mat-dialog-close routerLink="/VerClaseP">¿Reproducir la clase?</button><br><br>
+        <button mat-raised-button onClick="window.location.reload();" style="width:200px" color="accent" mat-dialog-close routerLink="/CrearClase">¿Crear otra clase?</button><br><br>
+        <button mat-raised-button style="width:200px" color="accent" mat-dialog-close routerLink="/InicioProfesor">  Ir al inicio  </button>
+      </div>
+    </mat-card-content>
+  </mat-card>

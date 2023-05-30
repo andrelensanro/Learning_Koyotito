@@ -1,0 +1,17 @@
+<mat-card>
+    <mat-card-content><h1 mat-dialog-title>¿A qué alumnos / ¿Clase? quiere aprobar la clase?</h1>
+        <mat-form-field appearance="fill">
+          <mat-label>Alumnos / Clase</mat-label>
+    <mat-select [formControl]="alumnos" multiple  ng-model="SelectDenuncia">
+      <mat-select-trigger>
+        {{alumnos.value?.[0] || ''}}
+        <span *ngIf="(alumnos.value?.length || 0) > 1" class="example-additional-selection">
+          (+{{(alumnos.value?.length || 0) - 1}} {{alumnos.value?.length === 2 ? 'other' : 'others'}})
+        </span>
+      </mat-select-trigger>
+      <mat-option *ngFor="let alumno of ListaAlumnos" [value]="alumno">{{alumno}}</mat-option>
+    </mat-select>
+    </mat-form-field>
+    <button  ng-disabled="!SelectDenuncia || SelectDenuncia.length == 0" mat-stroked-button color="warn">Enviar</button>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,340 @@
+$timing-function   : cubic-bezier(0.190, 1.000, 0.220, 1.000);
+$nav-width-desktop : 40em;
+$nav-width-mobile  : 25em;
+$nav-item-nb       : 6;
+
+input {
+	position: fixed;
+	opacity: 0;
+}
+.label {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	background: none;
+	cursor: pointer;
+	&::before {
+		position: fixed;
+		z-index: 1001;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(darken(#3498db,40%),.75);
+		content: '';
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity .5s $timing-function;
+	}
+	.burger {
+		position: fixed;
+		top: 1em;
+		left: 1em;
+		z-index: 1003;
+		width: 2em;
+		height: 2em;
+		margin: 0;
+		padding: 0;
+		transition: opacity .5s $timing-function;
+		&::before,
+		.bar,
+		&::after {
+			position: absolute;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 12%;
+			background: white;
+			content: '';
+			transition: all .5s $timing-function;
+		}
+		.bar {
+			top: 44%;
+		}
+		&::before {
+			top: 0;
+			transform-origin: top left;
+		}
+		&::after {
+			bottom: 0;
+			transform-origin: bottom left;
+		}
+	}
+}
+
+input:focus + .label,
+.label:hover {
+	.burger {
+		opacity: .75;
+	}
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 1002;			/* Prioridad máxima */
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: flex-start;
+	transform: translate3d(0,0,0); /* material acceleration */
+	transform: translateX(-100%);
+	will-change: transform;
+	transition: transform .5s $timing-function;
+	&::before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0; 
+		z-index: -1;
+		width: $nav-width-mobile;
+		background: #d62956;
+		content: '';
+		transform: skewX(15deg) translateX(-100%);
+		transform-origin: bottom left;
+		will-change: transform;
+		transition: transform .5s $timing-function;
+		@media(min-width: 40em) {
+			width: $nav-width-desktop;
+		}
+	}
+	a {
+		margin: .5em 0;
+		padding: .2em 2em;
+		font-size: 1.5em;
+		color: white;
+		text-decoration: none;
+		font-weight: 500;
+		transform: translateX(-100%);
+		transition: color .15s, transform .5s;
+		transition-timing-function: $timing-function;
+		@for $i from 1 through $nav-item-nb {
+			&:nth-child(#{$i}) { transition-delay: 0s, #{50 + (50 * $i)}ms; }	
+		}
+		&:hover, &:focus {
+			color: black;
+		}
+	}
+}
+
+main {
+	overflow: hidden;
+	.content {
+		transform: translate3d(0,0,0); /* material acceleration */
+		will-change: transform, filter;
+		transition: all .5s $timing-function;
+	}
+}
+
+[id="navcheck"]:checked {
+	& + .label {
+		&::before {
+			opacity: 1;
+			pointer-events: auto;
+		}
+		.burger {
+			&::before,
+			&::after {
+				width: 141.42%; // Pythagore!
+			}
+			&::before {
+				transform: rotate(45deg) translateY(-50%);
+			}
+			&::after {
+				transform: rotate(-45deg) translateY(50%);
+			}
+			.bar {
+				transform: scale(0.1);
+			}
+		}
+	}
+	& ~ nav {
+		transform: translateX(0);
+		&::before {
+			transform: skewX(15deg) translateX(0);
+		}
+		a {
+			transform: translateX(0);
+		}
+	}
+	& ~ main .content {
+		transform: translateX(3em);
+		transform-origin: left center;
+		filter: blur(2px);
+	}
+}
+
+/* Cerrar sesión PopUp */
+
+input[type=checkbox] {
+  display: none;
+}
+
+p, button, .btn {
+  font-size: 20px;
+}
+
+button {
+  outline: none !important;
+}
+
+/* Wraps everyting, nothing special */
+.content-wrapper {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+/* helper */
+.visuallyhidden { border:0; clip:rect(0 0 0 0);	height:1px; margin:-1px; overflow:hidden; padding:0; position:absolute; width:1px; }
+
+/* misc */
+/*body { overflow-x: hidden; background: #444; color: white; font: 1em/1.4 "lato"; }*/
+
+
+/*
+  The sort of button-ish thingy.
+  It should be wrapped by a label and
+  should be followed by the checkbox.
+*/
+.btn {
+  color:inherit;
+    font-family:inherit;
+  font-size: inherit;
+  background: white;
+  padding: 0.3rem 3.4rem;
+  border: 3px black; //solid
+  margin-right: 2.6rem;
+  box-shadow: 0 0 0 black;
+  transition: all 0.2s;
+}
+
+.btn:last-child {
+  margin: 0;
+}
+
+.btn:hover {
+
+  box-shadow: 0.4rem 0.4rem 0 black;
+  transform: translate(-0.4rem, -0.4rem);
+}
+.si:hover {
+  background-color: rgb(12, 75, 192);
+}
+.no:hover {
+  background-color: red;
+}
+.btn:active {
+  box-shadow: 0 0 0 black;
+  transform: translate(0, 0);
+}
+/*
+  The modal background (the dark-ish overlay),
+  which obviously could be a class instead of a form.
+  
+  For scroll to work as expected, the position is absolute,
+  as position: fixed would not allow the page to scroll when the screen isn't tall enough.
+*/
+.confirm-modal {
+  display: block;
+  pointer-events: none;
+  .btn {
+    width: auto;
+    max-width: auto;
+    margin: auto;
+  }
+  
+  &::before {
+    /*
+      The shadow/backdrop which also is clickable to close the modal.
+    */
+    content: "";
+    display: block;
+    background-color: rgba(0,0,0,0.4);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 200px;
+    z-index: 1020;
+    opacity: 1;
+    pointer-events: all;
+  }
+  form {
+    /*
+      The actual modal.
+
+      Note: to not have clicks inside the modal
+      bleed through to the label (which would uncheck the checkbox),
+      pointer-events are set to none on the modal.
+    */
+    position: absolute;
+    z-index: 5000;
+    top: 50px;
+    transition: transform 0s;
+    max-width: 90%;
+    width: 450px;
+    background-color: #fafafa;
+    padding: 20px;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.2);
+    color: #080808;
+    border-radius: 5px;
+    pointer-events: none;
+  }
+}
+
+/* Hide the modal when the checkbox isn't checked. */
+input:not(:checked) + .confirm-modal {
+  /* Uncomment this for a sharper switch, which might work better on older browsers. */
+  /* display: none; */
+  
+  /*
+    Might be wonky on older browsers, but allows for the fly down.
+    Also does the fade in.
+  */
+  &, & * {
+    opacity: 0; 
+  }
+  &::before {
+    height: 0;
+    width: 0;
+  }
+}
+
+/* For that cute little fly down effect */
+input:not(:checked) + .confirm-modal form {
+  transform: translate(-50%, -100px);
+}
+
+/* Allow buttons to be clickable. */
+.confirm-modal button {
+  pointer-events: all;
+}
+
+
+
+.notification {
+
+	color: white;
+	text-decoration: none;
+	padding: 15px 26px;
+	position: relative;
+	display: inline-block;
+	border-radius: 2px;
+  }
+
+  .notification .badge {
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	padding: 5px 10px;
+	border-radius: 50%;
+	background: red;
+	color: white;
+  }

@@ -1,0 +1,103 @@
+<app-HeaderSidebarP></app-HeaderSidebarP>
+<main style="height: 80vh;">
+    <h1 class="page-header">Clase de matemáticas (Título)</h1>
+<div class="result" #result style="z-index: 10;"><- Presiona y habla.</div>
+    <div class="example-button-container">
+        <button (click)="startConverting(result);"  class="btnmic" [disabled]="isDisabled" mat-fab color="primary">
+          <mat-icon>microphone</mat-icon>
+        </button>
+    </div>
+<div class="Solucion" #Solucion>
+
+</div>
+
+<br>
+
+<div class="form-container">
+  <form action="" role="form">
+    <input id='step2' type='checkbox'>
+    <input id='step3' type='checkbox'>
+    <input id='step4' type='checkbox'>
+    <input id='step5' type='checkbox'>
+    <input id='step6' type='checkbox'>
+
+
+    <div id="part1" class="form-group">
+      
+      <h1 class="Instruccion1" style="position: absolute; top: 18%; right: 44%;">¿Cuál es el resultado?</h1>
+      <div class="panel panel-primary">
+        <img src="../../../../assets/Mt1.png" alt="Img1">
+        <div class="btn-group btn-group-lg" role="group" aria-label="...">
+          <label for='step2' id="continue-step2" class="continue">
+            <div class="btn btn-default btn-success btn-lg" role="button" (click)="Disables(Solucion, result)" [hidden]="show">Siguiente</div>
+          </label>
+        </div>
+      </div>
+      <button (click)="validacion('cuatro',Solucion); " [hidden]="!show">Continuar</button>
+    </div>
+
+    <div id="part2" class="form-group">
+      <h1 class="Instruccion2" style="position: absolute; top: 18%; right: 44%;">¿Cuál es el resultado?</h1>
+      <div class="panel panel-primary">
+        <img src="../../../../assets/Mt2.png" alt="Img2">
+        <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
+          <label for='step3' id="continue-step3" class="continue">
+            <div class="btn btn-default btn-success btn-lg" role="button" (click)="Disables(Solucion, result)" [hidden]="show">Siguiente</div>
+          </label>
+        </div>
+      </div>
+      <button (click)="validacion('six',Solucion); " [hidden]="!show">Continuar</button>
+    </div>
+
+    <div id="part3" class="form-group">
+      <h1 class="Instruccion3" style="position: absolute; top: 18%; right: 44%;">¿Cuál es el resultado?</h1>
+        <div class="panel panel-primary">
+          <img src="../../../../assets/Mt3.png" alt="Img3">
+          <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
+            <label for='step4' id="continue-step4" class="continue">
+                <div class="btn btn-default btn-success btn-lg" role="button" (click)="Disables(Solucion, result)" [hidden]="show">Siguiente</div>
+            </label>
+          </div>
+        </div>
+        <button (click)="validacion('once',Solucion); " [hidden]="!show">Continuar</button>
+    </div>
+
+      
+    <div id="part4" class="form-group">
+      <h1 class="Instruccion4" style="position: absolute; top: 18%; right: 44%;">¿Cuál es el resultado?</h1>
+        <div class="panel panel-primary">
+            <img src="../../../../assets/Mt4.png" alt="Img4">
+            <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
+                <label for='step5' id="continue-step5" class="continue">
+                    <div class="btn btn-default btn-success btn-lg" role="button" (click)="Disables(Solucion, result)" [hidden]="show">Siguiente</div>
+                </label>
+            </div>
+        </div>
+        <button (click)="validacion('s',Solucion); " [hidden]="!show">Continuar</button>
+    </div>
+
+    <div id="part5" class="form-group">
+      <h1 class="Instruccion5" style="position: absolute; top: 18%; right: 44%;">¿Cuál es el resultado?</h1>
+        <div class="panel panel-primary">
+            <img src="../../../../assets/Mt5.png" alt="Img5">
+            <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
+                <label for='step6' id="continue-step6" class="continue">
+                    <div class="btn btn-default btn-success btn-lg" role="button" (click)="Disables(Solucion, result); PantallaFinDialog()" [hidden]="show">Siguiente</div>
+                </label>
+            </div>
+        </div>
+        <button (click)="validacion('5',Solucion); " [hidden]="!show">Continuar</button>
+    </div>
+
+    <div id="part6"> 
+    </div>
+  </form>
+  
+
+</div>
+
+<div class='air air1  Iborroso' style="z-index: 1;"></div>
+<div class='air air2  Iborroso' style="z-index: 1;"></div>
+<div class='air air3  Iborroso' style="z-index: 1;"></div>
+<div class='air air4  Iborroso' style="z-index: 1;"></div>	
+</main>

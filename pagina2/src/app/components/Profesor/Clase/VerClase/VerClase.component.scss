@@ -1,0 +1,252 @@
+.btnmic{
+    font-size: 20px;
+    position: absolute;
+    top: 74%;
+    left: 20%;
+}
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 480px;
+  }
+
+
+
+
+  .form-container {
+    width: 100%;
+    max-width: 90%;
+    height: auto;
+    margin: 0 auto;
+    input[type=text], input[type=email], input[type=phone], input[type=number], textarea {
+      width: 90%;
+      margin: 20px auto;
+      border: 1px solid white;
+      box-shadow: 0  0 1px 1px white;
+    }
+    textarea {
+      min-height: 150px;
+    }
+    .panel {
+      background: rgba(0,0,0,.2);
+      .panel-heading {
+        margin-bottom: 20px;
+      }
+    }
+    .btn-group {
+      width: 90%;
+      margin: 0 auto 10px auto;
+    }
+    .back {
+      float: left;
+    }
+    .continue {
+      float: right;
+    }
+    .BtnContinuar{              /* Bug, muestra solo el resultado del último que llama a esta calse */
+        font-size: 20px;
+        position: absolute;
+        top: 70%;
+        right: 5%;
+    }
+  }
+
+
+
+  
+  img{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #e6e6e9;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    box-sizing: border-box;
+    width: auto;
+    height: 30%;
+    border: solid #ababb1 2px;
+    transform: translate(-50%, -50%);
+    padding: 5px;  
+  }
+  /* Multi-Part CSS */
+  input[type=checkbox] {
+    position: absolute;
+    /* Position the checkbox in upper left corner */
+    
+    opacity: 0;
+  }
+  
+  /* Styling Parts */
+  #part1,
+  #part2,
+  #part3,
+  #part4,
+  #part5,
+  #part6 {
+    z-index: 2;
+    display: block;
+    height: auto;
+    opacity: 1;
+  }
+  
+  /* Hidden Parts */
+  #part2,
+  #part3,#part4,
+  #part5,#part6 {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  /* Show Step 2 & Hide Step 1 */
+  #step2:checked ~ #part2 {
+    opacity: 1;
+    height: auto;
+  }
+  #step2:checked ~ #part1 {
+    opacity: 0;
+    height: 0;
+    display: none;
+  }
+  
+  /* Show Step 3  & Hide Step 2 */
+  #step3:checked ~ #part3 {
+    opacity: 1;
+    height: auto;
+  }
+  #step3:checked ~ #part2 {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+
+ /* Show Step 4  & Hide Step 3 */
+ #step4:checked ~ #part4 {
+    opacity: 1;
+    height: auto;
+  }
+  #step4:checked ~ #part3 {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+
+ /* Show Step 5  & Hide Step 4 */
+ #step5:checked ~ #part5 {
+    opacity: 1;
+    height: auto;
+  }
+  #step5:checked ~ #part4 {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+   /* Show Step 5  & Hide Step 4 */
+ #step6:checked ~ #part6 {
+    opacity: 1;
+    height: auto;
+  }
+  #step6:checked ~ #part5 {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .Solucion{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 16%;
+    right: 0;
+    height: 30px;
+    width: 50%;
+    padding: 40px;
+    margin-bottom: 30px;
+    font-size: 60px;
+    line-height: 25px;
+    font-size: 1.5em;
+  }
+
+  .result {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 65%;
+    right: 0;
+    height: 30px;
+    width: 40%;
+    border: 1px solid #ccc;
+    padding: 40px;
+    box-shadow: 0 0 10px 0 #bbb;
+    margin-bottom: 30px;
+    font-size: 60px;
+    line-height: 25px;
+    font-size: 1.5em;
+  
+    --border-size: 0.3rem;
+    border: var(--border-size) solid transparent;
+  
+    /* Paint an image in the border */
+    border-image: conic-gradient(
+        from var(--angle),
+        #d53e33 0deg 90deg,
+        #fbb300 90deg 180deg,
+        #377af5 180deg 270deg,
+        #399953 270deg 360deg
+      )
+      1 stretch;
+    background: rgb(255 255 255 / var(--opacity));
+  }
+  
+  /** show a warning in browers that don't support it **/
+  .warning {
+    margin: 2em;
+    padding: 1em;
+    border: 1px solid #ccc;
+  }
+  .warning p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  /* Animate when Houdini is available */
+  @supports (background: paint(houdini)) {
+    @property --opacity {
+      syntax: "<number>";
+      initial-value: 0.5;
+      inherits: false;
+    }
+  
+    @property --angle {
+      syntax: "<angle>";
+      initial-value: 0deg;
+      inherits: false;
+    }
+  
+    @keyframes opacityChange {
+      to {
+        --opacity: 1;
+      }
+    }
+  
+    @keyframes rotate {
+      to {
+        --angle: 360deg;
+      }
+    }
+  
+    .result {
+      animation: rotate 4s linear infinite;
+    }
+}
+
+
+
+
+/*    Botón de continuar          */
